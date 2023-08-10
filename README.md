@@ -1,2 +1,0 @@
-# jallodApi
-Django API
