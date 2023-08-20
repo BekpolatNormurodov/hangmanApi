@@ -5,12 +5,5 @@ from rest_framework.decorators import api_view
 def getData(request):
     person = [
         {'name':'Dennis', 'age':28},
-        {'name':'Jhon', 'age':20},
-        {'name':'Dennis', 'age':28},
-        {'name':'Jhon', 'age':20},
-        {'name':'Dennis', 'age':28},
-        {'name':'Jhon', 'age':20},
-        {'name':'Dennis', 'age':28},
-        {'name':'Jhon', 'age':20},
     ]
     return Response(person)
