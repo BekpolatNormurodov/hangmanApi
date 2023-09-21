@@ -5,6 +5,6 @@ from rest_framework.decorators import api_view
 def getData(request):
     person = [
         {'question':'kitob', 'answer': 'book'},
-        {'question':'olma', 'answer': 'apple'},
+        {'question':'olma', 'answer': 'apple'}
     ]
     return Response(person)
