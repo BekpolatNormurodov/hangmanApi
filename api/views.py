@@ -14,5 +14,7 @@ def getData(request):
         {'question':'rasm', 'answer': 'picture'},
         {'question':'ruchka', 'answer': 'per'},
         {'question':'qizil', 'answer': 'red'},
+        {'question':'sariq', 'answer': 'yellow'},
+        {'question':'kok', 'answer': 'blue'},
     ]
     return Response(person)
