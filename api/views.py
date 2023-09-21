@@ -17,5 +17,6 @@ def getData(request):
         {'question':'sariq', 'answer': 'yellow'},
         {'question':'kok', 'answer': 'blue'},
         {'question':'yashil', 'answer': 'green'},
+        {'question':'qora', 'answer': 'black'},
     ]
     return Response(person)
