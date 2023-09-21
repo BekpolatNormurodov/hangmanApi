@@ -6,7 +6,5 @@ def getData(request):
     person = [
         {'question':'kitob', 'answer': 'book'},
         {'question':'olma', 'answer': 'apple'},
-        {'question':'ism', 'answer': 'name'},
-
     ]
     return Response(person)
