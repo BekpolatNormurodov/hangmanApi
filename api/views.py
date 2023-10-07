@@ -5,10 +5,5 @@ from rest_framework.decorators import api_view
 def getData(request):
     person = [
         {'question':'oq', 'answer': 'white'},
-        {'question':'qizil', 'answer': 'red'},
-        {'question':'sariq', 'answer': 'yellow'},
-        {'question':'kok', 'answer': 'blue'},
-        {'question':'yashil', 'answer': 'green'},
-        {'question':'qora', 'answer': 'black'},
     ]
     return Response(person)
