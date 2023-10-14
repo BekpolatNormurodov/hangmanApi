@@ -4,4 +4,4 @@ from api.models import Hangman
 class Hangmanserializer(serializers.ModelSerializer):
     class Meta:
         model = Hangman
-        fields = ('question', 'answer')
+        fields = ('id','question', 'answer')
