@@ -5,7 +5,7 @@ from rest_framework import permissions
 
 class HangmanApiView(ListAPIView):
     permission_classes = (permissions.IsAuthenticated,)
-    queryset = Hangman.objects.all()
+    # queryset = Hangman.objects.all()
     serializer_class = Hangmanserializer
 
 class HangmanApiCreate(ListCreateAPIView):
