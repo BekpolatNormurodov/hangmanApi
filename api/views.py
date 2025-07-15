@@ -19,5 +19,5 @@ from rest_framework.response import Response
 
 class HangmanApiView(APIView):
     def get(self, request):
-        phones = []
-        return Response(phones)
+        names = []
+        return Response(names)
