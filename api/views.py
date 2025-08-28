@@ -678,164 +678,164 @@ class TasodifyAPI(APIView):
 
         lvl_20 = [job_json]
 
-        lvl_21 = [random.choice(category_1), nature_json]
+        lvl_21 = [nature_json]
 
-        lvl_22 = [random.choice(category_2), bird_json]
+        lvl_22 = [bird_json]
 
-        lvl_23 = [random.choice(category_3), phone_json]
+        lvl_23 = [phone_json]
 
-        lvl_24 = [random.choice(category_4), uzb_region_json]
+        lvl_24 = [uzb_region_json]
 
-        lvl_25 = [random.choice(category_1), country_json]
+        lvl_25 = [country_json]
 
-        lvl_26 = [random.choice(category_2), kiyim_kichak_json]
+        lvl_26 = [kiyim_kichak_json]
 
-        lvl_27 = [random.choice(category_3), oshxona_buyumlar]
+        lvl_27 = [oshxona_buyumlar]
 
-        lvl_28 = [random.choice(category_4), car_json]
+        lvl_28 = [car_json]
 
-        lvl_29 = [random.choice(category_1), his_tuygu_json]
+        lvl_29 = [his_tuygu_json]
 
-        lvl_30 = [random.choice(category_2), produxta_json]
+        lvl_30 = [produxta_json]
 
-        lvl_31 = [random.choice(category_3), movie_json]
+        lvl_31 = [movie_json]
 
-        lvl_32 = [random.choice(category_4), diniy_json]
+        lvl_32 = [diniy_json]
 
-        lvl_33 = [random.choice(category_1), zvaniya_json]
+        lvl_33 = [zvaniya_json]
 
-        lvl_34 = [random.choice(category_2), inson_haraktir_json]
+        lvl_34 = [inson_haraktir_json]
 
-        lvl_35 = [random.choice(category_3), game_json]
+        lvl_35 = [game_json]
 
-        lvl_36 = [random.choice(category_4), city_json]
+        lvl_36 = [city_json]
 
-        lvl_37 = [random.choice(category_1), bank_json]
+        lvl_37 = [bank_json]
 
-        lvl_38 = [random.choice(category_2), futbol_jamoa_json]
+        lvl_38 = [futbol_jamoa_json]
 
-        lvl_39 = [random.choice(category_3), football_player_json]
+        lvl_39 = [football_player_json]
 
-        lvl_40 = [random.choice(category_4), sifat_json]
+        lvl_40 = [sifat_json]
 
-        lvl_41 = [random.choice(category_5), oq_json]
+        lvl_41 = [random.choice(category_1), oq_json]
 
-        lvl_42 = [random.choice(category_6), qora_json]
+        lvl_42 = [random.choice(category_2), qora_json]
 
-        lvl_43 = [random.choice(category_7), qizil_json]
+        lvl_43 = [random.choice(category_3), qizil_json]
 
-        lvl_44 = [random.choice(category_8), sa_json]
+        lvl_44 = [random.choice(category_4), sa_json]
 
-        lvl_45 = [random.choice(category_5), yashil_json]
+        lvl_45 = [random.choice(category_1), yashil_json]
 
-        lvl_46 = [random.choice(category_6), kok_json]
+        lvl_46 = [random.choice(category_2), kok_json]
 
-        lvl_47 = [random.choice(category_7), osmon_json]
+        lvl_47 = [random.choice(category_3), osmon_json]
 
-        lvl_48 = [random.choice(category_8), shirinlik_json]
+        lvl_48 = [random.choice(category_4), shirinlik_json]
 
-        lvl_49 = [random.choice(category_5), joy_json]
+        lvl_49 = [random.choice(category_1), joy_json]
 
-        lvl_50 = [random.choice(category_6), mebel_json]
+        lvl_50 = [random.choice(category_2), mebel_json]
 
-        lvl_51 = [random.choice(category_7), quyosh_tizim_json]
+        lvl_51 = [random.choice(category_3), quyosh_tizim_json]
 
-        lvl_52 = [random.choice(category_8), matematika_json]
+        lvl_52 = [random.choice(category_4), matematika_json]
 
-        lvl_53 = [random.choice(category_5), fizika_json]
+        lvl_53 = [random.choice(category_1), fizika_json]
 
-        lvl_54 = [random.choice(category_6), kimyo_json]
+        lvl_54 = [random.choice(category_2), kimyo_json]
 
-        lvl_55 = [random.choice(category_7), metall_json]
+        lvl_55 = [random.choice(category_3), metall_json]
 
-        lvl_56 = [random.choice(category_8), metro_json]
+        lvl_56 = [random.choice(category_4), metro_json]
 
-        lvl_57 = [random.choice(category_5), company_json]
+        lvl_57 = [random.choice(category_1), company_json]
 
-        lvl_58 = [random.choice(category_6), program_json]
+        lvl_58 = [random.choice(category_2), program_json]
 
-        lvl_59 = [random.choice(category_7), programming_json]
+        lvl_59 = [random.choice(category_3), programming_json]
 
-        lvl_60 = [random.choice(category_8), tecnology_json]
+        lvl_60 = [random.choice(category_4), tecnology_json]
 
-        lvl_61 = [random.choice(category_1), random.choice(category_3), b_r_json]
+        lvl_61 = [random.choice(category_5), b_r_json]
 
-        lvl_62 = [random.choice(category_2), random.choice(category_4), t_t_json]
+        lvl_62 = [random.choice(category_6), t_t_json]
 
-        lvl_63 = [random.choice(category_3), random.choice(category_5), k_t_json]
+        lvl_63 = [random.choice(category_7), k_t_json]
 
-        lvl_64 = [random.choice(category_4), random.choice(category_6), m_t_json]
+        lvl_64 = [random.choice(category_8), m_t_json]
 
-        lvl_65 = [random.choice(category_5), random.choice(category_7), p_t_json]
+        lvl_65 = [random.choice(category_5), p_t_json]
 
-        lvl_66 = [random.choice(category_1), random.choice(category_3), s_t_json]
+        lvl_66 = [random.choice(category_6), s_t_json]
 
-        lvl_67 = [random.choice(category_2), random.choice(category_4), y_z_json]
+        lvl_67 = [random.choice(category_7), y_z_json]
 
-        lvl_68 = [random.choice(category_3), random.choice(category_5), h_m_json]
+        lvl_68 = [random.choice(category_8), h_m_json]
 
-        lvl_69 = [random.choice(category_4), random.choice(category_6), x_r_json]
+        lvl_69 = [random.choice(category_5), x_r_json]
 
-        lvl_70 = [random.choice(category_5), random.choice(category_7), ch_a_json]
+        lvl_70 = [random.choice(category_6), ch_a_json]
 
-        lvl_71 = [random.choice(category_1), random.choice(category_3), Sh_r_json]
+        lvl_71 = [random.choice(category_7), Sh_r_json]
 
-        lvl_72 = [random.choice(category_2), random.choice(category_4), q_q_json]
+        lvl_72 = [random.choice(category_8), q_q_json]
 
-        lvl_73 = [random.choice(category_3), random.choice(category_5), a_a_json]
+        lvl_73 = [random.choice(category_5), a_a_json]
 
-        lvl_74 = [random.choice(category_4), random.choice(category_6), b_a_json]
+        lvl_74 = [random.choice(category_6), b_a_json]
 
-        lvl_75 = [random.choice(category_5), random.choice(category_7), k_a_json]
+        lvl_75 = [random.choice(category_7), k_a_json]
 
-        lvl_76 = [random.choice(category_1), random.choice(category_3), m_a_json]
+        lvl_76 = [random.choice(category_8), m_a_json]
 
-        lvl_77 = [random.choice(category_2), random.choice(category_4), d_n_json]
+        lvl_77 = [random.choice(category_5), d_n_json]
 
-        lvl_78 = [random.choice(category_3), random.choice(category_5), f_l_json]
+        lvl_78 = [random.choice(category_6), f_l_json]
 
-        lvl_79 = [random.choice(category_4), random.choice(category_6), e_t_json]
+        lvl_79 = [random.choice(category_7), e_t_json]
 
-        lvl_80 = [random.choice(category_5), random.choice(category_7), m_n_json]
+        lvl_80 = [random.choice(category_8), m_n_json]
 
-        lvl_81 = [random.choice(category_6), random.choice(category_8), ma_json]
+        lvl_81 = [random.choice(category_1), random.choice(category_9), ma_json]
 
-        lvl_82 = [random.choice(category_7), random.choice(category_9), bo_json]
+        lvl_82 = [random.choice(category_2), random.choice(category_10), bo_json]
 
-        lvl_83 = [random.choice(category_8), random.choice(category_10), ta_json]
+        lvl_83 = [random.choice(category_3), random.choice(category_11), ta_json]
 
-        lvl_84 = [random.choice(category_9), random.choice(category_11), sa_json]
+        lvl_84 = [random.choice(category_4), random.choice(category_12), sa_json]
 
-        lvl_85 = [random.choice(category_10), random.choice(category_12), di_json]
+        lvl_85 = [random.choice(category_1), random.choice(category_9), di_json]
 
-        lvl_86 = [random.choice(category_6), random.choice(category_8), al_json]
+        lvl_86 = [random.choice(category_2), random.choice(category_10), al_json]
 
-        lvl_87 = [random.choice(category_7), random.choice(category_9), yo_json]
+        lvl_87 = [random.choice(category_3), random.choice(category_11), yo_json]
 
-        lvl_88 = [random.choice(category_8), random.choice(category_10), qi_json]
+        lvl_88 = [random.choice(category_4), random.choice(category_12), qi_json]
 
-        lvl_89 = [random.choice(category_9), random.choice(category_11), na_json]
+        lvl_89 = [random.choice(category_5), random.choice(category_9), na_json]
 
-        lvl_90 = [random.choice(category_10), random.choice(category_12), hu_json]
+        lvl_90 = [random.choice(category_6), random.choice(category_10), hu_json]
 
-        lvl_91 = [random.choice(category_6), random.choice(category_8), za_json]
+        lvl_91 = [random.choice(category_7), random.choice(category_11), za_json]
 
-        lvl_92 = [random.choice(category_7), random.choice(category_9), ol_json]
+        lvl_92 = [random.choice(category_8), random.choice(category_12), ol_json]
 
-        lvl_93 = [random.choice(category_8), random.choice(category_10), ka_json]
+        lvl_93 = [random.choice(category_5), random.choice(category_9), ka_json]
 
-        lvl_94 = [random.choice(category_9), random.choice(category_11), mu_json]
+        lvl_94 = [random.choice(category_6), random.choice(category_10), mu_json]
 
-        lvl_95 = [random.choice(category_10), random.choice(category_12), ra_json]
+        lvl_95 = [random.choice(category_7), random.choice(category_11), ra_json]
 
-        lvl_96 = [random.choice(category_6), random.choice(category_8), lo_json]
+        lvl_96 = [random.choice(category_8), random.choice(category_12), lo_json]
 
-        lvl_97 = [random.choice(category_7), random.choice(category_9), te_json]
+        lvl_97 = [random.choice(category_5), random.choice(category_9), te_json]
 
-        lvl_98 = [random.choice(category_8), random.choice(category_10), su_json]
+        lvl_98 = [random.choice(category_6), random.choice(category_10), su_json]
 
-        lvl_99 = [random.choice(category_9), random.choice(category_11), ni_json]
+        lvl_99 = [random.choice(category_7), random.choice(category_11), ni_json]
 
-        lvl_100 = [random.choice(category_10), random.choice(category_12), la_json]
+        lvl_100 = [random.choice(category_8), random.choice(category_12), la_json]
 
         return Response(tecnology) 
