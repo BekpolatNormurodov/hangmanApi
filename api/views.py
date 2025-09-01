@@ -68,46 +68,7 @@ class TasodifyAPI(APIView):
         program = "Oson", "Click", "Payme", "Paynet", "IMO", "OLX", "Clock", "Word", "Excel", "Zoom", "Gmail", "Google", "Browser", "Telegram", "Messenger", "WhatsApp", "Instagram", "Facebook", "YouTube", "Calendar", "Gallery", "Calculator", "Viber", "Skype", "Shazam", "Netflix", "Chrome", "MXPlayer", "Canva", "Twitter", "WeChat", "MyTaxi", "YandexGo", "GooglePlay", "PlayMarket", "AppStore", "GoogleMaps", "VoiceRecorder", "PowerPoint", "AnyDesk", "CapCut", "ChatGPT", "Telegraph", "Snapchat", "BigoLive", "AliExpress", "Amazon", "ZoodMall", "UzumMarket" # 50
         programming = "R", "Go", "PHP", "CSS", "Git", "SQL", "JSON", "XML", "Dart", "Rust", "Ruby", "Java", "Sass", "Less", "HTML", "Nodejs", "Linux", "Swift", "Vue", "jQuery", "Oracle", "MySQL", "Python", "React", "GSAP", "Flask", "Redis", "Vue", "Nextjs", "Nuxtjs", "MongoDB", "Chartjs", "Threejs", "Docker", "GitHub", "GitLab", "aHost", "Heroku", "Netlify", "Vercel", "Railway", "Firebase", "SQLite", "Tailwind", "Angular", "Django", "Spring", "Laravel", "Symfony", "NestJS", "FastAPI", "Expressjs", "Bootstrap", "Postman", "WebStorm", "PhpStorm", "CLion", "Xcode", "VSCode", "Brackets", "Webpack", "Matlab", "Kotlin", "Kalkulyator", "VisualStudio", "PyCharm", "Nextjs", "ObjectiveC", "IntelliJ IDEA", "AndroidStudio", "SublimeText", "CodeBlocks", "DigitalOcean", "JupyterNotebook", "PostgreSQL", "GoogleCloud", "WebSocket" # 80
         tecnology = "Soat", "Radio", "GPS", "WiFi", "iOS", "VPN", "iPad", "iPhone", "Dron", "Robot", "Kamera", "Planshet", "Android", "SIMkarta", "Naushnik", "Quloqchin", "Fleshka", "Windows", "Laptop", "Monitor", "Printer", "Skaner", "Server", "Router", "Kompyuter", "Smartfon", "Kalkulyator", "Televizor", "Muzlatgich", "Kirmashina", "Changyutgich", "Mikropech", "Gazplita", "Ventilyator", "Termometr", "Bankomat", "Navigator", "Notebook", "Klaviatura", "Protsessor", "Bluetooth", "Internet", "Zaryadlagich", "PowerBank", "Smartwatch", "Konditsioner", "PlayStation", "Desktop", "Modem" # 50      
-        B____r = "Bozor","Bahor","Bobir","Bemor","Bahodir","Baxtiyor","Bunyodkor", "Barqaror"
-        T____t = "Toshkent","Transport","Tabiat","Talant","Taxt","Targ'ibot"
-        K____t = "Kredit","Kafolat","Konsert","Konspekt","Kamolot"
-        M____t = "Mehnat","Maslahat","Muloqot","Mahsulot","Murojaat","Muvaffaqiyat","Munosabat","Madaniyat"
-        P____t = "Pasport","Paket","Poytaxt","Patent","Plakat","Parlament"
-        S____t = "Siyosat","Sifat","Samolyot","Savlat","Sharbat","Sanat","Sadoqat"
-        Y____z = "Yulduz","Yuz","Yoz","Yalpiz","Yolg'iz"
-        H____m = "Hokim","Hammom","Halim","Hujum","Hajm"
-        X____r = "Xabar","Xaridor","Xarakter","Xamir","Xumor","Xizmatkor"
-        Ch____a = "Chashma","Choyxona","Chizma","Choliqush","Chilla"
-        Sh____r = "Shahar","Shifokor","Shakar","Shior","Shukur"
-        Q____q = "Qishloq","Quloq","Qirq","Qovoq","Qayiq","Qarmoq","Qirqmoq","Qizaloq"
-        A____a = "Ariza","Aloqa","Apteka","Antena","Arava","Aziza"
-        B____a = "Bola","Bog'cha","Binafsha","Boshqa","Barcha","Bahora","Baraka"
-        K____a = "Ko'cha","Kassa","Kamera","Kutubxona","Komila","Kamola","Kema"
-        M____a = "Mashina","Musiqa","Mahalla","Muallima","Madina","Malika","Maftuna"
-        D____n = "Do'kon","Dasturxon","Darmon","Dehqon","Doston","Davron"
-        F____l = "Futbol","Fayl","Fasl","Fil","Fozil"
-        E____t = "Effekt","Eksport","Element","Eksperiment","Etiket","Eshmat"
-        M____n = "Magazin","Makon","Mehribon","Mikrofon","Musulmon", "Mehmon"
-        Ma_____ = "Maktab","Malika","Mashina","Mahalla","Maqola","Madina","Mavsum","Mahsulot","Maqsad"
-        Bo_____ = "Bozor","Bolalar","Bog'cha","Boshliq","Boylik","Bolta","Borliq","Bodom"
-        Ta_____ = "Talaba","Talim","Tabiat","Taom","Taqvim","Tayyor","Tadbirkor","Tarix","Taxt","Tarmoq"
-        Sa_____ = "Sabzi","Samolyot","Samarqand","Salom","San'at","Saroy","Sayohat","Savdo","Saboq"
-        Di_____ = "Dildora","Diqqat","Dilbar","Dindor","Dialog","Didor"
-        Al_____ = "Alisher","Alvido","Alanga","Albatta","Aloqa","Alpomish","Alkogol","Algebra"
-        Yo_____ = "Yozuv","Yulduz","Yorqin","Yolg'iz","Yor","Yoz","Yog'och","Yodgor","Yorug'lik","Yoshlar"
-        Qi_____ = "Qish","Qizil","Qishloq","Qiyin","Qizaloq","Qimmat","Qiyofa","Qiruvchi","Qiyos"
-        Na_____ = "Navro'z","Nargiza","Nafis","Nasiba","Namangan","Nafaqa","Navoiy"
-        Hu_____ = "Hurmat","Hokim","Humor","Hujjat","Hujum","Humo","Hunar","Hukumdor"
-        Za_____ = "Zarafshon","Zarina","Zarur","Zafar","Ziyo","Zamon","Zamonaviy","Ziyofat","Ziyorat"
-        Ol_____ = "Olma","Olov","Oltin","Olim","Olmos","Oltiariq","Oltinsoy","Oliy"
-        Ka_____ = "Karim","Kamol","Kamalak","Katta","Kafolat","Kamera","Kassir"
-        Mu_____ = "Murod","Muborak","Muallim","Mustaqillik","Musiqa","Muqaddas","Murojaat","Munozara","Muhabbat"
-        Ra_____ = "Rahmat","Ravon","Rasul","Ramazon","Rang","Rasm","Ravshan","Rano","Rasululloh"
-        Lo_____ = "Lola","Lozim","Loyiha","Loqayd","Lochin"
-        Te_____ = "Telefon","Televizor","Temir","Tepalik","Teatr","Tezlik","Texnika","Teshik","Tenglik"
-        Su_____ = "Suv","Sut","Suyanchiq","Sulton","Surat","Sunnat"
-        Ni_____ = "Nima","Nishon","Niyat","Nilufar","Nishab","Niqob","Nigor","Nizom","Nimadir","Nihol"
-        La_____ = "Lab","Lampa","Lavozim","Lazzat","Latifa","Lashkar","Laptop","Lagan"
+
 
 
 
@@ -412,404 +373,65 @@ class TasodifyAPI(APIView):
             "word": random.choice(tecnology),
         }
 
-        lvl_61 = {
-            "category": "B____R",
-            "word": random.choice(B____r),
-        }
-
-        lvl_62 = {
-            "category": "T____T",
-            "word": random.choice(T____t),
-        }
-
-        lvl_63 = {
-            "category": "K____T",
-            "word": random.choice(K____t),
-        }
-
-        lvl_64 = {
-            "category": "M____T",
-            "word": random.choice(M____t),
-        }
-
-        lvl_65 = {
-            "category": "P____T",
-            "word": random.choice(P____t),
-        }
-
-        lvl_66 = {
-            "category": "S____T",
-            "word": random.choice(S____t),
-        }
-
-        lvl_67 = {
-            "category": "Y____Z",
-            "word": random.choice(Y____z),
-        }
-
-        lvl_68 = {
-            "category": "H____M",
-            "word": random.choice(H____m),
-        }
-
-        lvl_69 = {
-            "category": "X____R",
-            "word": random.choice(X____r),
-        }
-
-        lvl_70 = {
-            "category": "CH____A",
-            "word": random.choice(Ch____a),
-        }
-
-        lvl_71 = {
-            "category": "SH____R",
-            "word": random.choice(Sh____r),
-        }
-
-        lvl_72 = {
-            "category": "Q____Q",
-            "word": random.choice(Q____q),
-        }
-
-        lvl_73 = {
-            "category": "A____A",
-            "word": random.choice(A____a),
-        }
-
-        lvl_74 = {
-            "category": "B____A",
-            "word": random.choice(B____a),
-        }
-
-        lvl_75 = {
-            "category": "K____A",
-            "word": random.choice(K____a),
-        }
-
-        lvl_76 = {
-            "category": "M____A",
-            "word": random.choice(M____a),
-        }
-
-        lvl_77 = {
-            "category": "D____N",
-            "word": random.choice(D____n),
-        }
-
-        lvl_78 = {
-            "category": "F____L",
-            "word": random.choice(F____l),
-        }
-
-        lvl_79 = {
-            "category": "E____T",
-            "word": random.choice(E____t),
-        }
-
-        lvl_80 = {
-            "category": "M____N",
-            "word": random.choice(M____n),
-        }
-
-        lvl_81 = {
-            "category": "MA____",
-            "word": random.choice(Ma_____),
-        }
-
-        lvl_82 = {
-            "category": "BO____",
-            "word": random.choice(Bo_____),
-        }
-
-        lvl_83 = {
-            "category": "TA____",
-            "word": random.choice(Ta_____),
-        }
-
-        lvl_84 = {
-            "category": "SA____",
-            "word": random.choice(Sa_____),
-        }
-
-        lvl_85 = {
-            "category": "DI____",
-            "word": random.choice(Di_____),
-        }
-
-        lvl_86 = {
-            "category": "AL____",
-            "word": random.choice(Al_____),
-        }
-
-        lvl_87 = {
-            "category": "YO____",
-            "word": random.choice(Yo_____),
-        }
-
-        lvl_88 = {
-            "category": "QI____",
-            "word": random.choice(Qi_____),
-        }
-
-        lvl_89 = {
-            "category": "NA____",
-            "word": random.choice(Na_____),
-        }
-
-        lvl_90 = {
-            "category": "HU____",
-            "word": random.choice(Hu_____),
-        }
-
-        lvl_91 = {
-            "category": "ZA____",
-            "word": random.choice(Za_____),
-        }
-
-        lvl_92 = {
-            "category": "OL____",
-            "word": random.choice(Ol_____),
-        }
-
-        lvl_93 = {
-            "category": "KA____",
-            "word": random.choice(Ka_____),
-        }
-
-        lvl_94 = {
-            "category": "MU____",
-            "word": random.choice(Mu_____),
-        }
-
-        lvl_95 = {
-            "category": "RA____",
-            "word": random.choice(Ra_____),
-        }
-
-        lvl_96 = {
-            "category": "LO____",
-            "word": random.choice(Lo_____),
-        }
-
-        lvl_97 = {
-            "category": "TE____",
-            "word": random.choice(Te_____),
-        }
-
-        lvl_98 = {
-            "category": "SU____",
-            "word": random.choice(Su_____),
-        }
-
-        lvl_99 = {
-            "category": "NI____",
-            "word": random.choice(Ni_____),
-        }
-
-        lvl_100 = {
-            "category": "LA____",
-            "word": random.choice(La_____),
-        }
-
-
 
         lvl_1 = name_json
-
         lvl_2 = color_json
-
         lvl_3 = calendar_json
-
         lvl_4 = animal_json
-
         lvl_5 = fruit_json
-
         lvl_6 = vegetable_json
-
         lvl_7 = ovqat_json
-
         lvl_8 = obhavo_json
-
         lvl_9 = transport_json
-
         lvl_10 = osimlik_json
-
         lvl_11= ichimlik_json
-
         lvl_12= fan_json
-
         lvl_13 = vaqt_json
-
         lvl_14 = qurol_json
-
         lvl_15 = musiqa_asbob_json
-
         lvl_16 = oila_va_qarindosh_json
-
         lvl_17 = human_body_json
-
         lvl_18 = sport_json
-
         lvl_19 = maktab_anjom_json
-
         lvl_20 = job_json
-
         lvl_21 = nature_json
-
         lvl_22 = bird_json
-
         lvl_23 = phone_json
-
         lvl_24 = uzb_region_json
-
         lvl_25 = country_json
-
         lvl_26 = kiyim_kichak_json
-
         lvl_27 = oshxona_buyumlar
-
         lvl_28 = car_json
-
         lvl_29 = his_tuygu_json
-
         lvl_30 = produxta_json
-
         lvl_31 = movie_json
-
         lvl_32 = diniy_json
-
         lvl_33 = zvaniya_json
-
         lvl_34 = inson_haraktir_json
-
         lvl_35 = game_json
-
         lvl_36 = city_json
-
         lvl_37 = bank_json
-
         lvl_38 = futbol_jamoa_json
-
         lvl_39 = football_player_json
-
         lvl_40 = sifat_json
-
         lvl_41 = oq_json
-
         lvl_42 = qora_json
-
         lvl_43 = qizil_json
-
         lvl_44 = sa_json
-
         lvl_45 = yashil_json
-
         lvl_46 = kok_json
-
         lvl_47 = osmon_json
-
         lvl_48 = shirinlik_js
-
         lvl_50 = mebel_json
-
         lvl_51 = quyosh_tizim_json
-
         lvl_52 = matematika_json
-
         lvl_53 = fizika_json
-
         lvl_54 = kimyo_json
-
         lvl_55 = metall_json
-
         lvl_56 = metro_json
-
         lvl_57 = company_json
-
         lvl_58 = program_json
-
         lvl_59 = programming_json
-
         lvl_60 = tecnology_json
-
-        lvl_61 = b_r_json
-
-        lvl_62 = t_t_json
-
-        lvl_63 = k_t_json
-
-        lvl_64 = m_t_json
-
-        lvl_65 = p_t_json
-
-        lvl_66 = s_t_json
-
-        lvl_67 = y_z_json
-
-        lvl_68 = h_m_json
-
-        lvl_69 = x_r_json
-
-        lvl_70 = ch_a_json
-
-        lvl_71 = Sh_r_json
-
-        lvl_72 = q_q_json
-
-        lvl_73 = a_a_json
-
-        lvl_74 = b_a_json
-
-        lvl_75 = k_a_json
-
-        lvl_76 = m_a_json
-
-        lvl_77 = d_n_json
-
-        lvl_78 = f_l_json
-
-        lvl_79 = e_t_json
-
-        lvl_80 = m_n_json
-
-        lvl_81 = ma_json
-
-        lvl_82 = bo_json
-
-        lvl_83 = ta_json
-
-        lvl_84 = sa_json
-
-        lvl_85 = di_json
-
-        lvl_86 = al_json
-
-        lvl_87 = yo_json
-
-        lvl_88 = qi_json
-
-        lvl_89 = na_json
-
-        lvl_90 = hu_json
-
-        lvl_91 = za_json
-
-        lvl_92 = ol_json
-
-        lvl_93 = ka_json
-
-        lvl_94 = mu_json
-
-        lvl_95 = ra_json
-
-        lvl_96 = lo_json
-
-        lvl_97 = te_json
-
-        lvl_98 = su_json
-
-        lvl_99 = ni_json
-
-        lvl_100 = la_json
 
         return Response(tecnology) 
