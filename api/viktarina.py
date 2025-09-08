@@ -2,12 +2,17 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 import random
 
-# Millioner stilida, biror manzilga yaqinlashaversin, yutqazsa boshidan boshlasin.
+# 100ta level buladi, har bir levelda 5tadan max 10tagacha savol buladi.
 class Viktoriya(APIView):
     def get(self, request):
  
-        # FAN 300
-        level_1 = [
+
+        quiz_1 = [
+            {
+                "question": "Dunyoning eng katta tog‘ tizmalari?",
+                "answer": "Gimolay",
+                "variant": ["Gimolay", "And", "Alp", "Tyan-Shan"]
+            },
             {
                 "question": "Rassiyaning poytaxti qaysi?",
                 "answer": "Maskva",
@@ -329,11 +334,6 @@ class Viktoriya(APIView):
                 "variant": ["Sher", "Yo‘lbars", "Burgut", "Bo‘ri"]
             },
             {
-                "question": "Telefonni kim ixtiro qilgan?",
-                "answer": "Aleksandr Bell",
-                "variant": ["Aleksandr Bell", "Edison", "Tesla", "Newton"]
-            },
-            {
                 "question": "Mingbuloq, Arnasoy, Dengizko‘l — bular nima?",
                 "answer": "Ko‘llar",
                 "variant": ["Ko‘llar", "Tog‘lar", "Shaharlar", "Daryolar"]
@@ -454,11 +454,6 @@ class Viktoriya(APIView):
                 "variant": ["Yoz", "Kuz", "Qish", "Bahor yana"]
             },
             {
-                "question": "Afrikadagi eng katta ko‘l?",
-                "answer": "Viktoriya ko‘li",
-                "variant": ["Viktoriya ko‘li", "Tanganika", "Malavi", "Chad"]
-            },
-            {
                 "question": "Dunyodagi eng baland daraxt turi?",
                 "answer": "Sekvoyya",
                 "variant": ["Sekvoyya", "Eman", "Qayrag‘och", "Tol"]
@@ -512,7 +507,12 @@ class Viktoriya(APIView):
                 "question": "Qaysi davlatda eng ko‘p orollar bor?",
                 "answer": "Shvetsiya",
                 "variant": ["Shvetsiya", "Indoneziya", "Filippin", "Yaponiya"]
-            },
+            }
+        ]
+
+
+
+        quiz_2 = [
             {
                 "question": "Quyosh tizimidagi eng kichik sayyora?",
                 "answer": "Merkuriy",
@@ -594,7 +594,7 @@ class Viktoriya(APIView):
                 "variant": ["Kanguru", "Fil", "Sher", "Bo‘ri"]
             },
             {
-                "question": "O‘zbekistondagi eng katta konlardan biri?",
+                "question": "O‘zbekistondagi eng katta kon?",
                 "answer": "Qizilqum oltin koni",
                 "variant": ["Qizilqum oltin koni", "Angren ko‘mir koni", "Olmaliq mis koni", "Sharg‘un ko‘mir koni"]
             },
@@ -652,11 +652,6 @@ class Viktoriya(APIView):
                 "question": "Qaysi davlatda eng ko‘p aholiga ega shahar — Mexiko joylashgan?",
                 "answer": "Meksika",
                 "variant": ["Meksika", "Braziliya", "Argentina", "Ispaniya"]
-            },
-            {
-                "question": "Yevropadagi eng kichik davlatlardan biri?",
-                "answer": "Monako",
-                "variant": ["Monako", "Vatikan", "Andorra", "San-Marino"]
             },
             {
                 "question": "Qaysi hayvon 'sahro kemasi' deb ataladi?",
@@ -719,8 +714,8 @@ class Viktoriya(APIView):
                 "variant": ["6371 km", "7000 km", "5500 km", "6000 km"]
             },
             {
-                "question": "O‘zbekiston hududidan oqib o‘tadigan eng yirik daryolardan biri?",
-                "answer": "Sirdaryo",
+                "question": "O‘zbekiston hududidan oqib o‘tadigan eng yirik daryo?",
+                "answer": "Amudaryo",
                 "variant": ["Sirdaryo", "Amudaryo", "Zarafshon", "Qashqadaryo"]
             },
             {
@@ -819,7 +814,7 @@ class Viktoriya(APIView):
                 "variant": ["Baykal", "Tanganika", "Viktoriya", "Aral"]
             },
             {
-                "question": "Dunyodagi eng baland minoralardan biri?",
+                "question": "Dunyodagi eng baland minora?",
                 "answer": "Burj Xalifa",
                 "variant": ["Burj Xalifa", "Eyfel minorasi", "CN Tower", "Empire State Building"]
             },
@@ -1017,7 +1012,12 @@ class Viktoriya(APIView):
                 "question": "Yerning sun’iy yo‘ldoshi nima deb ataladi?",
                 "answer": "Sun’iy yo‘ldosh",
                 "variant": ["Oy", "Sun’iy yo‘ldosh", "Quyosh", "Sayyora"]
-            },
+            }
+        ]
+
+
+
+        quiz_3 = [
             {
                 "question": "Toshkent metrosi nechanchi yilda ochilgan?",
                 "answer": "1977",
@@ -1067,11 +1067,6 @@ class Viktoriya(APIView):
                 "question": "O‘zbekistonda qaysi viloyat 'paxtasi' bilan mashhur?",
                 "answer": "Farg‘ona",
                 "variant": ["Surxondaryo", "Farg‘ona", "Xorazm", "Jizzax"]
-            },
-            {
-                "question": "Dunyodagi eng baland hayvon?",
-                "answer": "Jirafa",
-                "variant": ["Jirafa", "Fil", "Arslon", "Ot"]
             },
             {
                 "question": "O‘zbekistonning eng mashhur tarixiy obidalaridan biri — Minorai Kalon qayerda?",
@@ -1129,14 +1124,9 @@ class Viktoriya(APIView):
                 "variant": ["Somsa", "Pizza", "Burger", "Norin"]
             },
             {
-                "question": "Dunyodagi eng uzun daryolardan biri?",
-                "answer": "Amazonka",
+                "question": "Dunyodagi eng uzun daryo?",
+                "answer": "Nil",
                 "variant": ["Nil", "Amazonka", "Volga", "Ganga"]
-            },
-            {
-                "question": "O‘zbekistonning milliy o‘yinlaridan biri?",
-                "answer": "Chillak",
-                "variant": ["Shaxmat", "Chillak", "Basseyn", "Voleybol"]
             },
             {
                 "question": "Dunyodagi eng mashhur muzlik qaysi qit’ada joylashgan?",
@@ -1159,7 +1149,7 @@ class Viktoriya(APIView):
                 "variant": ["Tyan-Shan", "Pamir", "Altay", "Kavkaz"]
             },
             {
-                "question": "Dunyodagi eng mashhur devorlardan biri?",
+                "question": "Dunyodagi eng mashhur devor?",
                 "answer": "Xitoy devori",
                 "variant": ["Xitoy devori", "Berlin devori", "Hadrian devori", "Bobil devori"]
             },
@@ -1354,8 +1344,8 @@ class Viktoriya(APIView):
                 "variant": ["Yulduz Usmonova", "Sevara Nazarkhan", "Ozodbek Nazarbekov", "Botir Zokirov"]
             },
             {
-                "question": "Dunyodagi eng mashhur tog‘lardan biri?",
-                "answer": "Kilimanjaro",
+                "question": "Dunyodagi eng mashhur tog‘?",
+                "answer": "Everest",
                 "variant": ["Kilimanjaro", "Everest", "Elbrus", "Montblan"]
             },
             {
@@ -1371,12 +1361,12 @@ class Viktoriya(APIView):
             {
                 "question": "O‘zbekistonda mashhur milliy o‘yinlardan biri?",
                 "answer": "Ko‘pkari",
-                "variant": ["Ko‘pkari", "Shaxmat", "Basketbol", "Kurash"]
+                "variant": ["Ko‘pkari", "Shaxmat", "Basketbol", "futbol"]
             },
             {
-                "question": "Dunyodagi eng mashhur ko‘rfazlardan biri?",
-                "answer": "Meksika ko‘rfazi",
-                "variant": ["Meksika ko‘rfazi", "Bengal ko‘rfazi", "Pers ko‘rfazi", "Aden ko‘rfazi"]
+                "question": "Dunyodagi eng mashhur ko‘rfaz?",
+                "answer": "Bengal",
+                "variant": ["Meksika", "Bengal", "Pers", "Aden"]
             },
             {
                 "question": "O‘zbekistonning mashhur shaharlaridan biri — Qo‘qon qaysi viloyatda?",
@@ -1397,11 +1387,6 @@ class Viktoriya(APIView):
                 "question": "Dunyodagi eng mashhur muzliklardan biri?",
                 "answer": "Grenlandiya",
                 "variant": ["Grenlandiya", "Antarktida", "Alp", "And"]
-            },
-            {
-                "question": "O‘zbekiston hududidagi qadimiy madaniy markazlardan biri?",
-                "answer": "Termiz",
-                "variant": ["Termiz", "Samarqand", "Buxoro", "Xiva"]
             },
             {
                 "question": "Dunyodagi eng mashhur teatrlaridan biri — Bolshoy teatri qayerda?",
@@ -1449,17 +1434,12 @@ class Viktoriya(APIView):
                 "variant": ["Portugaliya", "Ispaniya", "Braziliya", "Italiya"]
             },
             {
-                "question": "O‘zbekistonning mashhur milliy shirinliklaridan biri?",
-                "answer": "Navvot",
-                "variant": ["Navvot", "Halva", "Shakar", "Asal"]
-            },
-            {
                 "question": "Dunyodagi eng mashhur minoralardan biri — CN Tower qayerda?",
                 "answer": "Kanada",
                 "variant": ["AQSh", "Kanada", "Fransiya", "Angliya"]
             },
             {
-                "question": "O‘zbekistonning mashhur shaharlaridan biri — Qarshi qaysi viloyat markazi?",
+                "question": "Qarshi shahar qaysi viloyat markazi?",
                 "answer": "Qashqadaryo",
                 "variant": ["Qashqadaryo", "Buxoro", "Jizzax", "Namangan"]
             },
@@ -1467,11 +1447,6 @@ class Viktoriya(APIView):
                 "question": "Dunyodagi eng mashhur muzlatilgan qahva nomi?",
                 "answer": "Frappe",
                 "variant": ["Frappe", "Latte", "Amerikano", "Espresso"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur milliy o‘yinlaridan biri?",
-                "answer": "Alpomish aytishuvlari",
-                "variant": ["Alpomish aytishuvlari", "Shaxmat", "Kurash", "Voleybol"]
             },
             {
                 "question": "O‘zbekistonning shimoliy viloyatlaridan biri?",
@@ -1504,15 +1479,135 @@ class Viktoriya(APIView):
                 "variant": ["Jahon chempionati", "Olimpiada", "Yevropa Ligasi", "Osiyo Kubogi"]
             },
             {
-                "question": "O‘zbekistonning eng mashhur qo‘lyozmalardan biri?",
-                "answer": "Avesto",
-                "variant": ["Avesto", "Shohnoma", "Xamsa", "Qutadg‘u bilig"]
+                "question": "O‘zbekiston hududidagi eng mashhur suv omborlaridan biri — Chorvoq qaysi viloyatda joylashgan?",
+                "answer": "Toshkent viloyati",
+                "variant": ["Toshkent viloyati", "Namangan viloyati", "Andijon viloyati", "Samarqand viloyati"]
+            },
+            {
+                "question": "Dunyoning eng katta yarim oroli?",
+                "answer": "Arabiston yarim oroli",
+                "variant": ["Arabiston yarim oroli", "Iberiya", "Skandinaviya", "Hindiston yarim oroli"]
+            },
+            {
+                "question": "O‘zbekiston hududida joylashgan qadimiy madrasalardan biri — Ko‘kaldosh qayerda joylashgan?",
+                "answer": "Toshkent",
+                "variant": ["Toshkent", "Buxoro", "Xiva", "Samarqand"]
+            },
+            {
+                "question": "Dunyoning eng uzun qirg‘oq chizig‘iga ega davlat?",
+                "answer": "Kanada",
+                "variant": ["Kanada", "Rossiya", "Avstraliya", "AQSh"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur tarixiy shaharlaridan biri — Shahrisabz qaysi vohada joylashgan?",
+                "answer": "Qashqadaryo vohasi",
+                "variant": ["Qashqadaryo vohasi", "Surxondaryo vohasi", "Zarafshon vohasi", "Farg‘ona vohasi"]
+            },
+            {
+                "question": "Dunyoning eng katta muzliklari qaysi hududda joylashgan?",
+                "answer": "Antarktida",
+                "variant": ["Antarktida", "Grenlandiya", "Shimoliy qutb", "Islandiya"]
+            },
+            {
+                "question": "Buyuk astronom Galiley qanday ixtirosi bilan mashhur?",
+                "answer": "Teleskopni takomillashtirish",
+                "variant": ["Teleskopni takomillashtirish", "Kompasni ixtiro qilish", "Bug‘ mashinasi", "Telefon"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Pirimqul Qodirov mashhur asari?",
+                "answer": "Avlodlar dovoni",
+                "variant": ["Avlodlar dovoni", "Yulduzli tunlar", "Sarob", "O‘tkan kunlar"]
             }
         ]
 
        
-        # FAN 100
-        level_2 = [
+
+        quiz_4 = [
+            {
+                "question": "O‘zbekiston hududidagi mashhur maqbaralardan biri — Ismoil Somoniy maqbarasi qayerda?",
+                "answer": "Buxoro",
+                "variant": ["Buxoro", "Samarqand", "Xiva", "Andijon"]
+            },
+            {
+                "question": "Buyuk yozuvchi Abdulla Qodiriy mashhur asarlaridan biri?",
+                "answer": "O‘tkan kunlar",
+                "variant": ["O‘tkan kunlar", "Mehrobdan chayon", "Sarob", "Yulduzli tunlar"]
+            },
+            {
+                "question": "Yevropadagi eng mashhur futbol klublaridan biri — Real Madrid qaysi davlatda?",
+                "answer": "Ispaniya",
+                "variant": ["Ispaniya", "Italiya", "Fransiya", "Angliya"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi eng katta ko‘l?",
+                "answer": "Aral dengizi",
+                "variant": ["Aral dengizi", "Aydarko‘l", "Sarezko‘l", "Tuzko‘l"]
+            },
+            {
+                "question": "Dunyoning eng baland hayvonlaridan biri?",
+                "answer": "Jirafa",
+                "variant": ["Jirafa", "Fil", "Gepard", "Arslon"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur tarixiy shaxsi — Jaloliddin Manguberdi qaysi asrda yashagan?",
+                "answer": "XIII asr",
+                "variant": ["XIII asr", "XI asr", "XIV asr", "XV asr"]
+            },
+            {
+                "question": "Dunyoning eng katta arxipelaglari qayerda joylashgan?",
+                "answer": "Janubi-Sharqiy Osiyo",
+                "variant": ["Janubi-Sharqiy Osiyo", "Shimoliy Amerika", "Afrika", "Yevropa"]
+            },
+            {
+                "question": "O‘zbekiston hududida joylashgan mashhur yodgorlik — Guri Amir maqbarasi kimga bag‘ishlangan?",
+                "answer": "Amir Temur",
+                "variant": ["Amir Temur", "Ulug‘bek", "Alisher Navoiy", "Ibn Sino"]
+            },
+            {
+                "question": "Dunyodagi eng chuqur okean?",
+                "answer": "Tinch okeani",
+                "variant": ["Tinch okeani", "Atlantika okeani", "Hind okeani", "Shimoliy muz okeani"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Abdulla Qodiriy qaysi davr adibi?",
+                "answer": "XX asr boshlarida",
+                "variant": ["XX asr boshlarida", "XV asrda", "XVIII asrda", "XIX asrda"]
+            },
+            {
+                "question": "Eng qadimgi yozuvlardan biri — mixxat qayerda paydo bo‘lgan?",
+                "answer": "Shumer",
+                "variant": ["Shumer", "Misr", "Xitoy", "Hindiston"]
+            },
+            {
+                "question": "O‘zbekistonning milliy o‘yinlaridan biri?",
+                "answer": "Ko‘pkari",
+                "variant": ["Ko‘pkari", "Futbol", "Shaxmat", "Basketbol"]
+            },
+            {
+                "question": "Dunyoning eng mashhur san’at muzeylaridan biri — Prado qayerda joylashgan?",
+                "answer": "Madrid",
+                "variant": ["Madrid", "Parij", "Berlin", "Rim"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi mashhur tarixiy obidalaridan biri — Minorai Jam qayerda joylashgan?",
+                "answer": "Afg‘oniston bilan chegarada",
+                "variant": ["Afg‘oniston bilan chegarada", "Buxoro", "Samarqand", "Xorazm"]
+            },
+            {
+                "question": "Dunyoning eng baland tog‘ dovonlaridan biri?",
+                "answer": "Torong-La",
+                "variant": ["Torong-La", "Elbrus", "Altay", "Ural"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur tarixiy shaxsi — Alisher Navoiy qaysi asrda yashagan?",
+                "answer": "XV asr",
+                "variant": ["XV asr", "XVI asr", "XIV asr", "XIII asr"]
+            },
+            {
+                "question": "Dunyoning eng katta ichki daryosiz hududi qayerda joylashgan?",
+                "answer": "Mongoliya",
+                "variant": ["Mongoliya", "Liviya", "Avstraliya", "Kanada"]
+            },
             {
                 "question": "Quyoshdan eng uzoq joylashgan sayyora qaysi?",
                 "answer": "Neptun",
@@ -1552,11 +1647,6 @@ class Viktoriya(APIView):
                 "question": "O‘zbekistonda eng yirik issiqlik elektr stansiyasi?",
                 "answer": "Talimarjon IES",
                 "variant": ["Talimarjon IES", "Sirdaryo IES", "Novoangren IES", "Navoiy IES"]
-            },
-            {
-                "question": "Yevropadagi eng baland tog‘?",
-                "answer": "Elbrus",
-                "variant": ["Elbrus", "Alp", "Montblan", "Kavkaz"]
             },
             {
                 "question": "Qaysi olim 'harakatning uchinchi qonuni'ni kashf qilgan?",
@@ -1679,11 +1769,6 @@ class Viktoriya(APIView):
                 "variant": ["Albert Eynshteyn", "Nyuton", "Galiley", "Planck"]
             },
             {
-                "question": "Qaysi shahar 'abadiy shahar' deb ataladi?",
-                "answer": "Rim",
-                "variant": ["Rim", "Afina", "Qohira", "Istanbul"]
-            },
-            {
                 "question": "O‘zbekiston hududidan o‘tadigan eng yirik tog‘ tizmasi?",
                 "answer": "Tyan-Shan",
                 "variant": ["Tyan-Shan", "Gimolay", "Alp", "And"]
@@ -1712,11 +1797,6 @@ class Viktoriya(APIView):
                 "question": "Qaysi davlat 'g‘o‘za mamlakati' deb ataladi?",
                 "answer": "O‘zbekiston",
                 "variant": ["O‘zbekiston", "AQSh", "Hindiston", "Braziliya"]
-            },
-            {
-                "question": "Osiyodagi eng uzun daryo?",
-                "answer": "Yanszi",
-                "variant": ["Yanszi", "Ind", "Amur", "Mekong"]
             },
             {
                 "question": "Qaysi yevropa davlatida eng ko‘p orollar bor?",
@@ -1819,19 +1899,9 @@ class Viktoriya(APIView):
                 "variant": ["Transsibir magistrali", "Transamerika", "Transafrika", "Yevropa-Osiyo"]
             },
             {
-                "question": "Qaysi davlatda Kilimanjaro tog‘i joylashgan?",
-                "answer": "Tanzaniya",
-                "variant": ["Tanzaniya", "Keniya", "Efiopiya", "Uganda"]
-            },
-            {
                 "question": "Buyuk rus shoiri Pushkin qaysi asar bilan mashhur?",
                 "answer": "Yevgeniy Onegin",
                 "variant": ["Yevgeniy Onegin", "Urush va tinchlik", "Qizil qalpoqcha", "Otello"]
-            },
-            {
-                "question": "Qaysi davlatning poytaxti Seul?",
-                "answer": "Janubiy Koreya",
-                "variant": ["Janubiy Koreya", "Shimoliy Koreya", "Xitoy", "Yaponiya"]
             },
             {
                 "question": "O‘zbekistonning eng yirik metallurgiya kombinati?",
@@ -1842,11 +1912,6 @@ class Viktoriya(APIView):
                 "question": "Buyuk fransuz inqilobi qachon boshlangan?",
                 "answer": "1789",
                 "variant": ["1789", "1776", "1812", "1848"]
-            },
-            {
-                "question": "Dunyodagi eng katta cho‘l?",
-                "answer": "Sahroi Kabir",
-                "variant": ["Sahroi Kabir", "Gobi", "Karakum", "Kizilqum"]
             },
             {
                 "question": "Qaysi davlat 'Kengurular mamlakati' deb ataladi?",
@@ -1874,11 +1939,6 @@ class Viktoriya(APIView):
                 "variant": ["Indoneziya", "Turkiya", "Hindiston", "Pokiston"]
             },
             {
-                "question": "Qaysi davlatda eng ko‘p orollar bor?",
-                "answer": "Shvetsiya",
-                "variant": ["Shvetsiya", "Filippin", "Indoneziya", "Yaponiya"]
-            },
-            {
                 "question": "O‘zbekiston hududidagi eng katta suv ombori?",
                 "answer": "Tuyamo‘yin",
                 "variant": ["Tuyamo‘yin", "Chorvoq", "Qoratepa", "To‘dako‘l"]
@@ -1897,11 +1957,6 @@ class Viktoriya(APIView):
                 "question": "Buyuk Aleksandr qaysi mamlakat hukmdori edi?",
                 "answer": "Makedoniya",
                 "variant": ["Makedoniya", "Rim", "Sparta", "Bobil"]
-            },
-            {
-                "question": "Dunyodagi eng katta okean oqimi?",
-                "answer": "Gulfstrim",
-                "variant": ["Gulfstrim", "Peru oqimi", "Oyashio", "Bengal oqimi"]
             },
             {
                 "question": "O‘zbekistonda eng katta yog‘och ishlovchi kombinat qayerda joylashgan?",
@@ -1929,24 +1984,9 @@ class Viktoriya(APIView):
                 "variant": ["5 yil", "7 yil", "6 yil", "4 yil"]
             },
             {
-                "question": "Afrikadagi eng katta ko‘l?",
-                "answer": "Viktoriya ko‘li",
-                "variant": ["Viktoriya ko‘li", "Tanganika", "Chad", "Malavi"]
-            },
-            {
-                "question": "Qaysi yozuvchi 'Jinoyat va jazo' romanini yozgan?",
-                "answer": "Dostoyevskiy",
-                "variant": ["Dostoyevskiy", "Tolstoy", "Pushkin", "Chexov"]
-            },
-            {
                 "question": "Qaysi davlatda Sahara cho‘li joylashgan?",
                 "answer": "Jazoir",
                 "variant": ["Jazoir", "Misr", "Sudan", "Liviya"]
-            },
-            {
-                "question": "Qaysi davlatning poytaxti Buenos-Ayres?",
-                "answer": "Argentina",
-                "variant": ["Argentina", "Braziliya", "Urugvay", "Paragvay"]
             },
             {
                 "question": "Buyuk astronom Galiley qanday asbobni takomillashtirgan?",
@@ -1982,6 +2022,651 @@ class Viktoriya(APIView):
                 "question": "O‘zbekiston Respublikasida mustaqillik e’lon qilingan joy?",
                 "answer": "Oliy Kengash",
                 "variant": ["Oliy Kengash", "Senat", "Prezident qarorgohi", "Adliya vazirligi"]
+            }
+        ]
+
+        
+        
+        quiz_5 = [
+            {
+                "question": "Dunyoning eng mashhur muzeylaridan biri — Britaniya muzeyi qayerda?",
+                "answer": "London",
+                "variant": ["London", "Berlin", "Parij", "Madrid"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur tarixiy shaxsi — Alisher Navoiy nechanchi asrda yashagan?",
+                "answer": "15-asr",
+                "variant": ["15-asr", "14-asr", "16-asr", "17-asr"]
+            },
+            {
+                "question": "Dunyoning eng mashhur teatrlaridan biri — Bolshoy teatri qayerda?",
+                "answer": "Moskva",
+                "variant": ["Moskva", "London", "Parij", "Berlin"]
+            },
+            {
+                "question": "Dunyoning eng mashhur tog‘laridan biri — Montblan qayerda joylashgan?",
+                "answer": "Fransiya va Italiya",
+                "variant": ["Fransiya va Italiya", "Shveytsariya", "Avstriya", "Germaniya"]
+            },
+            {
+                "question": "Dunyoning eng mashhur sharsharalaridan biri — Iguasu qayerda joylashgan?",
+                "answer": "Braziliya va Argentina",
+                "variant": ["Braziliya va Argentina", "Peru va Boliviya", "Kolumbiya va Venesuela", "Meksika va AQSh"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Abdulla Qodiriy mashhur asari?",
+                "answer": "O‘tkan kunlar",
+                "variant": ["O‘tkan kunlar", "Mehrobdan chayon", "Sarob", "Yulduzli tunlar"]
+            },
+            {
+                "question": "Dunyoning eng mashhur orollaridan biri — Sumatra qayerda joylashgan?",
+                "answer": "Indoneziya",
+                "variant": ["Indoneziya", "Filippin", "Malayziya", "Singapur"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur tarixiy shaxsi — Ibn Sino qaysi sohada mashhur?",
+                "answer": "Tibbiyot",
+                "variant": ["Tibbiyot", "Matematika", "Adabiyot", "Kimyo"]
+            },
+            {
+                "question": "Dunyoning eng mashhur daryolaridan biri — Yanszi qaysi davlatdan oqib o‘tadi?",
+                "answer": "Xitoy",
+                "variant": ["Xitoy", "Hindiston", "Rossiya", "Mongoliya"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur shoirlaridan biri — Cho‘lpon mashhur romani?",
+                "answer": "Kecha va kunduz",
+                "variant": ["Kecha va kunduz", "O‘tkan kunlar", "Sarob", "Shaytanat"]
+            },
+            {
+                "question": "Dunyoning eng mashhur teatrlaridan biri — Metropolitan Opera qayerda joylashgan?",
+                "answer": "Nyu-York",
+                "variant": ["Nyu-York", "London", "Moskva", "Parij"]
+            },
+            {
+                "question": "YUNESKO tomonidan jahon merosi ro‘yxatiga kiritilgan O‘zbekiston shaharlari qaysilar?",
+                "answer": "Samarqand, Buxoro, Xiva, Shahrisabz",
+                "variant": ["Samarqand, Buxoro, Xiva, Shahrisabz", "Toshkent, Andijon, Namangan", "Qo‘qon, Jizzax, Guliston", "Termiz, Qarshi, Nukus"]
+            },
+            {
+                "question": "Dunyoning eng katta vodiylaridan biri — Grand Kanyon qayerda joylashgan?",
+                "answer": "AQSh",
+                "variant": ["AQSh", "Kanada", "Meksika", "Braziliya"]
+            },
+            {
+                "question": "Yevropa va Osiyoni bog‘lab turuvchi mashhur ko‘prik qayerda joylashgan?",
+                "answer": "Turkiya",
+                "variant": ["Turkiya", "Rossiya", "Fransiya", "Angliya"]
+            },
+            {
+                "question": "O‘zbekistonning milliy bog‘laridan biri — Zomin milliy bog‘i qaysi viloyatda joylashgan?",
+                "answer": "Jizzax",
+                "variant": ["Jizzax", "Namangan", "Farg‘ona", "Surxondaryo"]
+            },
+            {
+                "question": "Dunyoning eng mashhur futbol jamoalaridan biri — 'Bavariya' qaysi shaharda joylashgan?",
+                "answer": "Myunxen",
+                "variant": ["Myunxen", "Berlin", "Dortmund", "Hamburg"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur tarixiy yodgorliklaridan biri — Qizil minor masjidi qayerda?",
+                "answer": "Xiva",
+                "variant": ["Xiva", "Buxoro", "Toshkent", "Samarqand"]
+            },
+            {
+                "question": "Dunyodagi eng katta arxipelag davlat?",
+                "answer": "Indoneziya",
+                "variant": ["Indoneziya", "Filippin", "Shvetsiya", "Malayziya"]
+            },
+            {
+                "question": "Buyuk olim Muhammad al-Xorazmiy qaysi fan asoschisi?",
+                "answer": "Algebra",
+                "variant": ["Algebra", "Geometriya", "Astronomiya", "Kimyo"]
+            },
+            {
+                "question": "O‘zbekiston hududida joylashgan qadimiy Budda ibodatxonasi?",
+                "answer": "Fayoztepa",
+                "variant": ["Fayoztepa", "Shohi Zinda", "Registon", "Qoratepa"]
+            },
+            {
+                "question": "Dunyoning eng baland sharsharasi Anxel qaysi mamlakatda joylashgan?",
+                "answer": "Venesuela",
+                "variant": ["Venesuela", "Braziliya", "Argentina", "Kolumbiya"]
+            },
+            {
+                "question": "O‘zbekiston hududida joylashgan eng baland tog‘ cho‘qqisi?",
+                "answer": "Hazrati Sulton",
+                "variant": ["Hazrati Sulton", "Chimyon", "Bobotog‘", "Somoni cho‘qqisi"]
+            },
+            {
+                "question": "Yevropadagi eng katta ko‘l?",
+                "answer": "Ladoga",
+                "variant": ["Ladoga", "Onega", "Viktoriya", "Kaspiy"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi qadimiy madaniy markazlardan biri — Termiz qaysi daryo bo‘yida joylashgan?",
+                "answer": "Amudaryo",
+                "variant": ["Amudaryo", "Sirdaryo", "Zarafshon", "Chirchiq"]
+            },
+            {
+                "question": "Dunyodagi eng ko‘p orolga ega davlat?",
+                "answer": "Shvetsiya",
+                "variant": ["Shvetsiya", "Norvegiya", "Indoneziya", "Yaponiya"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi qadimiy qal’alardan biri — Qo‘yqirilgan qal’a qayerda joylashgan?",
+                "answer": "Qoraqalpog‘iston",
+                "variant": ["Qoraqalpog‘iston", "Buxoro", "Xorazm", "Samarqand"]
+            },
+            {
+                "question": "Dunyodagi eng mashhur rasm galereyalaridan biri — Prado muzeyi qayerda joylashgan?",
+                "answer": "Ispaniya",
+                "variant": ["Ispaniya", "Italiya", "Fransiya", "Angliya"]
+            },
+            {
+                "question": "O‘zbekistonning milliy musiqiy asboblaridan biri?",
+                "answer": "Doira",
+                "variant": ["Doira", "G‘ijjak", "Pianino", "Gitara"]
+            },
+            {
+                "question": "Afrikadagi eng uzun daryo?",
+                "answer": "Nil",
+                "variant": ["Nil", "Kongo", "Niger", "Zambezi"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi mashhur arxeologik yodgorliklardan biri?",
+                "answer": "Topraqqal’a",
+                "variant": ["Topraqqal’a", "Ayazqal’a", "Qo‘yqirilgan qal’a", "Mug‘ qal’a"]
+            },
+            {
+                "question": "Dunyodagi eng mashhur teatrlaridan biri — La Skala qaysi shaharda joylashgan?",
+                "answer": "Milan",
+                "variant": ["Milan", "Parij", "London", "Vena"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Abdulla Qahhorning mashhur asari?",
+                "answer": "Sarob",
+                "variant": ["Sarob", "Anor", "Sinchalak", "O‘tkan kunlar"]
+            },
+            {
+                "question": "Shimoliy Amerikadagi eng uzun daryo?",
+                "answer": "Missisipi",
+                "variant": ["Missisipi", "Amazonka", "Orinoko", "Parana"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi mashhur tarixiy me’moriy majmualardan biri — Registon?",
+                "answer": "Samarqand",
+                "variant": ["Samarqand", "Buxoro", "Xiva", "Toshkent"]
+            },
+            {
+                "question": "Dunyodagi eng baland tog‘ tizmasi?",
+                "answer": "Gimolay",
+                "variant": ["Gimolay", "Alp", "And", "Tyan-Shan"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur shoirlaridan biri — Cho‘lponning mashhur asari?",
+                "answer": "Kecha va kunduz",
+                "variant": ["Kecha va kunduz", "Yulduzli tunlar", "O‘tkan kunlar", "Sarob"]
+            },
+            {
+                "question": "Dunyodagi eng mashhur sharsharalardan biri — Viktoriya qayerda joylashgan?",
+                "answer": "Zambiya va Zimbabve",
+                "variant": ["Zambiya va Zimbabve", "Braziliya va Argentina", "Venesuela", "Kanada va AQSh"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi qadimiy shaharlaridan biri?",
+                "answer": "Buxoro",
+                "variant": ["Buxoro", "Samarqand", "Xiva", "Shahrisabz"]
+            },
+            {
+                "question": "Dunyodagi eng mashhur universitetlardan biri — Garvard qaysi davlatda joylashgan?",
+                "answer": "AQSh",
+                "variant": ["AQSh", "Angliya", "Kanada", "Avstraliya"]
+            },
+            {
+                "question": "Dunyoning eng katta ichki dengizi?",
+                "answer": "Kaspiy",
+                "variant": ["Kaspiy", "Aral", "Qora dengiz", "Oq dengiz"]
+            },
+            {
+                "question": "Afrikadagi eng katta ko‘l?",
+                "answer": "Viktoriya",
+                "variant": ["Viktoriya", "Tanganika", "Malavi", "Chad"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur shoirlaridan biri — Erkin Vohidov mashhur she’riy turkumi?",
+                "answer": "Tong nafasi",
+                "variant": ["Tong nafasi", "Ruhlar isyoni", "O‘zbekiston", "Sarob"]
+            },
+            {
+                "question": "Dunyoning eng mashhur orollardan biri — Madagaskar qayerda joylashgan?",
+                "answer": "Hind okeani",
+                "variant": ["Hind okeani", "Tinch okeani", "Atlantika okeani", "Shimoliy muz okeani"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Tohir Malik mashhur romani?",
+                "answer": "Shaytanat",
+                "variant": ["Shaytanat", "Dunyoning ishlari", "Yulduzli tunlar", "Sarob"]
+            },
+            {
+                "question": "Dunyoning eng mashhur teatrlaridan biri — Katta teatr qaysi shaharda joylashgan?",
+                "answer": "Moskva",
+                "variant": ["Moskva", "London", "Parij", "Rim"]
+            },
+            {
+                "question": "Dunyoning eng mashhur sharsharalaridan biri — Niagara qaysi ikki davlat chegarasida?",
+                "answer": "AQSh va Kanada",
+                "variant": ["AQSh va Kanada", "Braziliya va Argentina", "Venesuela", "Zambiya va Zimbabve"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Abdulla Qodiriy mashhur romani?",
+                "answer": "Mehrobdan chayon",
+                "variant": ["Mehrobdan chayon", "O‘tkan kunlar", "Sarob", "Kecha va kunduz"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur tarixiy shaxsi — Ibn Sino qaysi asarda tibbiy bilimlarni jamlagan?",
+                "answer": "Tib qonunlari",
+                "variant": ["Tib qonunlari", "Shohnoma", "Xamsa", "Qutadg‘u bilig"]
+            },
+            {
+                "question": "Yer kurrasidagi eng baland plato qaysi?",
+                "answer": "Tibet platosi",
+                "variant": ["Tibet platosi", "Pamir", "Altay", "And"]
+            },
+            {
+                "question": "Dunyoning eng yirik metall ishlab chiqaruvchilaridan biri?",
+                "answer": "Xitoy",
+                "variant": ["Xitoy", "AQSh", "Rossiya", "Hindiston"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi qadimiy qal’alardan biri — Ayazqal’a qaysi hududda joylashgan?",
+                "answer": "Qoraqalpog‘iston",
+                "variant": ["Qoraqalpog‘iston", "Buxoro", "Samarqand", "Namangan"]
+            },
+            {
+                "question": "Buyuk astronom Kopernik qanday nazariyasi bilan mashhur?",
+                "answer": "Geliosentrik nazariya",
+                "variant": ["Geliosentrik nazariya", "Geosentrik nazariya", "Atom nazariyasi", "Evolyutsiya nazariyasi"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur shaharlaridan biri — Nukus qaysi hudud markazi?",
+                "answer": "Qoraqalpog‘iston",
+                "variant": ["Qoraqalpog‘iston", "Buxoro", "Qashqadaryo", "Xorazm"]
+            },
+            {
+                "question": "Afrikadagi eng baland tog‘ cho‘qqisi?",
+                "answer": "Kilimanjaro",
+                "variant": ["Kilimanjaro", "Elbrus", "Atlas", "Drakensberg"]
+            },
+            {
+                "question": "Shimoliy Amerikadagi eng katta ko‘l?",
+                "answer": "Yuqori ko‘l",
+                "variant": ["Yuqori ko‘l", "Michigan", "Ontario", "Eri"]
+            },
+            {
+                "question": "Buyuk yozuvchi Abdulla Oripov mashhur asarlaridan biri?",
+                "answer": "Jannatga yo‘l",
+                "variant": ["Jannatga yo‘l", "Tong nafasi", "Sarob", "Kecha va kunduz"]
+            },
+            {
+                "question": "Dunyoning eng mashhur sharsharalaridan biri — Iguasu qaysi davlatlarda joylashgan?",
+                "answer": "Braziliya va Argentina",
+                "variant": ["Braziliya va Argentina", "Venesuela", "Kanada va AQSh", "Kolumbiya va Peru"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur tarixiy shaharlaridan biri — Qarshi qaysi davrda tashkil topgan?",
+                "answer": "Miloddan avvalgi davrda",
+                "variant": ["Miloddan avvalgi davrda", "IX asrda", "XIV asrda", "XVIII asrda"]
+            },
+            {
+                "question": "Osiyodagi eng baland tog‘ cho‘qqisi?",
+                "answer": "Everest",
+                "variant": ["Everest", "K2", "Kangchenjunga", "Makalu"]
+            },
+            {
+                "question": "Dunyodagi eng mashhur teatr binosi — Sidney Opera House qayerda joylashgan?",
+                "answer": "Avstraliya",
+                "variant": ["Avstraliya", "Yangi Zelandiya", "Kanada", "AQSh"]
+            },
+            {
+                "question": "O‘zbekistonning eng katta gaz konlaridan biri?",
+                "answer": "Sho‘rtan",
+                "variant": ["Sho‘rtan", "Qandim", "Muborak", "Olmaliq"]
+            },
+            {
+                "question": "Dunyoning eng mashhur universitetlaridan biri — Kembridj qaysi davlatda joylashgan?",
+                "answer": "Angliya",
+                "variant": ["Angliya", "AQSh", "Kanada", "Avstraliya"]
+            },
+            {
+                "question": "Afrikadagi eng katta daryo havzasi?",
+                "answer": "Kongo",
+                "variant": ["Kongo", "Nil", "Niger", "Zambezi"]
+            },
+            {
+                "question": "Buyuk yozuvchi Erkin Vohidov mashhur asarlaridan biri?",
+                "answer": "Ruhlar isyoni",
+                "variant": ["Ruhlar isyoni", "O'zbegim", "O‘zbekiston", "Sarob"]
+            },
+            {
+                "question": "Dunyoning eng katta ichki ko‘li?",
+                "answer": "Kaspiy",
+                "variant": ["Kaspiy", "Baykal", "Viktoriya", "Aral"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur tarixiy shaxsi — Beruniy qaysi sohalarda mashhur?",
+                "answer": "Matematika va astronomiya",
+                "variant": ["Matematika va astronomiya", "Kimyo va tibbiyot", "Adabiyot va san’at", "Geografiya va tarix"]
+            },
+            {
+                "question": "Janubiy Amerikadagi eng katta mamlakat?",
+                "answer": "Braziliya",
+                "variant": ["Braziliya", "Argentina", "Kolumbiya", "Peru"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi mashhur shoirlardan biri — Bobur qayerda tug‘ilgan?",
+                "answer": "Andijon",
+                "variant": ["Andijon", "Samarqand", "Toshkent", "Xiva"]
+            },
+            {
+                "question": "Dunyoning eng mashhur sport musobaqalaridan biri — Olimpiada dastlab qayerda boshlangan?",
+                "answer": "Yunoniston",
+                "variant": ["Yunoniston", "Italiya", "Fransiya", "Misr"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — O‘tkir Hoshimovning mashhur asari?",
+                "answer": "Ikki eshik orasi",
+                "variant": ["Ikki eshik orasi", "Dunyoning ishlari", "Sarob", "Anor"]
+            },
+            {
+                "question": "Osiyodagi eng katta orol?",
+                "answer": "Borneo",
+                "variant": ["Borneo", "Sumatra", "Yava", "Saxalin"]
+            },
+            {
+                "question": "Dunyoning eng mashhur qal’alaridan biri — Alhambra qayerda joylashgan?",
+                "answer": "Ispaniya",
+                "variant": ["Ispaniya", "Italiya", "Fransiya", "Portugaliya"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi mashhur yodgorliklardan biri — Ismoil Somoniy maqbarasi qayerda joylashgan?",
+                "answer": "Buxoro",
+                "variant": ["Buxoro", "Samarqand", "Xiva", "Shahrisabz"]
+            },
+            {
+                "question": "Shimoliy Amerikadagi eng baland tog‘?",
+                "answer": "Denali",
+                "variant": ["Denali", "Logan", "Orizaba", "Rainier"]
+            },
+            {
+                "question": "Dunyoning eng mashhur universitetlaridan biri — Sorbonna qayerda joylashgan?",
+                "answer": "Parij",
+                "variant": ["Parij", "London", "Berlin", "Madrid"]
+            },
+            {
+                "question": "Dunyoning eng mashhur sharsharalaridan biri — Dettifoss qayerda joylashgan?",
+                "answer": "Islandiya",
+                "variant": ["Islandiya", "Norvegiya", "Kanada", "AQSh"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi mashhur san’at maktablaridan biri?",
+                "answer": "Bekzod san’at maktabi",
+                "variant": ["Bekzod san’at maktabi", "Ilhom san’at maktabi", "Usto", "Kamolot"]
+            },
+            {
+                "question": "Janubiy Amerikadagi eng mashhur tog‘ tizmasi?",
+                "answer": "And",
+                "variant": ["And", "Syerra-Madre", "Patagoniya", "Altiplano"]
+            },
+            {
+                "question": "Dunyoning eng mashhur cho‘llaridan biri — Atakama qayerda joylashgan?",
+                "answer": "Chili",
+                "variant": ["Chili", "Argentina", "Peru", "Boliviya"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Cho‘lponning mashhur she’riy to‘plamlaridan biri?",
+                "answer": "Buloqlar",
+                "variant": ["Buloqlar", "Tong nafasi", "O‘zbekiston", "Sarob"]
+            },
+            {
+                "question": "Afrikadagi eng mashhur sharsharalardan biri — Tugela qayerda joylashgan?",
+                "answer": "Janubiy Afrika",
+                "variant": ["Janubiy Afrika", "Namibiya", "Kongo", "Zimbabve"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi mashhur shahar — Andijon qaysi vohada joylashgan?",
+                "answer": "Farg‘ona vodiysi",
+                "variant": ["Farg‘ona vodiysi", "Qashqadaryo", "Surxondaryo", "Zarafshon"]
+            },
+            {
+                "question": "Dunyoning eng mashhur sportchilaridan biri — Muhammad Ali qaysi sport turi bo‘yicha mashhur?",
+                "answer": "Boks",
+                "variant": ["Boks", "Futbol", "Basketbol", "Tennis"]
+            },
+            {
+                "question": "Dunyodagi eng uzun daryo qaysi ikki davlat hududidan oqib o‘tadi?",
+                "answer": "Misr va Sudan",
+                "variant": ["Misr va Sudan", "Braziliya va Peru", "Xitoy va Hindiston", "Rossiya va Qozog‘iston"]
+            },
+            {
+                "question": "Dunyoning eng katta ko‘llaridan biri — Baykal qayerda joylashgan?",
+                "answer": "Rossiya",
+                "variant": ["Rossiya", "Mongoliya", "Qozog‘iston", "Xitoy"]
+            },
+            {
+                "question": "Buyuk geografik kashfiyotlar davrida Hindistonga dengiz yo‘lini topgan kim?",
+                "answer": "Vasko da Gama",
+                "variant": ["Vasko da Gama", "Kolumb", "Magellan", "Hudson"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi qadimiy buddaviy yodgorliklardan biri — Zurmala stupasi qayerda?",
+                "answer": "Termez",
+                "variant": ["Termez", "Samarqand", "Xiva", "Toshkent"]
+            },
+            {
+                "question": "Dunyoning eng katta orollaridan biri — Madagaskar qaysi okeanda joylashgan?",
+                "answer": "Hind okeani",
+                "variant": ["Hind okeani", "Tinch okeani", "Atlantika okeani", "Shimoliy muz okeani"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Utkir Hoshimov mashhur hikoyasi?",
+                "answer": "Dunyoning ishlari",
+                "variant": ["Dunyoning ishlari", "Bahor qaytmaydi", "Ikki eshik orasi", "Shum bola"]
+            },
+            {
+                "question": "Dunyoning eng katta aholi yashaydigan oroli?",
+                "answer": "Yava",
+                "variant": ["Yava", "Sumatra", "Bali", "Filippin oroli"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi qadimiy qal’alardan biri — Devxona qayerda joylashgan?",
+                "answer": "Surxondaryo",
+                "variant": ["Surxondaryo", "Buxoro", "Qashqadaryo", "Xorazm"]
+            },
+            {
+                "question": "Dunyoning eng baland shahri?",
+                "answer": "La-Pas",
+                "variant": ["La-Pas", "Katmandu", "Quito", "Bogota"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur tarixiy shaxsi — Al-Farg‘oniy asosan qaysi fan bilan shug‘ullangan?",
+                "answer": "Astronomiya",
+                "variant": ["Astronomiya", "Matematika", "Kimyo", "Fizika"]
+            },
+            {
+                "question": "Dunyoning eng uzun yerosti daryosi?",
+                "answer": "Perto Princeso",
+                "variant": ["Perto Princeso", "Nil", "Amazonka", "Yanszi"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi mashhur tarixiy obidalaridan biri — Ko‘hna Ark qayerda joylashgan?",
+                "answer": "Xiva",
+                "variant": ["Xiva", "Buxoro", "Samarqand", "Shahrisabz"]
+            },
+            {
+                "question": "Dunyoning eng mashhur san’at muzeylaridan biri — Uffizi galereyasi qayerda joylashgan?",
+                "answer": "Florensiya",
+                "variant": ["Florensiya", "Rim", "Venetsiya", "Milan"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Erkin Vohidovning mashhur dostoni?",
+                "answer": "Sadoqat",
+                "variant": ["Sadoqat", "Ruhlar isyoni", "Tong nafasi", "O‘zbekiston"]
+            },
+            {
+                "question": "Dunyoning eng katta cho‘llaridan biri — Kalahari qaysi qit’ada joylashgan?",
+                "answer": "Afrika",
+                "variant": ["Afrika", "Osiyo", "Janubiy Amerika", "Avstraliya"]
+            },
+            {
+                "question": "O‘zbekiston hududida joylashgan qadimiy shahar qal’alaridan biri — Qo‘yqirilgan qal’a qaysi vohada joylashgan?",
+                "answer": "Ellikqal’a",
+                "variant": ["Ellikqal’a", "Buxoro vohasi", "Zarafshon vohasi", "Farg‘ona vodiysi"]
+            },
+            {
+                "question": "Dunyoning eng mashhur orollaridan biri — Shpitsbergen qaysi davlat hududida joylashgan?",
+                "answer": "Norvegiya",
+                "variant": ["Norvegiya", "Daniya", "Islandiya", "Shvetsiya"]
+            }
+        ]
+        
+        
+
+        quiz_6 = [
+            {
+                "question": "Kompyuter klaviaturasida 'Esc' tugmasi odatda qaysi burchakda joylashgan?",
+                "answer": "Yuqori chap burchak",
+                "variant": ["Yuqori chap burchak", "Yuqori o‘ng burchak", "Pastki chap burchak", "Pastki o‘ng burchak"]
+            },
+            {
+                "question": "Rubik kubigini kim ixtiro qilgan?",
+                "answer": "Ernő Rubik",
+                "variant": ["Ernő Rubik", "Nikola Tesla", "Tim Berners-Lee", "Alan Turing"]
+            },
+            {
+                "question": "HTML tilida gipermurojaat yaratish uchun qaysi teg ishlatiladi?",
+                "answer": "<a>",
+                "variant": ["<a>", "<link>", "<href>", "<url>"]
+            },
+            {
+                "question": "Toshkent metropoliteni qaysi yilda ishga tushirilgan?",
+                "answer": "1977",
+                "variant": ["1977", "1984", "1969", "1991"]
+            },
+            {
+                "question": "O‘zbekistonda 'Alpomish' dostoni qaysi og‘zaki ijod turiga mansub?",
+                "answer": "Epos",
+                "variant": ["Epos", "Lyirika", "Doston drama", "Novella"]
+            },
+            {
+                "question": "Qaysi gaz Yer atmosferasida eng ko‘p uchraydi?",
+                "answer": "Azot",
+                "variant": ["Azot", "Kislorod", "Argon", "Karbonat angidrid"]
+            },
+            {
+                "question": "SI tizimida elektr tok kuchining birliksi?",
+                "answer": "Amper",
+                "variant": ["Amper", "Volt", "Om", "Vatt"]
+            },
+            {
+                "question": "Chopar (courier) xizmatlarida 'ETA' qisqartmasi odatda nimani anglatadi?",
+                "answer": "Taxminiy yetib kelish vaqti",
+                "variant": ["Taxminiy yetib kelish vaqti", "Eng tez adres", "Elektron tranzit ariza", "Yuk turi"]
+            },
+            {
+                "question": "Qaysi musiqiy asbob torli cholg‘u hisoblanadi?",
+                "answer": "Skripka",
+                "variant": ["Skripka", "Fleyta", "Klarnet", "Baraban"]
+            },
+            {
+                "question": "Qog‘ozning A4 formatida uzun tomoni taxminan nechaga teng?",
+                "answer": "297 mm",
+                "variant": ["297 mm", "210 mm", "300 mm", "250 mm"]
+            },
+            {
+                "question": "Dunyoning eng kichik qit’asi qaysi?",
+                "answer": "Avstraliya",
+                "variant": ["Avstraliya", "Yevropa", "Antarktida", "Afrika"]
+            },
+            {
+                "question": "DNS qisqartmasi kompyuter tarmoqlarida nimani anglatadi?",
+                "answer": "Domain Name System",
+                "variant": ["Domain Name System", "Data Network Service", "Digital Node Server", "Dynamic Name Source"]
+            },
+            {
+                "question": "Fizikada 'harorat'ni o‘lchash uchun xalqaro birlik tizimidagi asosiy birlik qaysi?",
+                "answer": "Kelvin",
+                "variant": ["Kelvin", "Selsiy", "Farengeyt", "Rankin"]
+            },
+            {
+                "question": "Qaysi shaxs zamonaviy 'Vikipediya' loyihasining hammuassisi sifatida tanilgan?",
+                "answer": "Jimmi Uels",
+                "variant": ["Jimmi Uels", "Mark Sukerberg", "Sergey Brin", "Lerri Peyj"]
+            },
+            {
+                "question": "O‘zbek tilida 'q' va 'k' tovushlari farqlanishi fonetik jihatdan nimaga bog‘liq?",
+                "answer": "Til orqa va til oldi artikulyatsiyasiga",
+                "variant": ["Til orqa va til oldi artikulyatsiyasiga", "Lab-lab artikulyatsiyasiga", "Burun rezonansiga", "Tanglay yumshoqligiga"]
+            },
+            {
+                "question": "Fotosintez jarayonida o‘simliklar asosan qaysi gazni yutadi?",
+                "answer": "Karbonat angidrid",
+                "variant": ["Karbonat angidrid", "Kislorod", "Azot", "Vodorod"]
+            },
+            {
+                "question": "O‘zbekistonda milliy valyuta — so‘m qaysi yilda joriy qilingan?",
+                "answer": "1994",
+                "variant": ["1994", "1991", "1992", "1996"]
+            },
+            {
+                "question": "Qaysi futbol qoidasi 'o‘yindan tashqari holat'ni belgilaydi?",
+                "answer": "Ofsayd",
+                "variant": ["Ofsayd", "Penalti", "Aut", "Korner"]
+            },
+            {
+                "question": "Matnda yangi satrga o‘tish belgisi qanday yoziladi (ko‘p dasturlash tillarida)?",
+                "answer": "\\n",
+                "variant": ["\\n", "\\t", "\\r", "\\b"]
+            },
+            {
+                "question": "Qaysi ko‘paytirish natijasi to‘g‘ri: 9 × 7 = ?",
+                "answer": "63",
+                "variant": ["63", "56", "72", "64"]
+            },
+            {
+                "question": "Toshkentdagi Mustaqillik maydonida qaysi ramziy obida joylashgan?",
+                "answer": "Baxtiyor ona va bolakay haykali",
+                "variant": ["Baxtiyor ona va bolakay haykali", "Temuriylar haykali", "Qaldirg‘och haykali", "Amir Temur haykali"]
+            },
+            {
+                "question": "Qaysi yirik adabiy janr voqeaband nasriy asar hisoblanadi?",
+                "answer": "Roman",
+                "variant": ["Roman", "G‘azal", "She’r", "Doston"]
+            },
+            {
+                "question": "Kimyo darsida H2O formulasi qaysi moddagi ifodalaydi?",
+                "answer": "Suv",
+                "variant": ["Suv", "Vodorod peroksid", "Metan", "Oksigen"]
+            },
+            {
+                "question": "Qaysi so‘z imlo jihatidan to‘g‘ri yozilgan?",
+                "answer": "Muammo",
+                "variant": ["Muammo", "Muammoh", "Muaamo", "Muama"]
+            },
+            {
+                "question": "Qaysi shahar 'shamollar shahri' laqabiga ega?",
+                "answer": "Chicago",
+                "variant": ["Chicago", "Seul", "Berlin", "Madrid"]
+            },
+            {
+                "question": "Algoritm nima?",
+                "answer": "Muammoni yechish uchun aniq qadamlar ketma-ketligi",
+                "variant": ["Muammoni yechish uchun aniq qadamlar ketma-ketligi", "Kompyuter qurilmasi", "Ma’lumotlar bazasi", "Dasturiy interfeys"]
+            },
+            {
+                "question": "Quyosh tizimidagi eng katta sayyora qaysi?",
+                "answer": "Yupiter",
+                "variant": ["Yupiter", "Saturn", "Yer", "Uran"]
             },
             {
                 "question": "Qaysi davlat 'qahva vatani' hisoblanadi?",
@@ -2007,11 +2692,6 @@ class Viktoriya(APIView):
                 "question": "Qaysi davlatda 'Machu-Pikchu' yodgorligi joylashgan?",
                 "answer": "Peru",
                 "variant": ["Peru", "Meksika", "Boliviya", "Argentina"]
-            },
-            {
-                "question": "Dunyodagi eng katta orollardan biri — Madagaskar qaysi okeanda joylashgan?",
-                "answer": "Hind okeani",
-                "variant": ["Hind okeani", "Tinch okeani", "Atlantika okeani", "Shimoliy muz okeani"]
             },
             {
                 "question": "Yer kurrasidagi eng katta chuchuk suv ko‘li qaysi?",
@@ -2047,11 +2727,6 @@ class Viktoriya(APIView):
                 "question": "Yer yuzidagi eng baland poytaxt shahar?",
                 "answer": "La-Pas",
                 "variant": ["La-Pas", "Katmandu", "Quito", "Bogota"]
-            },
-            {
-                "question": "O‘zbekiston hududida joylashgan eng qadimiy madaniyatlardan biri?",
-                "answer": "Sopollitepa",
-                "variant": ["Sopollitepa", "Mo‘ynoq", "Qiziltepa", "Qo‘yqirilgan qal’a"]
             },
             {
                 "question": "Qaysi davlatda eng ko‘p orollar mavjud?",
@@ -2154,26 +2829,6 @@ class Viktoriya(APIView):
                 "variant": ["Kanada", "Avstraliya", "Shvetsiya", "Norvegiya"]
             },
             {
-                "question": "O‘zbekistonning mashhur shoirlaridan biri?",
-                "answer": "Erkin Vohidov",
-                "variant": ["Erkin Vohidov", "Cho‘lpon", "Pirimqul Qodirov", "Abdulla Qahhor"]
-            },
-            {
-                "question": "Dunyoning eng katta okeani?",
-                "answer": "Tinch okeani",
-                "variant": ["Tinch okeani", "Atlantika", "Hind okeani", "Shimoliy muz okeani"]
-            },
-            {
-                "question": "Qaysi davlatning poytaxti Ottava?",
-                "answer": "Kanada",
-                "variant": ["Kanada", "AQSh", "Avstraliya", "Meksika"]
-            },
-            {
-                "question": "O‘zbekistonning milliy o‘yinlaridan biri?",
-                "answer": "Kurash",
-                "variant": ["Kurash", "Ko‘pkari", "Chillak", "Shaxmat"]
-            },
-            {
                 "question": "Dunyodagi eng katta yarim orol?",
                 "answer": "Arabiston yarim oroli",
                 "variant": ["Arabiston yarim oroli", "Iberiya", "Skandinaviya", "Hindiston"]
@@ -2219,24 +2874,9 @@ class Viktoriya(APIView):
                 "variant": ["Peru", "Meksika", "Boliviya", "Ekvador"]
             },
             {
-                "question": "Yer sharida eng baland sharshara?",
-                "answer": "Anxel",
-                "variant": ["Anxel", "Niagara", "Victoria", "Iguasu"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur milliy shirinliklaridan biri?",
-                "answer": "Navvot",
-                "variant": ["Navvot", "Halva", "Shakar", "Asal"]
-            },
-            {
                 "question": "Dunyodagi eng katta ichki dengiz?",
                 "answer": "Kaspiy",
                 "variant": ["Kaspiy", "Oq dengiz", "Qora dengiz", "Aral dengizi"]
-            },
-            {
-                "question": "Qaysi davlatda 'Taj Mahal' joylashgan?",
-                "answer": "Hindiston",
-                "variant": ["Hindiston", "Pokiston", "Nepal", "Bangladesh"]
             },
             {
                 "question": "O‘zbekistonning mashhur tarixiy shaxsi — Jaloliddin Manguberdi qaysi shahar yaqinida tug‘ilgan?",
@@ -2247,11 +2887,6 @@ class Viktoriya(APIView):
                 "question": "Dunyodagi eng katta orol?",
                 "answer": "Grenlandiya",
                 "variant": ["Grenlandiya", "Yangi Gvineya", "Sumatra", "Madagaskar"]
-            },
-            {
-                "question": "Qaysi davlatning poytaxti Berlin?",
-                "answer": "Germaniya",
-                "variant": ["Germaniya", "Fransiya", "Polsha", "Avstriya"]
             },
             {
                 "question": "Yer sharidagi eng katta okean oqimi?",
@@ -2267,11 +2902,6 @@ class Viktoriya(APIView):
                 "question": "O‘zbekiston hududidagi eng qadimiy me’moriy majmualardan biri?",
                 "answer": "Shohi Zinda",
                 "variant": ["Shohi Zinda", "Registon", "Gur Amir", "Minorai Kalon"]
-            },
-            {
-                "question": "Dunyodagi eng katta cho‘l Afrikada joylashgan. Bu qaysi?",
-                "answer": "Sahroi Kabir",
-                "variant": ["Sahroi Kabir", "Kalahari", "Lut cho‘li", "Namib"]
             },
             {
                 "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Pirimqul Qodirovning mashhur romani?",
@@ -2294,9 +2924,9 @@ class Viktoriya(APIView):
                 "variant": ["Samarqand", "Buxoro", "Toshkent", "Shahrisabz"]
             },
             {
-                "question": "Dunyodagi eng katta yarim orollardan biri?",
-                "answer": "Skandinaviya",
-                "variant": ["Skandinaviya", "Iberiya", "Arabiston", "Hindiston yarim oroli"]
+                "question": "Dunyodagi eng katta orol?",
+                "answer": "Grenlandiya",
+                "variant": ["Skandinaviya", "Iberiya", "Arabiston", "Grenlandiya"]
             },
             {
                 "question": "Qaysi olim tortishish qonunini yaratgan?",
@@ -2369,11 +2999,6 @@ class Viktoriya(APIView):
                 "variant": ["Bengal ko‘rfazi", "Meksika ko‘rfazi", "Pers ko‘rfazi", "Aden ko‘rfazi"]
             },
             {
-                "question": "O‘zbekistonning mashhur shaharlaridan biri — Qarshi qaysi viloyat markazi?",
-                "answer": "Qashqadaryo",
-                "variant": ["Qashqadaryo", "Buxoro", "Namangan", "Jizzax"]
-            },
-            {
                 "question": "Dunyoning eng mashhur arxitekturalaridan biri — Kolizey qayerda?",
                 "answer": "Rim",
                 "variant": ["Rim", "Parij", "Afina", "Madrid"]
@@ -2387,11 +3012,6 @@ class Viktoriya(APIView):
                 "question": "Dunyodagi eng mashhur futbol klublaridan biri — Barcelona qaysi mamlakatda?",
                 "answer": "Ispaniya",
                 "variant": ["Ispaniya", "Italiya", "Fransiya", "Angliya"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — O‘tkir Hoshimovning mashhur asari?",
-                "answer": "Dunyoning ishlari",
-                "variant": ["Dunyoning ishlari", "Ikki eshik orasi", "Sarob", "Shaytanat"]
             },
             {
                 "question": "Dunyodagi eng mashhur universitetlardan biri — Oksford qayerda joylashgan?",
@@ -2412,631 +3032,21 @@ class Viktoriya(APIView):
                 "question": "O‘zbekistonning mashhur me’moriy obidalaridan biri — Minorai Kalon qayerda joylashgan?",
                 "answer": "Buxoro",
                 "variant": ["Buxoro", "Samarqand", "Xiva", "Shahrisabz"]
-            },
-            {
-                "question": "Dunyoning eng mashhur muzeylaridan biri — Britaniya muzeyi qayerda?",
-                "answer": "London",
-                "variant": ["London", "Berlin", "Parij", "Madrid"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur tarixiy shaxsi — Alisher Navoiy nechanchi asrda yashagan?",
-                "answer": "15-asr",
-                "variant": ["15-asr", "14-asr", "16-asr", "17-asr"]
-            },
-            {
-                "question": "Dunyoning eng mashhur teatrlaridan biri — Bolshoy teatri qayerda?",
-                "answer": "Moskva",
-                "variant": ["Moskva", "London", "Parij", "Berlin"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur milliy shirinliklaridan biri?",
-                "answer": "Halva",
-                "variant": ["Halva", "Navvot", "Shakar", "Asal"]
-            },
-            {
-                "question": "Dunyoning eng mashhur tog‘laridan biri — Montblan qayerda joylashgan?",
-                "answer": "Fransiya va Italiya",
-                "variant": ["Fransiya va Italiya", "Shveytsariya", "Avstriya", "Germaniya"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur shoirlaridan biri — Erkin Vohidov mashhur asari?",
-                "answer": "Ruhlar isyoni",
-                "variant": ["Ruhlar isyoni", "Tong nafasi", "O‘zbekiston", "Sarob"]
-            },
-            {
-                "question": "Dunyoning eng mashhur sharsharalaridan biri — Iguasu qayerda joylashgan?",
-                "answer": "Braziliya va Argentina",
-                "variant": ["Braziliya va Argentina", "Peru va Boliviya", "Kolumbiya va Venesuela", "Meksika va AQSh"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Abdulla Qodiriy mashhur asari?",
-                "answer": "O‘tkan kunlar",
-                "variant": ["O‘tkan kunlar", "Mehrobdan chayon", "Sarob", "Yulduzli tunlar"]
-            },
-            {
-                "question": "Dunyoning eng mashhur orollaridan biri — Sumatra qayerda joylashgan?",
-                "answer": "Indoneziya",
-                "variant": ["Indoneziya", "Filippin", "Malayziya", "Singapur"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur tarixiy shaxsi — Ibn Sino qaysi sohada mashhur?",
-                "answer": "Tibbiyot",
-                "variant": ["Tibbiyot", "Matematika", "Adabiyot", "Kimyo"]
-            },
-            {
-                "question": "Dunyoning eng mashhur daryolaridan biri — Yanszi qaysi davlatdan oqib o‘tadi?",
-                "answer": "Xitoy",
-                "variant": ["Xitoy", "Hindiston", "Rossiya", "Mongoliya"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur shoirlaridan biri — Cho‘lpon mashhur romani?",
-                "answer": "Kecha va kunduz",
-                "variant": ["Kecha va kunduz", "O‘tkan kunlar", "Sarob", "Shaytanat"]
-            },
-            {
-                "question": "Dunyoning eng mashhur teatrlaridan biri — Metropolitan Opera qayerda joylashgan?",
-                "answer": "Nyu-York",
-                "variant": ["Nyu-York", "London", "Moskva", "Parij"]
-            },
-            {
-                "question": "YUNESKO tomonidan jahon merosi ro‘yxatiga kiritilgan O‘zbekiston shaharlari qaysilar?",
-                "answer": "Samarqand, Buxoro, Xiva, Shahrisabz",
-                "variant": ["Samarqand, Buxoro, Xiva, Shahrisabz", "Toshkent, Andijon, Namangan", "Qo‘qon, Jizzax, Guliston", "Termiz, Qarshi, Nukus"]
-            },
-            {
-                "question": "Dunyoning eng katta vodiylaridan biri — Grand Kanyon qayerda joylashgan?",
-                "answer": "AQSh",
-                "variant": ["AQSh", "Kanada", "Meksika", "Braziliya"]
-            },
-            {
-                "question": "O‘zbekiston hududidan oqib o‘tuvchi eng katta daryolardan biri?",
-                "answer": "Amudaryo",
-                "variant": ["Amudaryo", "Sirdaryo", "Zarafshon", "Chirchiq"]
-            },
-            {
-                "question": "Yevropa va Osiyoni bog‘lab turuvchi mashhur ko‘prik qayerda joylashgan?",
-                "answer": "Turkiya",
-                "variant": ["Turkiya", "Rossiya", "Fransiya", "Angliya"]
-            },
-            {
-                "question": "O‘zbekistonning milliy bog‘laridan biri — Zomin milliy bog‘i qaysi viloyatda joylashgan?",
-                "answer": "Jizzax",
-                "variant": ["Jizzax", "Namangan", "Farg‘ona", "Surxondaryo"]
-            },
-            {
-                "question": "Dunyoning eng mashhur futbol jamoalaridan biri — 'Bavariya' qaysi shaharda joylashgan?",
-                "answer": "Myunxen",
-                "variant": ["Myunxen", "Berlin", "Dortmund", "Hamburg"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur tarixiy yodgorliklaridan biri — Qizil minor masjidi qayerda?",
-                "answer": "Xiva",
-                "variant": ["Xiva", "Buxoro", "Toshkent", "Samarqand"]
-            },
-            {
-                "question": "Dunyodagi eng katta arxipelag davlat?",
-                "answer": "Indoneziya",
-                "variant": ["Indoneziya", "Filippin", "Shvetsiya", "Malayziya"]
-            },
-            {
-                "question": "Buyuk olim Muhammad al-Xorazmiy qaysi fan asoschisi?",
-                "answer": "Algebra",
-                "variant": ["Algebra", "Geometriya", "Astronomiya", "Kimyo"]
-            },
-            {
-                "question": "O‘zbekiston hududida joylashgan qadimiy Budda ibodatxonasi?",
-                "answer": "Fayoztepa",
-                "variant": ["Fayoztepa", "Shohi Zinda", "Registon", "Qoratepa"]
-            },
-            {
-                "question": "Dunyoning eng baland sharsharasi Anxel qaysi mamlakatda joylashgan?",
-                "answer": "Venesuela",
-                "variant": ["Venesuela", "Braziliya", "Argentina", "Kolumbiya"]
-            },
-            {
-                "question": "O‘zbekiston hududida joylashgan eng baland tog‘ cho‘qqisi?",
-                "answer": "Hazrati Sulton",
-                "variant": ["Hazrati Sulton", "Chimyon", "Bobotog‘", "Somoni cho‘qqisi"]
-            },
-            {
-                "question": "Yevropadagi eng katta ko‘l?",
-                "answer": "Ladoga",
-                "variant": ["Ladoga", "Onega", "Viktoriya", "Kaspiy"]
-            },
-            {
-                "question": "O‘zbekiston hududidagi qadimiy madaniy markazlardan biri — Termiz qaysi daryo bo‘yida joylashgan?",
-                "answer": "Amudaryo",
-                "variant": ["Amudaryo", "Sirdaryo", "Zarafshon", "Chirchiq"]
-            },
-            {
-                "question": "Dunyodagi eng ko‘p orolga ega davlat?",
-                "answer": "Shvetsiya",
-                "variant": ["Shvetsiya", "Norvegiya", "Indoneziya", "Yaponiya"]
-            },
-            {
-                "question": "O‘zbekiston hududidagi qadimiy qal’alardan biri — Qo‘yqirilgan qal’a qayerda joylashgan?",
-                "answer": "Qoraqalpog‘iston",
-                "variant": ["Qoraqalpog‘iston", "Buxoro", "Xorazm", "Samarqand"]
-            },
-            {
-                "question": "Dunyodagi eng mashhur rasm galereyalaridan biri — Prado muzeyi qayerda joylashgan?",
-                "answer": "Ispaniya",
-                "variant": ["Ispaniya", "Italiya", "Fransiya", "Angliya"]
-            },
-            {
-                "question": "O‘zbekistonning milliy musiqiy asboblaridan biri?",
-                "answer": "Doira",
-                "variant": ["Doira", "G‘ijjak", "Pianino", "Gitara"]
-            },
-            {
-                "question": "Afrikadagi eng uzun daryo?",
-                "answer": "Nil",
-                "variant": ["Nil", "Kongo", "Niger", "Zambezi"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur milliy raqslaridan biri?",
-                "answer": "Tanovar",
-                "variant": ["Tanovar", "Lazgi", "Vals", "Sirtaki"]
-            },
-            {
-                "question": "Dunyodagi eng ko‘p aholiga ega shahar?",
-                "answer": "Tokio",
-                "variant": ["Tokio", "Mumbay", "Pekin", "Moskva"]
-            },
-            {
-                "question": "O‘zbekiston hududidagi mashhur arxeologik yodgorliklardan biri?",
-                "answer": "Topraqqal’a",
-                "variant": ["Topraqqal’a", "Ayazqal’a", "Qo‘yqirilgan qal’a", "Mug‘ qal’a"]
-            },
-            {
-                "question": "Dunyodagi eng mashhur teatrlaridan biri — La Skala qaysi shaharda joylashgan?",
-                "answer": "Milan",
-                "variant": ["Milan", "Parij", "London", "Vena"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Abdulla Qahhorning mashhur asari?",
-                "answer": "Sarob",
-                "variant": ["Sarob", "Anor", "Sinchalak", "O‘tkan kunlar"]
-            },
-            {
-                "question": "Shimoliy Amerikadagi eng uzun daryo?",
-                "answer": "Missisipi",
-                "variant": ["Missisipi", "Amazonka", "Orinoko", "Parana"]
-            },
-            {
-                "question": "O‘zbekiston hududidagi mashhur tarixiy me’moriy majmualardan biri — Registon?",
-                "answer": "Samarqand",
-                "variant": ["Samarqand", "Buxoro", "Xiva", "Toshkent"]
-            },
-            {
-                "question": "Dunyodagi eng baland tog‘ tizmasi?",
-                "answer": "Gimolay",
-                "variant": ["Gimolay", "Alp", "And", "Tyan-Shan"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur shoirlaridan biri — Cho‘lponning mashhur asari?",
-                "answer": "Kecha va kunduz",
-                "variant": ["Kecha va kunduz", "Yulduzli tunlar", "O‘tkan kunlar", "Sarob"]
-            },
-            {
-                "question": "Dunyodagi eng mashhur sharsharalardan biri — Viktoriya qayerda joylashgan?",
-                "answer": "Zambiya va Zimbabve",
-                "variant": ["Zambiya va Zimbabve", "Braziliya va Argentina", "Venesuela", "Kanada va AQSh"]
-            },
-            {
-                "question": "O‘zbekiston hududidagi qadimiy shaharlaridan biri?",
-                "answer": "Buxoro",
-                "variant": ["Buxoro", "Samarqand", "Xiva", "Shahrisabz"]
-            },
-            {
-                "question": "Yevropadagi eng uzun daryo?",
-                "answer": "Volga",
-                "variant": ["Volga", "Dunay", "Rona", "Temza"]
-            },
-            {
-                "question": "O‘zbekiston hududidagi mashhur masjidlardan biri?",
-                "answer": "Bibi Xonim masjidi",
-                "variant": ["Bibi Xonim masjidi", "Hazrati Imom", "Ko‘kaldosh", "Xo‘ja Ahror"]
-            },
-            {
-                "question": "Dunyodagi eng mashhur universitetlardan biri — Garvard qaysi davlatda joylashgan?",
-                "answer": "AQSh",
-                "variant": ["AQSh", "Angliya", "Kanada", "Avstraliya"]
-            },
-            {
-                "question": "O‘zbekiston hududidagi eng mashhur qal’alardan biri?",
-                "answer": "Ark",
-                "variant": ["Ark", "Ayazqal’a", "Topraqqal’a", "Qo‘yqirilgan qal’a"]
-            },
-            {
-                "question": "Dunyoning eng katta ichki dengizi?",
-                "answer": "Kaspiy",
-                "variant": ["Kaspiy", "Aral", "Qora dengiz", "Oq dengiz"]
-            },
-            {
-                "question": "O‘zbekiston hududidagi mashhur maqbaralardan biri?",
-                "answer": "Gur Amir",
-                "variant": ["Gur Amir", "Shohi Zinda", "Ismoil Somoniy", "Qizil minor"]
-            },
-            {
-                "question": "Afrikadagi eng katta ko‘l?",
-                "answer": "Viktoriya",
-                "variant": ["Viktoriya", "Tanganika", "Malavi", "Chad"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur shoirlaridan biri — Erkin Vohidov mashhur she’riy turkumi?",
-                "answer": "Tong nafasi",
-                "variant": ["Tong nafasi", "Ruhlar isyoni", "O‘zbekiston", "Sarob"]
-            },
-            {
-                "question": "Dunyoning eng mashhur orollardan biri — Madagaskar qayerda joylashgan?",
-                "answer": "Hind okeani",
-                "variant": ["Hind okeani", "Tinch okeani", "Atlantika okeani", "Shimoliy muz okeani"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Tohir Malik mashhur romani?",
-                "answer": "Shaytanat",
-                "variant": ["Shaytanat", "Dunyoning ishlari", "Yulduzli tunlar", "Sarob"]
-            },
-            {
-                "question": "Dunyoning eng mashhur teatrlaridan biri — Katta teatr qaysi shaharda joylashgan?",
-                "answer": "Moskva",
-                "variant": ["Moskva", "London", "Parij", "Rim"]
-            },
-            {
-                "question": "O‘zbekiston hududidagi qadimiy manbalardan biri?",
-                "answer": "Avesto",
-                "variant": ["Avesto", "Devonu lug‘otit turk", "Shohnoma", "Xamsa"]
-            },
-            {
-                "question": "Dunyoning eng mashhur sharsharalaridan biri — Niagara qaysi ikki davlat chegarasida?",
-                "answer": "AQSh va Kanada",
-                "variant": ["AQSh va Kanada", "Braziliya va Argentina", "Venesuela", "Zambiya va Zimbabve"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Abdulla Qodiriy mashhur romani?",
-                "answer": "Mehrobdan chayon",
-                "variant": ["Mehrobdan chayon", "O‘tkan kunlar", "Sarob", "Kecha va kunduz"]
-            },
-            {
-                "question": "Osiyodagi eng uzun daryo?",
-                "answer": "Yanszi",
-                "variant": ["Yanszi", "Amudaryo", "Sirdaryo", "Ganga"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur tarixiy shaxsi — Ibn Sino qaysi asarda tibbiy bilimlarni jamlagan?",
-                "answer": "Tib qonunlari",
-                "variant": ["Tib qonunlari", "Shohnoma", "Xamsa", "Qutadg‘u bilig"]
-            },
-            {
-                "question": "Yer kurrasidagi eng baland plato qaysi?",
-                "answer": "Tibet platosi",
-                "variant": ["Tibet platosi", "Pamir", "Altay", "And"]
-            },
-            {
-                "question": "Dunyoning eng yirik metall ishlab chiqaruvchilaridan biri?",
-                "answer": "Xitoy",
-                "variant": ["Xitoy", "AQSh", "Rossiya", "Hindiston"]
-            },
-            {
-                "question": "O‘zbekiston hududidagi qadimiy qal’alardan biri — Ayazqal’a qaysi hududda joylashgan?",
-                "answer": "Qoraqalpog‘iston",
-                "variant": ["Qoraqalpog‘iston", "Buxoro", "Samarqand", "Namangan"]
-            },
-            {
-                "question": "Dunyodagi eng katta yarim yopiq ko‘rfazlardan biri?",
-                "answer": "Meksika ko‘rfazi",
-                "variant": ["Meksika ko‘rfazi", "Bengal ko‘rfazi", "Pers ko‘rfazi", "Aden ko‘rfazi"]
-            },
-            {
-                "question": "Buyuk astronom Kopernik qanday nazariyasi bilan mashhur?",
-                "answer": "Geliosentrik nazariya",
-                "variant": ["Geliosentrik nazariya", "Geosentrik nazariya", "Atom nazariyasi", "Evolyutsiya nazariyasi"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur shaharlaridan biri — Nukus qaysi hudud markazi?",
-                "answer": "Qoraqalpog‘iston",
-                "variant": ["Qoraqalpog‘iston", "Buxoro", "Qashqadaryo", "Xorazm"]
-            },
-            {
-                "question": "Afrikadagi eng baland tog‘ cho‘qqisi?",
-                "answer": "Kilimanjaro",
-                "variant": ["Kilimanjaro", "Elbrus", "Atlas", "Drakensberg"]
-            },
-            {
-                "question": "O‘zbekiston hududida joylashgan qadimiy observatoriyalardan biri?",
-                "answer": "Ulug‘bek observatoriyasi",
-                "variant": ["Ulug‘bek observatoriyasi", "Parij observatoriyasi", "London observatoriyasi", "Berlin observatoriyasi"]
-            },
-            {
-                "question": "Shimoliy Amerikadagi eng katta ko‘l?",
-                "answer": "Yuqori ko‘l",
-                "variant": ["Yuqori ko‘l", "Michigan", "Ontario", "Eri"]
-            },
-            {
-                "question": "Buyuk yozuvchi Abdulla Oripov mashhur asarlaridan biri?",
-                "answer": "Jannatga yo‘l",
-                "variant": ["Jannatga yo‘l", "Tong nafasi", "Sarob", "Kecha va kunduz"]
-            },
-            {
-                "question": "Dunyoning eng mashhur sharsharalaridan biri — Iguasu qaysi davlatlarda joylashgan?",
-                "answer": "Braziliya va Argentina",
-                "variant": ["Braziliya va Argentina", "Venesuela", "Kanada va AQSh", "Kolumbiya va Peru"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur tarixiy shaharlaridan biri — Qarshi qaysi davrda tashkil topgan?",
-                "answer": "Miloddan avvalgi davrda",
-                "variant": ["Miloddan avvalgi davrda", "IX asrda", "XIV asrda", "XVIII asrda"]
-            },
-            {
-                "question": "Osiyodagi eng baland tog‘ cho‘qqisi?",
-                "answer": "Everest",
-                "variant": ["Everest", "K2", "Kangchenjunga", "Makalu"]
-            },
-            {
-                "question": "Dunyodagi eng mashhur teatr binosi — Sidney Opera House qayerda joylashgan?",
-                "answer": "Avstraliya",
-                "variant": ["Avstraliya", "Yangi Zelandiya", "Kanada", "AQSh"]
-            },
-            {
-                "question": "O‘zbekistonning eng katta gaz konlaridan biri?",
-                "answer": "Sho‘rtan",
-                "variant": ["Sho‘rtan", "Qandim", "Muborak", "Olmaliq"]
-            },
-            {
-                "question": "Dunyoning eng mashhur universitetlaridan biri — Kembridj qaysi davlatda joylashgan?",
-                "answer": "Angliya",
-                "variant": ["Angliya", "AQSh", "Kanada", "Avstraliya"]
-            },
-            {
-                "question": "O‘zbekiston hududida joylashgan qadimiy masjidlardan biri?",
-                "answer": "Xo‘ja Ahror masjidi",
-                "variant": ["Xo‘ja Ahror masjidi", "Ko‘kaldosh", "Hazrati Imom", "Bibi Xonim"]
-            },
-            {
-                "question": "Afrikadagi eng katta daryo havzasi?",
-                "answer": "Kongo",
-                "variant": ["Kongo", "Nil", "Niger", "Zambezi"]
-            },
-            {
-                "question": "Buyuk yozuvchi Erkin Vohidov mashhur asarlaridan biri?",
-                "answer": "Ruhlar isyoni",
-                "variant": ["Ruhlar isyoni", "Tong nafasi", "O‘zbekiston", "Sarob"]
-            },
-            {
-                "question": "Dunyoning eng katta ichki ko‘li?",
-                "answer": "Kaspiy",
-                "variant": ["Kaspiy", "Baykal", "Viktoriya", "Aral"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur tarixiy shaxsi — Beruniy qaysi sohalarda mashhur?",
-                "answer": "Matematika va astronomiya",
-                "variant": ["Matematika va astronomiya", "Kimyo va tibbiyot", "Adabiyot va san’at", "Geografiya va tarix"]
-            },
-            {
-                "question": "Yevropadagi eng baland tog‘ cho‘qqisi?",
-                "answer": "Elbrus",
-                "variant": ["Elbrus", "Montblan", "Matterhorn", "Grossglockner"]
-            },
-            {
-                "question": "O‘zbekistonning eng mashhur teatrlaridan biri?",
-                "answer": "Muqimiy nomidagi teatr",
-                "variant": ["Muqimiy nomidagi teatr", "Navoi opera teatri", "Ilhom teatri", "Qo‘qon teatri"]
-            },
-            {
-                "question": "Janubiy Amerikadagi eng katta mamlakat?",
-                "answer": "Braziliya",
-                "variant": ["Braziliya", "Argentina", "Kolumbiya", "Peru"]
-            },
-            {
-                "question": "O‘zbekiston hududidagi mashhur shoirlardan biri — Bobur qayerda tug‘ilgan?",
-                "answer": "Andijon",
-                "variant": ["Andijon", "Samarqand", "Toshkent", "Xiva"]
-            },
-            {
-                "question": "Dunyoning eng mashhur sport musobaqalaridan biri — Olimpiada dastlab qayerda boshlangan?",
-                "answer": "Yunoniston",
-                "variant": ["Yunoniston", "Italiya", "Fransiya", "Misr"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — O‘tkir Hoshimovning mashhur asari?",
-                "answer": "Ikki eshik orasi",
-                "variant": ["Ikki eshik orasi", "Dunyoning ishlari", "Sarob", "Anor"]
-            },
-            {
-                "question": "Osiyodagi eng katta orol?",
-                "answer": "Borneo",
-                "variant": ["Borneo", "Sumatra", "Yava", "Saxalin"]
-            },
-            {
-                "question": "Dunyoning eng mashhur qal’alaridan biri — Alhambra qayerda joylashgan?",
-                "answer": "Ispaniya",
-                "variant": ["Ispaniya", "Italiya", "Fransiya", "Portugaliya"]
-            },
-            {
-                "question": "O‘zbekiston hududidagi mashhur yodgorliklardan biri — Ismoil Somoniy maqbarasi qayerda joylashgan?",
-                "answer": "Buxoro",
-                "variant": ["Buxoro", "Samarqand", "Xiva", "Shahrisabz"]
-            },
-            {
-                "question": "Shimoliy Amerikadagi eng baland tog‘?",
-                "answer": "Denali",
-                "variant": ["Denali", "Logan", "Orizaba", "Rainier"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur milliy shirinliklaridan biri?",
-                "answer": "Parvarda",
-                "variant": ["Parvarda", "Navvot", "Halva", "Shakar"]
-            },
-            {
-                "question": "Dunyoning eng mashhur universitetlaridan biri — Sorbonna qayerda joylashgan?",
-                "answer": "Parij",
-                "variant": ["Parij", "London", "Berlin", "Madrid"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur milliy o‘yinlaridan biri?",
-                "answer": "Chillak",
-                "variant": ["Chillak", "Kurash", "Ko‘pkari", "Shaxmat"]
-            },
-            {
-                "question": "Dunyoning eng mashhur sharsharalaridan biri — Dettifoss qayerda joylashgan?",
-                "answer": "Islandiya",
-                "variant": ["Islandiya", "Norvegiya", "Kanada", "AQSh"]
-            },
-            {
-                "question": "O‘zbekiston hududidagi mashhur san’at maktablaridan biri?",
-                "answer": "Bekzod san’at maktabi",
-                "variant": ["Bekzod san’at maktabi", "Ilhom san’at maktabi", "Usto", "Kamolot"]
-            },
-            {
-                "question": "Janubiy Amerikadagi eng mashhur tog‘ tizmasi?",
-                "answer": "And",
-                "variant": ["And", "Syerra-Madre", "Patagoniya", "Altiplano"]
-            },
-            {
-                "question": "O‘zbekiston hududidagi mashhur masjidlardan biri?",
-                "answer": "Ko‘kaldosh madrasasi",
-                "variant": ["Ko‘kaldosh madrasasi", "Hazrati Imom", "Bibi Xonim", "Xo‘ja Ahror"]
-            },
-            {
-                "question": "Dunyoning eng mashhur cho‘llaridan biri — Atakama qayerda joylashgan?",
-                "answer": "Chili",
-                "variant": ["Chili", "Argentina", "Peru", "Boliviya"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Cho‘lponning mashhur she’riy to‘plamlaridan biri?",
-                "answer": "Buloqlar",
-                "variant": ["Buloqlar", "Tong nafasi", "O‘zbekiston", "Sarob"]
-            },
-            {
-                "question": "Afrikadagi eng mashhur sharsharalardan biri — Tugela qayerda joylashgan?",
-                "answer": "Janubiy Afrika",
-                "variant": ["Janubiy Afrika", "Namibiya", "Kongo", "Zimbabve"]
-            },
-            {
-                "question": "O‘zbekiston hududidagi mashhur shahar — Andijon qaysi vohada joylashgan?",
-                "answer": "Farg‘ona vodiysi",
-                "variant": ["Farg‘ona vodiysi", "Qashqadaryo", "Surxondaryo", "Zarafshon"]
-            },
-            {
-                "question": "Dunyoning eng mashhur sportchilaridan biri — Muhammad Ali qaysi sport turi bo‘yicha mashhur?",
-                "answer": "Boks",
-                "variant": ["Boks", "Futbol", "Basketbol", "Tennis"]
-            },
-            {
-                "question": "Dunyodagi eng uzun daryo qaysi ikki davlat hududidan oqib o‘tadi?",
-                "answer": "Misr va Sudan",
-                "variant": ["Misr va Sudan", "Braziliya va Peru", "Xitoy va Hindiston", "Rossiya va Qozog‘iston"]
-            },
-            {
-                "question": "O‘zbekistonning eng yirik oltin koni?",
-                "answer": "Muruntov",
-                "variant": ["Muruntov", "Zarafshon", "Olmaliq", "Qizilqum"]
-            },
-            {
-                "question": "Dunyoning eng katta ko‘llaridan biri — Baykal qayerda joylashgan?",
-                "answer": "Rossiya",
-                "variant": ["Rossiya", "Mongoliya", "Qozog‘iston", "Xitoy"]
-            },
-            {
-                "question": "Buyuk geografik kashfiyotlar davrida Hindistonga dengiz yo‘lini topgan kim?",
-                "answer": "Vasko da Gama",
-                "variant": ["Vasko da Gama", "Kolumb", "Magellan", "Hudson"]
-            },
-            {
-                "question": "O‘zbekiston hududidagi qadimiy buddaviy yodgorliklardan biri — Zurmala stupasi qayerda?",
-                "answer": "Termez",
-                "variant": ["Termez", "Samarqand", "Xiva", "Toshkent"]
-            },
-            {
-                "question": "Dunyoning eng katta orollaridan biri — Madagaskar qaysi okeanda joylashgan?",
-                "answer": "Hind okeani",
-                "variant": ["Hind okeani", "Tinch okeani", "Atlantika okeani", "Shimoliy muz okeani"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Utkir Hoshimov mashhur hikoyasi?",
-                "answer": "Dunyoning ishlari",
-                "variant": ["Dunyoning ishlari", "Bahor qaytmaydi", "Ikki eshik orasi", "Shum bola"]
-            },
-            {
-                "question": "Dunyoning eng katta aholi yashaydigan oroli?",
-                "answer": "Yava",
-                "variant": ["Yava", "Sumatra", "Bali", "Filippin oroli"]
-            },
-            {
-                "question": "O‘zbekiston hududidagi qadimiy qal’alardan biri — Devxona qayerda joylashgan?",
-                "answer": "Surxondaryo",
-                "variant": ["Surxondaryo", "Buxoro", "Qashqadaryo", "Xorazm"]
-            },
-            {
-                "question": "Dunyoning eng baland shahri?",
-                "answer": "La-Pas",
-                "variant": ["La-Pas", "Katmandu", "Quito", "Bogota"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur tarixiy shaxsi — Al-Farg‘oniy asosan qaysi fan bilan shug‘ullangan?",
-                "answer": "Astronomiya",
-                "variant": ["Astronomiya", "Matematika", "Kimyo", "Fizika"]
-            },
-            {
-                "question": "Dunyoning eng uzun yerosti daryosi?",
-                "answer": "Perto Princeso",
-                "variant": ["Perto Princeso", "Nil", "Amazonka", "Yanszi"]
-            },
-            {
-                "question": "O‘zbekiston hududidagi mashhur tarixiy obidalaridan biri — Ko‘hna Ark qayerda joylashgan?",
-                "answer": "Xiva",
-                "variant": ["Xiva", "Buxoro", "Samarqand", "Shahrisabz"]
-            },
-            {
-                "question": "Dunyoning eng mashhur san’at muzeylaridan biri — Uffizi galereyasi qayerda joylashgan?",
-                "answer": "Florensiya",
-                "variant": ["Florensiya", "Rim", "Venetsiya", "Milan"]
-            },
-            {
-                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Erkin Vohidovning mashhur dostoni?",
-                "answer": "Sadoqat",
-                "variant": ["Sadoqat", "Ruhlar isyoni", "Tong nafasi", "O‘zbekiston"]
-            },
-            {
-                "question": "Dunyoning eng katta cho‘llaridan biri — Kalahari qaysi qit’ada joylashgan?",
-                "answer": "Afrika",
-                "variant": ["Afrika", "Osiyo", "Janubiy Amerika", "Avstraliya"]
-            },
-            {
-                "question": "O‘zbekiston hududida joylashgan qadimiy shahar qal’alaridan biri — Qo‘yqirilgan qal’a qaysi vohada joylashgan?",
-                "answer": "Ellikqal’a",
-                "variant": ["Ellikqal’a", "Buxoro vohasi", "Zarafshon vohasi", "Farg‘ona vodiysi"]
-            },
-            {
-                "question": "Dunyoning eng mashhur orollaridan biri — Shpitsbergen qaysi davlat hududida joylashgan?",
-                "answer": "Norvegiya",
-                "variant": ["Norvegiya", "Daniya", "Islandiya", "Shvetsiya"]
             }
         ]
 
-        
-        # FAN 200
-        level_3 = [
+
+
+        quiz_7 = [
             {
                 "question": "Yer yuzida eng baland tog‘ tizmasi qaysi?",
                 "answer": "Gimolay",
                 "variant": ["Alp", "And", "Gimolay", "Kavkaz"]
             },
             {
-                "question": "O‘zbekistonning eng katta ko‘li?",
-                "answer": "Aydarko‘l",
-                "variant": ["Aydarko‘l", "Arnasoy", "Qorako‘l", "Sarezko‘l"]
-            },
-            {
                 "question": "Buyuk Ipak yo‘li O‘zbekistondan qaysi davlatga chiqib ketgan?",
                 "answer": "Xitoy",
                 "variant": ["Turkiya", "Rossiya", "Xitoy", "Eron"]
-            },
-            {
-                "question": "O‘zbekistonning birinchi Prezidenti kim edi?",
-                "answer": "Islom Karimov",
-                "variant": ["Shavkat Mirziyoyev", "Islom Karimov", "Abdulla Aripov", "Rashidov"]
             },
             {
                 "question": "Qaysi sport turi O‘zbekistonning milliy sporti hisoblanadi?",
@@ -3062,11 +3072,6 @@ class Viktoriya(APIView):
                 "question": "Yer yuzidagi eng uzun daryo?",
                 "answer": "Nil",
                 "variant": ["Nil", "Amazonka", "Yanszi", "Missisipi"]
-            },
-            {
-                "question": "O‘zbekistonning eng baland cho‘qqisi?",
-                "answer": "Hazrati Sulton",
-                "variant": ["Hazrati Sulton", "Bobotog‘", "Chimyon", "Somoni cho‘qqisi"]
             },
             {
                 "question": "Buyuk yozuvchi Alisher Navoiy nechta tilni bilgan?",
@@ -3149,11 +3154,6 @@ class Viktoriya(APIView):
                 "variant": ["Arabiston yarim oroli", "Skandinaviya", "Iberiya", "Hindiston yarim oroli"]
             },
             {
-                "question": "Qaysi davlat 'Quyosh chiqish mamlakati' deb ataladi?",
-                "answer": "Yaponiya",
-                "variant": ["Xitoy", "Yaponiya", "Koreya", "Tayvan"]
-            },
-            {
                 "question": "Buyuk yozuvchi Firdavsiyning mashhur asari?",
                 "answer": "Shohnoma",
                 "variant": ["Shohnoma", "Xamsa", "Devonu lug‘otit turk", "Qutadg‘u bilig"]
@@ -3204,11 +3204,6 @@ class Viktoriya(APIView):
                 "variant": ["Ruhlar isyoni", "Shohnoma", "O‘tkan kunlar", "Qutadg‘u bilig"]
             },
             {
-                "question": "Yer sharida eng katta ko‘rfaz?",
-                "answer": "Bengal ko‘rfazi",
-                "variant": ["Bengal ko‘rfazi", "Meksika ko‘rfazi", "Aden ko‘rfazi", "Pers ko‘rfazi"]
-            },
-            {
                 "question": "Buyuk yozuvchi Cho‘lpon mashhur asari?",
                 "answer": "Kecha va kunduz",
                 "variant": ["Kecha va kunduz", "Shohnoma", "Xamsa", "Yulduzli tunlar"]
@@ -3244,11 +3239,6 @@ class Viktoriya(APIView):
                 "variant": ["Sarob", "Shohnoma", "O‘tkan kunlar", "Kecha va kunduz"]
             },
             {
-                "question": "O‘zbekiston hududidagi eng katta suv ombori?",
-                "answer": "Tuyamo‘yin",
-                "variant": ["Tuyamo‘yin", "Chorvoq", "Qoratepa", "To‘dako‘l"]
-            },
-            {
                 "question": "Yer sharidagi eng katta orollar arxipelagi?",
                 "answer": "Indoneziya",
                 "variant": ["Indoneziya", "Filippin", "Maldiv", "Shvetsiya"]
@@ -3267,11 +3257,6 @@ class Viktoriya(APIView):
                 "question": "O‘zbekiston hududida joylashgan eng qadimiy shahar?",
                 "answer": "Samarqand",
                 "variant": ["Samarqand", "Buxoro", "Xiva", "Termiz"]
-            },
-            {
-                "question": "Yer sharida eng katta yarim orollardan biri?",
-                "answer": "Skandinaviya",
-                "variant": ["Skandinaviya", "Arabiston", "Iberiya", "Hindiston yarim oroli"]
             },
             {
                 "question": "Buyuk yozuvchi Dostoyevskiyning mashhur asari?",
@@ -3324,11 +3309,6 @@ class Viktoriya(APIView):
                 "variant": ["Yevgeniy Onegin", "Shohnoma", "Kecha va kunduz", "Urush va tinchlik"]
             },
             {
-                "question": "O‘zbekiston hududida joylashgan mashhur maqbaralardan biri?",
-                "answer": "Gur Amir",
-                "variant": ["Gur Amir", "Shohi Zinda", "Hazrati Imam", "Somoniylar maqbarasi"]
-            },
-            {
                 "question": "Yer sharidagi eng uzun devor?",
                 "answer": "Xitoy devori",
                 "variant": ["Xitoy devori", "Berlin devori", "Hadrian devori", "Bobil devori"]
@@ -3344,11 +3324,6 @@ class Viktoriya(APIView):
                 "variant": ["O‘zbek tili", "Rus tili", "Ingliz tili", "Qoraqalpoq tili"]
             },
             {
-                "question": "Yer sharidagi eng mashhur vulqonlardan biri?",
-                "answer": "Fudziyama",
-                "variant": ["Fudziyama", "Etna", "Kilimanjaro", "Vezuviy"]
-            },
-            {
                 "question": "Buyuk yozuvchi Navoiy tug‘ilgan yil?",
                 "answer": "1441",
                 "variant": ["1441", "1451", "1430", "1420"]
@@ -3359,19 +3334,9 @@ class Viktoriya(APIView):
                 "variant": ["So‘m", "Rubl", "Tiyin", "Dollar"]
             },
             {
-                "question": "Yer sharidagi eng yirik orollardan biri?",
-                "answer": "Sumatra",
-                "variant": ["Sumatra", "Borneo", "Yangi Gvineya", "Grenlandiya"]
-            },
-            {
                 "question": "Buyuk yozuvchi Pirimqul Qodirov qaysi asarni yozgan?",
                 "answer": "Avlodlar dovoni",
                 "variant": ["Avlodlar dovoni", "Yulduzli tunlar", "Sarob", "Shaytanat"]
-            },
-            {
-                "question": "O‘zbekistonning eng mashhur teatrlaridan biri?",
-                "answer": "Navoi nomidagi Opera va balet teatri",
-                "variant": ["Ilhom teatri", "Qo‘qon teatri", "Navoi nomidagi Opera va balet teatri", "Yosh tomoshabinlar teatri"]
             },
             {
                 "question": "Yer sharidagi eng uzun daryo Osiyoda joylashgan. U qaysi?",
@@ -3387,11 +3352,6 @@ class Viktoriya(APIView):
                 "question": "O‘zbekiston Respublikasi ramzlaridan biri?",
                 "answer": "Davlat bayrog‘i",
                 "variant": ["Davlat bayrog‘i", "Qur’on", "Shohnoma", "Davlat kutubxonasi"]
-            },
-            {
-                "question": "Yer sharidagi eng yirik ko‘rfazlardan biri?",
-                "answer": "Meksika ko‘rfazi",
-                "variant": ["Meksika ko‘rfazi", "Bengal ko‘rfazi", "Aden ko‘rfazi", "Pers ko‘rfazi"]
             },
             {
                 "question": "Buyuk yozuvchi Shakespeare mashhur asari?",
@@ -3419,11 +3379,6 @@ class Viktoriya(APIView):
                 "variant": ["Amudaryo", "Sirdaryo", "Zarafshon", "Chirchiq"]
             },
             {
-                "question": "Yer sharidagi eng baland binolardan biri?",
-                "answer": "Burj Xalifa",
-                "variant": ["Burj Xalifa", "CN Tower", "Eiffel minorasi", "Big Ben"]
-            },
-            {
                 "question": "Buyuk yozuvchi Abdulla Qahhor mashhur hikoyasi?",
                 "answer": "Anor",
                 "variant": ["Anor", "Sarob", "Shohnoma", "Dunyoning ishlari"]
@@ -3449,14 +3404,9 @@ class Viktoriya(APIView):
                 "variant": ["So‘m", "Tiyin", "Rubl", "Dollar"]
             },
             {
-                "question": "Yer sharidagi eng katta sharsharalardan biri?",
-                "answer": "Viktoriya",
-                "variant": ["Viktoriya", "Niagara", "Anxel", "Iguasu"]
-            },
-            {
-                "question": "Buyuk yozuvchi Abdulla Qodiriy mashhur qissasi?",
-                "answer": "Mehrobdan chayon",
-                "variant": ["Mehrobdan chayon", "Sarob", "O‘tkan kunlar", "Shohnoma"]
+                "question": "Yer sharidagi eng katta sharshara?",
+                "answer": "Anxel",
+                "variant": ["Viktoriya", "Niagara", "Anxel", "Angel"]
             },
             {
                 "question": "O‘zbekiston Respublikasining milliy sporti?",
@@ -3482,11 +3432,6 @@ class Viktoriya(APIView):
                 "question": "Yer sharidagi eng baland platosi?",
                 "answer": "Tibet",
                 "variant": ["Pamir", "And", "Altay", "Tibet"]
-            },
-            {
-                "question": "Buyuk yozuvchi Erkin Vohidov mashhur qissasi?",
-                "answer": "Oltin vodiydan",
-                "variant": ["Oltin vodiydan", "Dunyoning ishlari", "Sarob", "Shohnoma"]
             },
             {
                 "question": "O‘zbekiston Respublikasining milliy ramzlaridan biri?",
@@ -3529,11 +3474,6 @@ class Viktoriya(APIView):
                 "variant": ["1992-yil", "1991-yil", "1993-yil", "1994-yil"]
             },
             {
-                "question": "Yer sharida eng baland vulqonlardan biri?",
-                "answer": "Kilimanjaro",
-                "variant": ["Kilimanjaro", "Etna", "Fudziyama", "Vezuviy"]
-            },
-            {
                 "question": "Buyuk yozuvchi Abdulla Qahhor mashhur qissasi?",
                 "answer": "O‘g‘ri",
                 "variant": ["O‘g‘ri", "Sarob", "Anor", "Shohnoma"]
@@ -3562,11 +3502,6 @@ class Viktoriya(APIView):
                 "question": "Yer sharida eng baland tog‘ dovoni?",
                 "answer": "Thorong La",
                 "variant": ["Thorong La", "And", "Altay", "Tyan-Shan"]
-            },
-            {
-                "question": "Buyuk yozuvchi Cho‘lpon mashhur she’riy turkumi?",
-                "answer": "Buloqlar",
-                "variant": ["Buloqlar", "Tong nafasi", "Shohnoma", "Sarob"]
             },
             {
                 "question": "O‘zbekiston hududidan oqib o‘tuvchi eng yirik daryo?",
@@ -3602,17 +3537,12 @@ class Viktoriya(APIView):
                 "question": "O‘zbekiston Respublikasida Konstitutsiya kuni qachon?",
                 "answer": "8-dekabr",
                 "variant": ["8-dekabr", "1-sentyabr", "21-mart", "9-may"]
-            },
-            {
-                "question": "Yer sharidagi eng katta sharsharalardan biri?",
-                "answer": "Iguasu",
-                "variant": ["Iguasu", "Niagara", "Victoria", "Anxel"]
-            },
-            {
-                "question": "Buyuk yozuvchi Erkin Vohidov mashhur qissasi?",
-                "answer": "Oltin vodiydan",
-                "variant": ["Oltin vodiydan", "Ruhlar isyoni", "Dunyoning ishlari", "Shohnoma"]
-            },
+            }
+        ]
+
+
+
+        quiz_8 = [
             {
                 "question": "O‘zbekiston Respublikasining Konstitutsiyasi qachon qabul qilingan?",
                 "answer": "1992-yil 8-dekabr",
@@ -3620,7 +3550,7 @@ class Viktoriya(APIView):
             },
             {
                 "question": "Yer sharidagi eng mashhur cho‘llardan biri?",
-                "answer": "Gobi",
+                "answer": "Sahroi Kabir",
                 "variant": ["Gobi", "Atakama", "Lut cho‘li", "Sahroi Kabir"]
             },
             {
@@ -3634,29 +3564,9 @@ class Viktoriya(APIView):
                 "variant": ["Islom Karimov", "Shavkat Mirziyoyev", "Abdulla Qodiriy", "Cho‘lpon"]
             },
             {
-                "question": "Yer sharidagi eng katta ko‘rfazlardan biri?",
-                "answer": "Bengal ko‘rfazi",
-                "variant": ["Bengal ko‘rfazi", "Meksika ko‘rfazi", "Pers ko‘rfazi", "Aden ko‘rfazi"]
-            },
-            {
-                "question": "Buyuk yozuvchi Abdulla Qodiriy mashhur qissasi?",
-                "answer": "Mehrobdan chayon",
-                "variant": ["Mehrobdan chayon", "O‘tkan kunlar", "Sarob", "Shohnoma"]
-            },
-            {
                 "question": "O‘zbekiston davlat gerbidagi bug‘doy va paxta ramzi nimani bildiradi?",
                 "answer": "Farovonlik va hosildorlik",
                 "variant": ["Farovonlik va hosildorlik", "Adolat", "Erkinlik", "Barqarorlik"]
-            },
-            {
-                "question": "Yer sharidagi eng katta ko‘llardan biri?",
-                "answer": "Viktoriya",
-                "variant": ["Viktoriya", "Baykal", "Tanganika", "Kaspiy"]
-            },
-            {
-                "question": "Buyuk yozuvchi O‘tkir Hoshimov mashhur romani?",
-                "answer": "Dunyoning ishlari",
-                "variant": ["Dunyoning ishlari", "Ikki eshik orasi", "Shohnoma", "Sarob"]
             },
             {
                 "question": "O‘zbekiston Respublikasining davlat ramzlaridan biri?",
@@ -3679,26 +3589,6 @@ class Viktoriya(APIView):
                 "variant": ["Kurash", "Futbol", "Boks", "Tennis"]
             },
             {
-                "question": "Yer sharidagi eng katta yarim orollardan biri?",
-                "answer": "Iberiya",
-                "variant": ["Iberiya", "Arabiston", "Skandinaviya", "Hindiston"]
-            },
-            {
-                "question": "Buyuk yozuvchi Navoiy mashhur dostonlaridan biri?",
-                "answer": "Farhod va Shirin",
-                "variant": ["Farhod va Shirin", "Shohnoma", "Mehrobdan chayon", "Sarob"]
-            },
-            {
-                "question": "O‘zbekiston Respublikasining Konstitutsiyasi nechta bobdan iborat?",
-                "answer": "26",
-                "variant": ["26", "24", "30", "22"]
-            },
-            {
-                "question": "Yer sharidagi eng yirik vodiylardan biri?",
-                "answer": "Kolorado Kanyoni",
-                "variant": ["Kolorado Kanyoni", "Yarlung", "Pamir", "Hindukush"]
-            },
-            {
                 "question": "Buyuk yozuvchi Cho‘lpon mashhur dramasi?",
                 "answer": "Yorqinoy",
                 "variant": ["Yorqinoy", "Kecha va kunduz", "Shohnoma", "Tong nafasi"]
@@ -3709,16 +3599,6 @@ class Viktoriya(APIView):
                 "variant": ["128", "121", "130", "100"]
             },
             {
-                "question": "Yer sharidagi eng qadimiy yozuvlardan biri?",
-                "answer": "Sanskrit",
-                "variant": ["Sanskrit", "Mixxat", "Arab yozuvi", "Lotin"]
-            },
-            {
-                "question": "Buyuk yozuvchi Abdulla Qahhor mashhur hikoyasi?",
-                "answer": "Sinchalak",
-                "variant": ["Sinchalak", "Sarob", "Anor", "Shohnoma"]
-            },
-            {
                 "question": "O‘zbekiston Respublikasida qabul qilingan birinchi Konstitutsiya qachon e’lon qilingan?",
                 "answer": "1992-yil",
                 "variant": ["1992-yil", "1991-yil", "1993-yil", "1994-yil"]
@@ -3727,11 +3607,6 @@ class Viktoriya(APIView):
                 "question": "Yer sharidagi eng mashhur tog‘ cho‘qqilaridan biri?",
                 "answer": "Elbrus",
                 "variant": ["Elbrus", "Everest", "Kilimanjaro", "Montblan"]
-            },
-            {
-                "question": "Buyuk yozuvchi Erkin Vohidov mashhur she’rlaridan biri?",
-                "answer": "O‘zbekiston",
-                "variant": ["O‘zbekiston", "Shohnoma", "Kecha va kunduz", "Tong nafasi"]
             },
             {
                 "question": "O‘zbekiston Respublikasining davlat madhiyasi musiqasini kim bastalagan?",
@@ -3754,11 +3629,6 @@ class Viktoriya(APIView):
                 "variant": ["Qashqadaryo", "Buxoro", "Surxondaryo", "Navoiy"]
             },
             {
-                "question": "Yer sharidagi eng mashhur binolardan biri?",
-                "answer": "Eiffel minorasi",
-                "variant": ["Eiffel minorasi", "Burj Xalifa", "Big Ben", "CN Tower"]
-            },
-            {
                 "question": "Buyuk yozuvchi Cho‘lpon mashhur she’rlaridan biri?",
                 "answer": "Ona tilim",
                 "variant": ["Ona tilim", "Sarob", "Tong nafasi", "Shohnoma"]
@@ -3767,16 +3637,6 @@ class Viktoriya(APIView):
                 "question": "O‘zbekiston davlat bayrog‘idagi yashil rang nimani anglatadi?",
                 "answer": "Tabiat va yangilanish",
                 "variant": ["Tabiat va yangilanish", "Hosildorlik", "Adolat", "Farovonlik"]
-            },
-            {
-                "question": "Yer sharida eng mashhur sharsharalardan biri?",
-                "answer": "Victoria",
-                "variant": ["Victoria", "Iguasu", "Anxel", "Niagara"]
-            },
-            {
-                "question": "Buyuk yozuvchi Erkin Vohidov mashhur she’rlaridan biri?",
-                "answer": "Ona tilim",
-                "variant": ["Ona tilim", "Ruhlar isyoni", "Tong nafasi", "Shohnoma"]
             },
             {
                 "question": "O‘zbekiston hududida joylashgan eng mashhur me’moriy obidalaridan biri?",
@@ -3799,11 +3659,6 @@ class Viktoriya(APIView):
                 "variant": ["Boylik va farovonlik", "Hosildorlik", "Adolat", "Ona tabiat"]
             },
             {
-                "question": "Yer sharidagi eng mashhur tog‘lardan biri?",
-                "answer": "Montblan",
-                "variant": ["Montblan", "Everest", "Elbrus", "Kilimanjaro"]
-            },
-            {
                 "question": "Buyuk yozuvchi Pirimqul Qodirov mashhur asarlaridan biri?",
                 "answer": "Yulduzli tunlar",
                 "variant": ["Yulduzli tunlar", "Avlodlar dovoni", "Sarob", "Shohnoma"]
@@ -3814,24 +3669,14 @@ class Viktoriya(APIView):
                 "variant": ["Namangan", "Andijon", "Buxoro", "Samarqand"]
             },
             {
-                "question": "Yer sharidagi eng mashhur orollardan biri?",
-                "answer": "Bali",
-                "variant": ["Bali", "Madagaskar", "Sumatra", "Yangi Gvineya"]
-            },
-            {
-                "question": "Buyuk yozuvchi Abdulla Qahhor mashhur hikoyasi?",
-                "answer": "Anor",
-                "variant": ["Anor", "Sarob", "Shohnoma", "O‘tkan kunlar"]
-            },
-            {
                 "question": "O‘zbekiston Respublikasining davlat bayrog‘idagi oq rang nimani anglatadi?",
                 "answer": "Poklik va tinchlik",
                 "variant": ["Poklik va tinchlik", "Adolat", "Hosildorlik", "Barqarorlik"]
             },
             {
-                "question": "Yer sharida eng mashhur dengizlardan biri?",
-                "answer": "O‘lik dengiz",
-                "variant": ["O‘lik dengiz", "Qora dengiz", "Kaspiy", "Adriatika"]
+                "question": "Yer sharida eng sovuq dengiz?",
+                "answer": "Sibir",
+                "variant": ["O‘lik dengiz", "Qora dengiz", "Kaspiy", "Sibir"]
             },
             {
                 "question": "Buyuk yozuvchi Navoiy mashhur dostonlaridan biri?",
@@ -3844,24 +3689,9 @@ class Viktoriya(APIView):
                 "variant": ["3", "4", "5", "2"]
             },
             {
-                "question": "Yer sharida eng mashhur tog‘lardan biri?",
-                "answer": "Elbrus",
-                "variant": ["Elbrus", "Montblan", "Everest", "Kilimanjaro"]
-            },
-            {
-                "question": "Buyuk yozuvchi Erkin Vohidov mashhur qissasi?",
-                "answer": "Oltin vodiydan",
-                "variant": ["Oltin vodiydan", "Dunyoning ishlari", "Ikki eshik orasi", "Sarob"]
-            },
-            {
                 "question": "O‘zbekiston Respublikasining Konstitutsiyasi nechta bobdan iborat?",
                 "answer": "26",
                 "variant": ["26", "25", "30", "22"]
-            },
-            {
-                "question": "Yer sharidagi eng mashhur sharsharalardan biri?",
-                "answer": "Anxel",
-                "variant": ["Anxel", "Victoria", "Niagara", "Iguasu"]
             },
             {
                 "question": "Buyuk yozuvchi Cho‘lpon mashhur she’riy turkumlaridan biri?",
@@ -3874,11 +3704,6 @@ class Viktoriya(APIView):
                 "variant": ["Kelajak va baxt", "Adolat", "Farovonlik", "Tabiat"]
             },
             {
-                "question": "Yer sharida eng mashhur vulqonlardan biri?",
-                "answer": "Etna",
-                "variant": ["Etna", "Fudziyama", "Vezuviy", "Kilimanjaro"]
-            },
-            {
                 "question": "Buyuk yozuvchi O‘tkir Hoshimov mashhur romani?",
                 "answer": "Dunyoning ishlari",
                 "variant": ["Dunyoning ishlari", "Ikki eshik orasi", "Shohnoma", "Sarob"]
@@ -3889,29 +3714,9 @@ class Viktoriya(APIView):
                 "variant": ["128", "130", "121", "115"]
             },
             {
-                "question": "Yer sharidagi eng mashhur ko‘llardan biri?",
-                "answer": "Tanganika",
-                "variant": ["Tanganika", "Viktoriya", "Baykal", "Aydarko‘l"]
-            },
-            {
-                "question": "Buyuk yozuvchi Abdulla Qodiriy mashhur qissasi?",
-                "answer": "Mehrobdan chayon",
-                "variant": ["Mehrobdan chayon", "O‘tkan kunlar", "Shohnoma", "Sarob"]
-            },
-            {
                 "question": "O‘zbekiston Respublikasining mustaqilligi qachon e’lon qilingan?",
                 "answer": "1991-yil 1-sentyabr",
                 "variant": ["1991-yil 1-sentyabr", "1992-yil 8-dekabr", "1990-yil 20-iyun", "1994-yil 21-mart"]
-            },
-            {
-                "question": "Yer sharidagi eng mashhur orollardan biri?",
-                "answer": "Yangi Gvineya",
-                "variant": ["Yangi Gvineya", "Grenlandiya", "Sumatra", "Madagaskar"]
-            },
-            {
-                "question": "Buyuk yozuvchi Erkin Vohidov mashhur she’rlaridan biri?",
-                "answer": "Tong nafasi",
-                "variant": ["Tong nafasi", "Ruhlar isyoni", "O‘zbekiston", "Shohnoma"]
             },
             {
                 "question": "O‘zbekiston Respublikasining Konstitutsiyasi nechta qismdan iborat?",
@@ -3919,24 +3724,9 @@ class Viktoriya(APIView):
                 "variant": ["6", "5", "7", "8"]
             },
             {
-                "question": "Yer sharidagi eng mashhur sharsharalardan biri?",
-                "answer": "Niagara",
-                "variant": ["Niagara", "Victoria", "Anxel", "Iguasu"]
-            },
-            {
-                "question": "Buyuk yozuvchi Abdulla Qahhor mashhur hikoyasi?",
-                "answer": "Sinchalak",
-                "variant": ["Sinchalak", "Anor", "Shohnoma", "Sarob"]
-            },
-            {
                 "question": "O‘zbekiston Respublikasining davlat bayrog‘idagi ko‘k rang nimani bildiradi?",
                 "answer": "Osmon va tinchlik",
                 "variant": ["Osmon va tinchlik", "Adolat", "Hosildorlik", "Ona tabiat"]
-            },
-            {
-                "question": "Yer sharidagi eng mashhur cho‘llardan biri?",
-                "answer": "Atakama",
-                "variant": ["Atakama", "Sahroi Kabir", "Lut cho‘li", "Gobi"]
             },
             {
                 "question": "Buyuk yozuvchi Cho‘lpon mashhur romani?",
@@ -3947,16 +3737,6 @@ class Viktoriya(APIView):
                 "question": "O‘zbekiston Respublikasining davlat madhiyasi so‘zlarini kim yozgan?",
                 "answer": "Abdulla Oripov",
                 "variant": ["Abdulla Oripov", "Erkin Vohidov", "Cho‘lpon", "O‘tkir Hoshimov"]
-            },
-            {
-                "question": "Yer sharidagi eng mashhur tog‘lardan biri?",
-                "answer": "Kilimanjaro",
-                "variant": ["Kilimanjaro", "Everest", "Elbrus", "Montblan"]
-            },
-            {
-                "question": "Buyuk yozuvchi Erkin Vohidov mashhur qissasi?",
-                "answer": "Ruhlar isyoni",
-                "variant": ["Ruhlar isyoni", "Oltin vodiydan", "Shohnoma", "Kecha va kunduz"]
             },
             {
                 "question": "O‘zbekiston Respublikasining davlat gerbidagi Humo qushi nimani bildiradi?",
@@ -3972,11 +3752,6 @@ class Viktoriya(APIView):
                 "question": "O‘zbekiston Respublikasining Konstitutsiya mualliflaridan biri kim?",
                 "answer": "Islom Karimov",
                 "variant": ["Islom Karimov", "Shavkat Mirziyoyev", "Abdulla Qodiriy", "Cho‘lpon"]
-            },
-            {
-                "question": "Dunyodagi eng katta futbol stadionlaridan biri — Marakana qayerda joylashgan?",
-                "answer": "Braziliya",
-                "variant": ["Braziliya", "Ispaniya", "Angliya", "Argentina"]
             },
             {
                 "question": "Yer sharida eng uzun metro tarmog‘i qaysi shaharda?",
@@ -4017,12 +3792,262 @@ class Viktoriya(APIView):
                 "question": "O‘zbekiston Respublikasining asosiy qonuni nima?",
                 "answer": "Konstitutsiya",
                 "variant": ["Konstitutsiya", "Madhiy", "Gerb", "Bayroq"]
+            },
+            {
+                "question": "Dunyoning eng mashhur sharsharalaridan biri — Viktoriya qayerda joylashgan?",
+                "answer": "Zambiya va Zimbabve",
+                "variant": ["Zambiya va Zimbabve", "Braziliya va Argentina", "Venesuela", "AQSh va Kanada"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi mashhur tarixiy shahar — Samarqand qachon asos solingan?",
+                "answer": "2700 yil avval",
+                "variant": ["2700 yil avval", "2000 yil avval", "1500 yil avval", "1000 yil avval"]
+            },
+            {
+                "question": "Dunyoning eng mashhur universitetlaridan biri — Tokio universiteti qayerda joylashgan?",
+                "answer": "Yaponiya",
+                "variant": ["Yaponiya", "Xitoy", "Janubiy Koreya", "Singapur"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Cho‘lpon mashhur asari?",
+                "answer": "Yorqinoy",
+                "variant": ["Yorqinoy", "Kecha va kunduz", "Buloqlar", "Tong nafasi"]
+            },
+            {
+                "question": "Dunyoning eng mashhur san’at muzeylaridan biri — Luvr qayerda joylashgan?",
+                "answer": "Parij",
+                "variant": ["Parij", "London", "Madrid", "Berlin"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur tarixiy shaharlaridan biri — Urganch qaysi vohada joylashgan?",
+                "answer": "Xorazm vohasi",
+                "variant": ["Xorazm vohasi", "Farg‘ona vohasi", "Surxondaryo vohasi", "Qashqadaryo vohasi"]
+            },
+            {
+                "question": "Dunyoning eng mashhur tog‘ cho‘qqilaridan biri — Montblan qayerda joylashgan?",
+                "answer": "Fransiya va Italiya",
+                "variant": ["Fransiya va Italiya", "Shveytsariya", "Avstriya", "Ispaniya"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Tohir Malik mashhur kitobi?",
+                "answer": "Shaytanat",
+                "variant": ["Shaytanat", "O‘tkan kunlar", "Yulduzli tunlar", "Sarob"]
+            },
+            {
+                "question": "Osiyodagi eng mashhur daryolardan biri?",
+                "answer": "Ganga",
+                "variant": ["Ganga", "Yanszi", "Amur", "Mekong"]
+            },
+            {
+                "question": "Dunyoning eng mashhur sportchilaridan biri — Usayn Bolt qaysi sport turi bo‘yicha mashhur?",
+                "answer": "Yugurish",
+                "variant": ["Yugurish", "Futbol", "Tennis", "Suzish"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi mashhur qadimiy qal’alardan biri — Topraqqal’a qaysi davrga oid?",
+                "answer": "Kushon davriga",
+                "variant": ["Kushon davriga", "Temuriylar davriga", "Arab xalifaligi davriga", "Sovet davriga"]
+            },
+            {
+                "question": "Dunyoning eng mashhur minoralaridan biri — Burj Xalifa qayerda joylashgan?",
+                "answer": "BAA",
+                "variant": ["BAA", "Saudiya Arabistoni", "Katar", "Kuvayt"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur shoirlaridan biri — G‘afur G‘ulom mashhur asari?",
+                "answer": "Shum bola",
+                "variant": ["Shum bola", "Sarob", "Anor", "O‘tkan kunlar"]
+            },
+            {
+                "question": "Shimoliy Amerikadagi eng katta ko‘rfaz?",
+                "answer": "Meksika ko‘rfazi",
+                "variant": ["Meksika ko‘rfazi", "Bengal ko‘rfazi", "Pers ko‘rfazi", "Aden ko‘rfazi"]
+            },
+            {
+                "question": "Dunyoning eng baland vulqon?",
+                "answer": "Etna",
+                "variant": ["Ojos del Salado", "Etna", "Fudziyama", "Vezuviy"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Oybek mashhur romani?",
+                "answer": "Navoiy",
+                "variant": ["Navoiy", "Sarob", "Kecha va kunduz", "Yulduzli tunlar"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi mashhur tarixiy yodgorliklardan biri — Minorai Kalon qayerda?",
+                "answer": "Buxoro",
+                "variant": ["Buxoro", "Samarqand", "Xiva", "Toshkent"]
+            },
+            {
+                "question": "Dunyoning eng mashhur orollardan biri — Bali qaysi davlatda joylashgan?",
+                "answer": "Indoneziya",
+                "variant": ["Indoneziya", "Filippin", "Malayziya", "Tailand"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi mashhur maqbaralardan biri — Shohizinda majmuasi qayerda joylashgan?",
+                "answer": "Samarqand",
+                "variant": ["Samarqand", "Buxoro", "Xiva", "Shahrisabz"]
+            },
+            {
+                "question": "Dunyoning eng mashhur futbol jamoalaridan biri — Juventus qayerda joylashgan?",
+                "answer": "Italiya",
+                "variant": ["Italiya", "Ispaniya", "Fransiya", "Angliya"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur tarixiy shaxsi — Mirzo Ulug‘bek qaysi sohaga ko‘proq hissa qo‘shgan?",
+                "answer": "Astronomiya",
+                "variant": ["Astronomiya", "Matematika", "Tibbiyot", "Kimyo"]
+            },
+            {
+                "question": "Osiyodagi eng katta ko‘rfaz?",
+                "answer": "Bengal ko‘rfazi",
+                "variant": ["Bengal ko‘rfazi", "Pers ko‘rfazi", "Meksika ko‘rfazi", "Aden ko‘rfazi"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — O‘tkir Hoshimov mashhur qissasi?",
+                "answer": "Bahor qaytmaydi",
+                "variant": ["Bahor qaytmaydi", "Ikki eshik orasi", "Dunyoning ishlari", "Sarob"]
+            },
+            {
+                "question": "Dunyoning eng mashhur tog‘ tizmalardan biri — Alp qaysi qit’ada joylashgan?",
+                "answer": "Yevropa",
+                "variant": ["Yevropa", "Osiyo", "Janubiy Amerika", "Afrika"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur shoirlaridan biri — Erkin Vohidov mashhur dramasi?",
+                "answer": "Oltin devor",
+                "variant": ["Oltin devor", "Sarob", "Shohnoma", "Yulduzli tunlar"]
+            },
+            {
+                "question": "Dunyoning eng mashhur sharsharalaridan biri — Seljalandsfoss qayerda joylashgan?",
+                "answer": "Islandiya",
+                "variant": ["Islandiya", "Norvegiya", "Shvetsiya", "Finlyandiya"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi mashhur tarixiy majmualardan biri — Ichan qal’a qayerda joylashgan?",
+                "answer": "Xiva",
+                "variant": ["Xiva", "Buxoro", "Samarqand", "Andijon"]
+            },
+            {
+                "question": "Dunyoning eng mashhur futbol jamoalaridan biri — PSG qayerda joylashgan?",
+                "answer": "Parij",
+                "variant": ["Parij", "Madrid", "Milan", "Manchester"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Cho‘lpon mashhur she’ri?",
+                "answer": "Ona tilim",
+                "variant": ["Ona tilim", "Tong nafasi", "Sarob", "Ruhlar isyoni"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi mashhur tarixiy obidalardan biri — Ark qal’asi qayerda joylashgan?",
+                "answer": "Buxoro",
+                "variant": ["Buxoro", "Samarqand", "Toshkent", "Shahrisabz"]
+            },
+            {
+                "question": "Dunyoning eng mashhur minoralaridan biri — Big Ben qayerda joylashgan?",
+                "answer": "London",
+                "variant": ["London", "Parij", "Berlin", "Madrid"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur shoirlaridan biri — Abdulla Oripov mashhur dostoni?",
+                "answer": "Sohibqiron",
+                "variant": ["Sohibqiron", "Sarob", "Jannatga yo‘l", "O‘zbekiston"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Pirimqul Qodirov mashhur kitobi?",
+                "answer": "Qora ko‘zlar",
+                "variant": ["Qora ko‘zlar", "Avlodlar dovoni", "Yulduzli tunlar", "Sarob"]
+            },
+            {
+                "question": "Dunyoning eng mashhur muzliklaridan biri — Vatnajokull qayerda joylashgan?",
+                "answer": "Islandiya",
+                "variant": ["Islandiya", "Norvegiya", "Kanada", "Grenlandiya"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur tarixiy obidalaridan biri — Bibi Xonim masjidi qayerda joylashgan?",
+                "answer": "Samarqand",
+                "variant": ["Samarqand", "Buxoro", "Xiva", "Toshkent"]
+            },
+            {
+                "question": "Dunyoning eng mashhur futbol jamoalaridan biri — Milan qayerda joylashgan?",
+                "answer": "Italiya",
+                "variant": ["Italiya", "Ispaniya", "Fransiya", "Angliya"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Abdulla Qahhor mashhur qissasi?",
+                "answer": "Oltin yulduz",
+                "variant": ["Oltin yulduz", "Sarob", "Anor", "Sinchalak"]
+            },
+            {
+                "question": "Osiyodagi eng usun tog‘ tizmasi?",
+                "answer": "Himolay",
+                "variant": ["Tyan-Shan", "Pamir", "Altay", "Himolay"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur shoirlaridan biri — Erkin Vohidov mashhur she’ri?",
+                "answer": "Nido",
+                "variant": ["Nido", "Ruhlar isyoni", "Tong nafasi", "O‘zbekiston"]
+            },
+            {
+                "question": "Dunyoning eng mashhur sharsharalaridan biri — Plitvice qayerda joylashgan?",
+                "answer": "Xorvatiya",
+                "variant": ["Xorvatiya", "Sloveniya", "Chexiya", "Serbiya"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi mashhur tarixiy qal’alardan biri — Ayazqal’a qayerda joylashgan?",
+                "answer": "Qoraqalpog‘iston",
+                "variant": ["Qoraqalpog‘iston", "Buxoro", "Xorazm", "Samarqand"]
+            },
+            {
+                "question": "Dunyoning eng mashhur sportchilardan biri — Diego Maradona qaysi davlat fuqarosi edi?",
+                "answer": "Argentina",
+                "variant": ["Argentina", "Braziliya", "Ispaniya", "Urugvay"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Tohir Malik mashhur hikoyasi?",
+                "answer": "So‘nggi o‘q",
+                "variant": ["So‘nggi o‘q", "Shaytanat", "Sarob", "Bahor qaytmaydi"]
+            },
+            {
+                "question": "Dunyoning eng mashhur orollardan biri — Yangi Gvineya qaysi okeanda joylashgan?",
+                "answer": "Tinch okeani",
+                "variant": ["Tinch okeani", "Hind okeani", "Atlantika okeani", "Shimoliy muz okeani"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur shoirlaridan biri — G‘afur G‘ulom mashhur she’ri?",
+                "answer": "Sen yetim emassan",
+                "variant": ["Sen yetim emassan", "Shum bola", "Sarob", "Yulduzli tunlar"]
+            },
+            {
+                "question": "Dunyoning eng mashhur minoralaridan biri — Ostankino minorasi qayerda joylashgan?",
+                "answer": "Moskva",
+                "variant": ["Moskva", "Sankt-Peterburg", "Novosibirsk", "Minsk"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Cho‘lpon mashhur hikoyasi?",
+                "answer": "Sevgi va hayot",
+                "variant": ["Sevgi va hayot", "Yorqinoy", "Kecha va kunduz", "Buloqlar"]
+            },
+            {
+                "question": "Dunyoning eng mashhur teatrlaridan biri — Bolshoy teatri qaysi shaharda joylashgan?",
+                "answer": "Moskva",
+                "variant": ["Moskva", "Parij", "London", "Berlin"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur tarixiy shaharlaridan biri — Jizzax qaysi yo‘lda muhim nuqta bo‘lgan?",
+                "answer": "Buyuk Ipak yo‘li",
+                "variant": ["Buyuk Ipak yo‘li", "Arab savdo yo‘li", "Buyuk ipak dengiz yo‘li", "Yevropa savdo yo‘li"]
+            },
+            {
+                "question": "Buyuk geografik kashfiyotlar davrida Amerikani ochgan kishi kim?",
+                "answer": "Xristofor Kolumb",
+                "variant": ["Xristofor Kolumb", "Vasko da Gama", "Magellan", "Amerigo Vespucci"]
             }
         ]
 
 
-        # FAN 100
-        level_4 = [
+    
+        quiz_9 = [
             {
                 "question": "Qaysi davlatning poytaxti Addis-Abeba?",
                 "answer": "Efiopiya",
@@ -4084,11 +4109,6 @@ class Viktoriya(APIView):
                 "variant": ["Tol", "Sekvoyya", "Eman", "Qayin"]
             },
             {
-                "question": "Afrikadagi eng qadimiy davlatlardan biri?",
-                "answer": "Efiopiya",
-                "variant": ["Efiopiya", "Misr", "Marokash", "Liviya"]
-            },
-            {
                 "question": "Yevropada 'Qora o‘lim' deb atalgan ofat nima edi?",
                 "answer": "Vabo",
                 "variant": ["Gripp", "Tif", "Chechak", "Vabo"]
@@ -4132,11 +4152,6 @@ class Viktoriya(APIView):
                 "question": "Yevropadagi eng baland tog‘?",
                 "answer": "Elbrus",
                 "variant": ["Montblan", "Elbrus", "Alp", "Kavkaz"]
-            },
-            {
-                "question": "Shimoliy qutbni birinchi bo‘lib kim kashf qilgan?",
-                "answer": "Robert Piri",
-                "variant": ["Amundsen", "Robert Piri", "Magellan", "Kolumb"]
             },
             {
                 "question": "O‘zbekiston hududidagi eng qadimiy shahar?",
@@ -4274,11 +4289,6 @@ class Viktoriya(APIView):
                 "variant": ["Shakespeare", "Tolstoy", "Chexov", "Dante"]
             },
             {
-                "question": "Qaysi davlat 'Quyosh chiqish mamlakati' deb ataladi?",
-                "answer": "Yaponiya",
-                "variant": ["Xitoy", "Yaponiya", "Koreya", "Tayvan"]
-            },
-            {
                 "question": "Buyuk Britaniya qaysi qit’ada joylashgan?",
                 "answer": "Yevropa",
                 "variant": ["Avstraliya", "Osiyo", "Yevropa", "Afrika"]
@@ -4334,11 +4344,6 @@ class Viktoriya(APIView):
                 "variant": ["Xorazm", "Buxoro", "Samarqand", "Nishopur"]
             },
             {
-                "question": "Qaysi davlatda Sahara cho‘li joylashgan?",
-                "answer": "Shimoliy Afrika",
-                "variant": ["Shimoliy Afrika", "Janubiy Afrika", "Arabiston", "Markaziy Osiyo"]
-            },
-            {
                 "question": "Yer sharidagi eng katta orol davlati?",
                 "answer": "Avstraliya",
                 "variant": ["Avstraliya", "Madagaskar", "Grenlandiya", "Yangi Zelandiya"]
@@ -4352,11 +4357,6 @@ class Viktoriya(APIView):
                 "question": "Buyuk olim Arximed qayerda tug‘ilgan?",
                 "answer": "Sirakuza",
                 "variant": ["Afina", "Sirakuza", "Rim", "Iskandariya"]
-            },
-            {
-                "question": "Dunyodagi eng katta metall ishlab chiqaruvchi davlat?",
-                "answer": "Xitoy",
-                "variant": ["Xitoy", "AQSh", "Rossiya", "Hindiston"]
             },
             {
                 "question": "O‘zbekiston hududidagi eng baland tog‘ cho‘qqisi?",
@@ -4404,11 +4404,6 @@ class Viktoriya(APIView):
                 "variant": ["Gimolay", "And", "Alp", "Kavkaz"]
             },
             {
-                "question": "Qaysi davlatning poytaxti Dushanbe?",
-                "answer": "Tojikiston",
-                "variant": ["Tojikiston", "Qirg‘iziston", "Turkmaniston", "Afg‘oniston"]
-            },
-            {
                 "question": "Buyuk yozuvchi Gyote qaysi asari bilan mashhur?",
                 "answer": "Faust",
                 "variant": ["Faust", "Otello", "Anna Karenina", "Qariya va dengiz"]
@@ -4422,11 +4417,6 @@ class Viktoriya(APIView):
                 "question": "Dunyodagi eng uzun daryo?",
                 "answer": "Nil",
                 "variant": ["Nil", "Amazonka", "Yanszi", "Missisipi"]
-            },
-            {
-                "question": "O‘zbekiston hududidagi eng mashhur madrasalardan biri?",
-                "answer": "Sherdor madrasasi",
-                "variant": ["Sherdor madrasasi", "Ko‘kaldosh", "Mirzo Ulug‘bek", "Chor Minor"]
             },
             {
                 "question": "Qaysi yozuvchi 'Sariq devni minib' asarini yozgan?",
@@ -4522,12 +4512,47 @@ class Viktoriya(APIView):
                 "question": "Dunyodagi eng katta yarim orollardan biri — Iberiya yarim oroli qaysi davlatlarga tegishli?",
                 "answer": "Ispaniya va Portugaliya",
                 "variant": ["Fransiya va Italiya", "Ispaniya va Portugaliya", "Turkiya va Gretsiya", "Angliya va Irlandiya"]
+            },
+            {
+                "question": "Dunyoning eng mashhur tog‘ cho‘qqilaridan biri — K2 qayerda joylashgan?",
+                "answer": "Pokiston va Xitoy",
+                "variant": ["Pokiston va Xitoy", "Nepal va Xitoy", "Hindiston va Tibet", "Butan va Hindiston"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur yozuvchilaridan biri — O‘tkir Hoshimov mashhur asari?",
+                "answer": "Ikki eshik orasi",
+                "variant": ["Ikki eshik orasi", "Dunyoning ishlari", "Sarob", "Shaytanat"]
+            },
+            {
+                "question": "Afrikadagi eng katta davlat maydon bo‘yicha?",
+                "answer": "Jazoir",
+                "variant": ["Jazoir", "Misr", "Sudan", "Efiopiya"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi qadimiy yodgorliklardan biri — Shohi Zinda majmuasi qayerda?",
+                "answer": "Samarqand",
+                "variant": ["Samarqand", "Buxoro", "Xiva", "Toshkent"]
+            },
+            {
+                "question": "Dunyoning eng mashhur minoralaridan biri — CN Tower qayerda joylashgan?",
+                "answer": "Kanada",
+                "variant": ["Kanada", "AQSh", "Fransiya", "Germaniya"]
+            },
+            {
+                "question": "Buyuk olim Arximedning mashhur iborasi?",
+                "answer": "Menga tayanch nuqta bering, men Yer sharini ko‘taraman",
+                "variant": ["Menga tayanch nuqta bering, men Yer sharini ko‘taraman", "Bilim kuchdir", "Men o‘ylayman, demak men borman", "Hammasi oqimda"]
+            },
+            {
+                "question": "O‘zbekistonning mashhur shaharlaridan biri — Qo‘qon qaysi tarixiy davrda xonlik markazi bo‘lgan?",
+                "answer": "XVIII-XIX asr",
+                "variant": ["XVIII-XIX asr", "XVI asr", "XIV-XV asr", "XX asr"]
             }
         ]
 
 
-        # FAN 100
-        level_5 = [
+  
+        quiz_10 = [
             {
                 "question": "Buyuk ipak yo‘li nechta qit’ani bog‘lagan?",
                 "answer": "2 qit’a – Osiyo va Yevropa",
@@ -4609,11 +4634,6 @@ class Viktoriya(APIView):
                 "variant": ["Fiji", "Kiribati", "Tonga", "Mikroneziya"]
             },
             {
-                "question": "O‘zbekiston hududida eng qadimiy madaniyatlardan biri?",
-                "answer": "Sopollitepa",
-                "variant": ["Sopollitepa", "Paykend", "Ellikqal’a", "Varaxsha"]
-            },
-            {
                 "question": "Dunyoning eng baland tog‘ dovoni?",
                 "answer": "Thorong La (Nepal)",
                 "variant": ["Thorong La (Nepal)", "Tyan-Shan", "And", "Altay"]
@@ -4682,11 +4702,6 @@ class Viktoriya(APIView):
                 "question": "Yer kurrasida eng ko‘p vulqonlar joylashgan davlat?",
                 "answer": "Indoneziya",
                 "variant": ["Indoneziya", "Yaponiya", "Italiya", "Meksika"]
-            },
-            {
-                "question": "Qaysi yozuvchi 'Qiyomat' romanini yozgan?",
-                "answer": "Chingiz Aytmatov",
-                "variant": ["Chingiz Aytmatov", "Pirimqul Qodirov", "O‘tkir Hoshimov", "Tahir Malik"]
             },
             {
                 "question": "O‘zbek xalqining eng mashhur eposlaridan biri?",
@@ -4794,11 +4809,6 @@ class Viktoriya(APIView):
                 "variant": ["Begona", "Jarayon", "Sariq devni minib", "Shohnoma"]
             },
             {
-                "question": "Qaysi davlat 'Piramidalar mamlakati' deb ataladi?",
-                "answer": "Misr",
-                "variant": ["Misr", "Meksika", "Xitoy", "Hindiston"]
-            },
-            {
                 "question": "Sharq mutafakkiri Umar Xayyom nima bilan mashhur?",
                 "answer": "Ruboiatlar",
                 "variant": ["Ruboiatlar", "Shohnoma", "Xamsa", "Qutadg‘u bilig"]
@@ -4817,11 +4827,6 @@ class Viktoriya(APIView):
                 "question": "Qaysi yozuvchi 'Karamazov aka-ukalari' asarini yozgan?",
                 "answer": "Dostoyevskiy",
                 "variant": ["Dostoyevskiy", "Tolstoy", "Gogol", "Chexov"]
-            },
-            {
-                "question": "Yer yuzidagi eng ko‘hna universitetlardan biri?",
-                "answer": "Al-Qaraviyin (Marokash)",
-                "variant": ["Al-Qaraviyin (Marokash)", "Al-Azhar", "Bolonya", "Oksford"]
             },
             {
                 "question": "Qaysi davlatda Mo‘g‘ul imperiyasi paydo bo‘lgan?",
@@ -4867,11 +4872,6 @@ class Viktoriya(APIView):
                 "question": "Qaysi yozuvchi 'Chol va dengiz' asarini yozgan?",
                 "answer": "Ernest Xeminguey",
                 "variant": ["Ernest Xeminguey", "Jek London", "Mark Tven", "Balzak"]
-            },
-            {
-                "question": "Qaysi davlatning poytaxti Nayrobi?",
-                "answer": "Keniya",
-                "variant": ["Keniya", "Tanzaniya", "Uganda", "Efiopiya"]
             },
             {
                 "question": "O‘zbekiston hududidagi eng yirik mis koni?",
@@ -4922,16 +4922,6 @@ class Viktoriya(APIView):
                 "question": "Qaysi davlatning milliy sporti hurling?",
                 "answer": "Irlandiya",
                 "variant": ["Irlandiya", "Angliya", "Shotlandiya", "Kanada"]
-            },
-            {
-                "question": "O‘zbekiston hududida joylashgan qadimiy qal’alardan biri?",
-                "answer": "Ayazqal’a",
-                "variant": ["Ayazqal’a", "Toproq qal’a", "Ellikqal’a", "Ark"]
-            },
-            {
-                "question": "Qaysi yozuvchi 'Qiyomat' romanini yozgan?",
-                "answer": "Chingiz Aytmatov",
-                "variant": ["Chingiz Aytmatov", "O‘tkir Hoshimov", "Pirimqul Qodirov", "Tahir Malik"]
             },
             {
                 "question": "Yer sharida eng katta ko‘rfaz?",
@@ -5027,1537 +5017,146 @@ class Viktoriya(APIView):
                 "question": "Qaysi davlatda Teotiuakan shahri joylashgan?",
                 "answer": "Meksika",
                 "variant": ["Meksi  ka", "Peru", "Boliviya", "Ekvador"]
+            },
+            {
+                "question": "Dunyoning eng mashhur sharsharalaridan biri — Tugela qaysi davlatda joylashgan?",
+                "answer": "Janubiy Afrika",
+                "variant": ["Janubiy Afrika", "Namibiya", "Keniya", "Zimbabve"]
+            },
+            {
+                "question": "O‘zbekiston hududida joylashgan qadimiy shaharlaridan biri — Termiz qaysi viloyatda?",
+                "answer": "Surxondaryo",
+                "variant": ["Surxondaryo", "Buxoro", "Samarqand", "Xorazm"]
+            },
+            {
+                "question": "Dunyoning eng katta ko‘rfazlaridan biri?",
+                "answer": "Bengal ko‘rfazi",
+                "variant": ["Bengal ko‘rfazi", "Meksika ko‘rfazi", "Pers ko‘rfazi", "Aden ko‘rfazi"]
+            },
+            {
+                "question": "Buyuk yozuvchi Abdulla Qahhor mashhur asarlaridan biri?",
+                "answer": "Anor",
+                "variant": ["Anor", "Sarob", "O‘tkan kunlar", "Sinchalak"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi mashhur masjidlardan biri — Hazrati Imom majmuasi qayerda joylashgan?",
+                "answer": "Toshkent",
+                "variant": ["Toshkent", "Samarqand", "Buxoro", "Andijon"]
+            },
+            {
+                "question": "Dunyoning eng mashhur muzeylaridan biri — Eremitaj qayerda joylashgan?",
+                "answer": "Sankt-Peterburg",
+                "variant": ["Sankt-Peterburg", "Moskva", "Parij", "Berlin"]
+            },
+            {
+                "question": "O‘zbekiston hududidagi mashhur qal’alardan biri — Ark qaysi shaharda?",
+                "answer": "Buxoro",
+                "variant": ["Buxoro", "Samarqand", "Xiva", "Shahrisabz"]
             }
         ]
                
 
+        lvl_1 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
+        lvl_2 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
+        lvl_3 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
+        lvl_4 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
+        lvl_5 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
+        lvl_6 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
+        lvl_7 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
+        lvl_8 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
+        lvl_9 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
+        lvl_10 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
+        lvl_11 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
+        lvl_12 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
+        lvl_13 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
+        lvl_14 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
+        lvl_15 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
+        lvl_16 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
+        lvl_17 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
+        lvl_18 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
+        lvl_19 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
+        lvl_20 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
+        lvl_21 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
+        lvl_22 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
+        lvl_23 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
+        lvl_24 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
+        lvl_25 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
+        lvl_26 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
+        lvl_27 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
+        lvl_28 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
+        lvl_29 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
+        lvl_30 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
+        lvl_31 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
+        lvl_32 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
+        lvl_33 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
+        lvl_34 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
+        lvl_35 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
+        lvl_36 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
+        lvl_37 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
+        lvl_38 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
+        lvl_39 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
+        lvl_40 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
+        lvl_41 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
+        lvl_42 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
+        lvl_43 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
+        lvl_44 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
+        lvl_45 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
+        lvl_46 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
+        lvl_47 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
+        lvl_48 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
+        lvl_49 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
+        lvl_50 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
+        lvl_51 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
+        lvl_52 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
+        lvl_53 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
+        lvl_54 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
+        lvl_55 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
+        lvl_56 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
+        lvl_57 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
+        lvl_58 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
+        lvl_59 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
+        lvl_60 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
+        lvl_61 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7),
+        lvl_62 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7),
+        lvl_63 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7),
+        lvl_64 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7),
+        lvl_65 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7),
+        lvl_66 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7),
+        lvl_67 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7),
+        lvl_68 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7),
+        lvl_69 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7),
+        lvl_70 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7),
+        lvl_71 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8),
+        lvl_72 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8),
+        lvl_73 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8),
+        lvl_74 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8),
+        lvl_75 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8),
+        lvl_76 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8),
+        lvl_77 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8),
+        lvl_78 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8),
+        lvl_79 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8),
+        lvl_80 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8),
+        lvl_81 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9),
+        lvl_82 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9),
+        lvl_83 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9),
+        lvl_84 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9),
+        lvl_85 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9),
+        lvl_86 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9),
+        lvl_87 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9),
+        lvl_88 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9),
+        lvl_89 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9),
+        lvl_90 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9),
+        lvl_91 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10),
+        lvl_92 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10),
+        lvl_93 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10),
+        lvl_94 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10),
+        lvl_95 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10),
+        lvl_96 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10),
+        lvl_97 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10),
+        lvl_98 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10),
+        lvl_99 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10),
+        lvl_100 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10),
 
-qoshimcha = [
-  {
-    "question": "O‘zbekiston hududidagi eng mashhur suv omborlaridan biri — Chorvoq qaysi viloyatda joylashgan?",
-    "answer": "Toshkent viloyati",
-    "variant": ["Toshkent viloyati", "Namangan viloyati", "Andijon viloyati", "Samarqand viloyati"]
-  },
-  {
-    "question": "Dunyoning eng katta yarim oroli?",
-    "answer": "Arabiston yarim oroli",
-    "variant": ["Arabiston yarim oroli", "Iberiya", "Skandinaviya", "Hindiston yarim oroli"]
-  },
-  {
-    "question": "O‘zbekiston hududida joylashgan qadimiy madrasalardan biri — Ko‘kaldosh qayerda joylashgan?",
-    "answer": "Toshkent",
-    "variant": ["Toshkent", "Buxoro", "Xiva", "Samarqand"]
-  },
-  {
-    "question": "Dunyoning eng uzun qirg‘oq chizig‘iga ega davlat?",
-    "answer": "Kanada",
-    "variant": ["Kanada", "Rossiya", "Avstraliya", "AQSh"]
-  },
-  {
-    "question": "Buyuk yozuvchi Erkin Vohidov mashhur asarlaridan biri?",
-    "answer": "Tong nafasi",
-    "variant": ["Tong nafasi", "Ruhlar isyoni", "Shohnoma", "Sarob"]
-  },
-  {
-    "question": "Afrikadagi eng katta ko‘llardan biri?",
-    "answer": "Tanganika",
-    "variant": ["Tanganika", "Viktoriya", "Malavi", "Chad"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur tarixiy shaharlaridan biri — Shahrisabz qaysi vohada joylashgan?",
-    "answer": "Qashqadaryo vohasi",
-    "variant": ["Qashqadaryo vohasi", "Surxondaryo vohasi", "Zarafshon vohasi", "Farg‘ona vohasi"]
-  },
-  {
-    "question": "Dunyoning eng katta muzliklari qaysi hududda joylashgan?",
-    "answer": "Antarktida",
-    "variant": ["Antarktida", "Grenlandiya", "Shimoliy qutb", "Islandiya"]
-  },
-  {
-    "question": "Buyuk astronom Galiley qanday ixtirosi bilan mashhur?",
-    "answer": "Teleskopni takomillashtirish",
-    "variant": ["Teleskopni takomillashtirish", "Kompasni ixtiro qilish", "Bug‘ mashinasi", "Telefon"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Pirimqul Qodirov mashhur asari?",
-    "answer": "Avlodlar dovoni",
-    "variant": ["Avlodlar dovoni", "Yulduzli tunlar", "Sarob", "O‘tkan kunlar"]
-  },
-  {
-    "question": "Dunyoning eng mashhur sharsharalaridan biri — Tugela qaysi davlatda joylashgan?",
-    "answer": "Janubiy Afrika",
-    "variant": ["Janubiy Afrika", "Namibiya", "Keniya", "Zimbabve"]
-  },
-  {
-    "question": "O‘zbekiston hududida joylashgan qadimiy shaharlaridan biri — Termiz qaysi viloyatda?",
-    "answer": "Surxondaryo",
-    "variant": ["Surxondaryo", "Buxoro", "Samarqand", "Xorazm"]
-  },
-  {
-    "question": "Dunyoning eng katta ko‘rfazlaridan biri?",
-    "answer": "Bengal ko‘rfazi",
-    "variant": ["Bengal ko‘rfazi", "Meksika ko‘rfazi", "Pers ko‘rfazi", "Aden ko‘rfazi"]
-  },
-  {
-    "question": "Buyuk yozuvchi Abdulla Qahhor mashhur asarlaridan biri?",
-    "answer": "Anor",
-    "variant": ["Anor", "Sarob", "O‘tkan kunlar", "Sinchalak"]
-  },
-  {
-    "question": "Shimoliy Amerikadagi eng mashhur sharsharalardan biri?",
-    "answer": "Niagara",
-    "variant": ["Niagara", "Iguasu", "Victoria", "Anxel"]
-  },
-  {
-    "question": "O‘zbekiston hududidagi mashhur masjidlardan biri — Hazrati Imom majmuasi qayerda joylashgan?",
-    "answer": "Toshkent",
-    "variant": ["Toshkent", "Samarqand", "Buxoro", "Andijon"]
-  },
-  {
-    "question": "Dunyoning eng mashhur muzeylaridan biri — Eremitaj qayerda joylashgan?",
-    "answer": "Sankt-Peterburg",
-    "variant": ["Sankt-Peterburg", "Moskva", "Parij", "Berlin"]
-  },
-  {
-    "question": "O‘zbekiston hududidagi mashhur qal’alardan biri — Ark qaysi shaharda?",
-    "answer": "Buxoro",
-    "variant": ["Buxoro", "Samarqand", "Xiva", "Shahrisabz"]
-  },
-  {
-    "question": "Dunyoning eng mashhur tog‘ cho‘qqilaridan biri — K2 qayerda joylashgan?",
-    "answer": "Pokiston va Xitoy",
-    "variant": ["Pokiston va Xitoy", "Nepal va Xitoy", "Hindiston va Tibet", "Butan va Hindiston"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur yozuvchilaridan biri — O‘tkir Hoshimov mashhur asari?",
-    "answer": "Ikki eshik orasi",
-    "variant": ["Ikki eshik orasi", "Dunyoning ishlari", "Sarob", "Shaytanat"]
-  },
-  {
-    "question": "Afrikadagi eng katta davlat maydon bo‘yicha?",
-    "answer": "Jazoir",
-    "variant": ["Jazoir", "Misr", "Sudan", "Efiopiya"]
-  },
-  {
-    "question": "O‘zbekiston hududidagi qadimiy yodgorliklardan biri — Shohi Zinda majmuasi qayerda?",
-    "answer": "Samarqand",
-    "variant": ["Samarqand", "Buxoro", "Xiva", "Toshkent"]
-  },
-  {
-    "question": "Dunyoning eng mashhur minoralaridan biri — CN Tower qayerda joylashgan?",
-    "answer": "Kanada",
-    "variant": ["Kanada", "AQSh", "Fransiya", "Germaniya"]
-  },
-  {
-    "question": "Buyuk olim Arximedning mashhur iborasi?",
-    "answer": "Menga tayanch nuqta bering, men Yer sharini ko‘taraman",
-    "variant": ["Menga tayanch nuqta bering, men Yer sharini ko‘taraman", "Bilim kuchdir", "Men o‘ylayman, demak men borman", "Hammasi oqimda"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur shaharlaridan biri — Qo‘qon qaysi tarixiy davrda xonlik markazi bo‘lgan?",
-    "answer": "XVIII-XIX asr",
-    "variant": ["XVIII-XIX asr", "XVI asr", "XIV-XV asr", "XX asr"]
-  },
-  {
-    "question": "Dunyoning eng katta tog‘ tizmalari?",
-    "answer": "Gimolay",
-    "variant": ["Gimolay", "And", "Alp", "Tyan-Shan"]
-  },
-  {
-    "question": "O‘zbekiston hududidagi mashhur maqbaralardan biri — Ismoil Somoniy maqbarasi qayerda?",
-    "answer": "Buxoro",
-    "variant": ["Buxoro", "Samarqand", "Xiva", "Andijon"]
-  },
-  {
-    "question": "Dunyoning eng mashhur teatrlaridan biri — Metropolitan Opera qayerda joylashgan?",
-    "answer": "Nyu-York",
-    "variant": ["Nyu-York", "London", "Moskva", "Parij"]
-  },
-  {
-    "question": "Buyuk yozuvchi Abdulla Qodiriy mashhur asarlaridan biri?",
-    "answer": "O‘tkan kunlar",
-    "variant": ["O‘tkan kunlar", "Mehrobdan chayon", "Sarob", "Yulduzli tunlar"]
-  },
-  {
-    "question": "Yevropadagi eng mashhur futbol klublaridan biri — Real Madrid qaysi davlatda?",
-    "answer": "Ispaniya",
-    "variant": ["Ispaniya", "Italiya", "Fransiya", "Angliya"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur shoirlaridan biri — Erkin Vohidov mashhur asari?",
-    "answer": "O‘zbekiston",
-    "variant": ["O‘zbekiston", "Ruhlar isyoni", "Tong nafasi", "Sarob"]
-  },
-  {
-    "question": "Dunyoning eng mashhur sharsharalaridan biri — Viktoriya qayerda joylashgan?",
-    "answer": "Zambiya va Zimbabve",
-    "variant": ["Zambiya va Zimbabve", "Braziliya va Argentina", "Venesuela", "AQSh va Kanada"]
-  },
-  {
-    "question": "O‘zbekiston hududidagi mashhur tarixiy shahar — Samarqand qachon asos solingan?",
-    "answer": "2700 yil avval",
-    "variant": ["2700 yil avval", "2000 yil avval", "1500 yil avval", "1000 yil avval"]
-  },
-  {
-    "question": "Dunyoning eng mashhur universitetlaridan biri — Tokio universiteti qayerda joylashgan?",
-    "answer": "Yaponiya",
-    "variant": ["Yaponiya", "Xitoy", "Janubiy Koreya", "Singapur"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Cho‘lpon mashhur asari?",
-    "answer": "Yorqinoy",
-    "variant": ["Yorqinoy", "Kecha va kunduz", "Buloqlar", "Tong nafasi"]
-  },
-  {
-    "question": "Afrikadagi eng mashhur sharsharalardan biri?",
-    "answer": "Victoria",
-    "variant": ["Victoria", "Niagara", "Iguasu", "Anxel"]
-  },
-  {
-    "question": "Dunyoning eng mashhur san’at muzeylaridan biri — Luvr qayerda joylashgan?",
-    "answer": "Parij",
-    "variant": ["Parij", "London", "Madrid", "Berlin"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur tarixiy shaharlaridan biri — Urganch qaysi vohada joylashgan?",
-    "answer": "Xorazm vohasi",
-    "variant": ["Xorazm vohasi", "Farg‘ona vohasi", "Surxondaryo vohasi", "Qashqadaryo vohasi"]
-  },
-  {
-    "question": "Dunyoning eng mashhur tog‘ cho‘qqilaridan biri — Montblan qayerda joylashgan?",
-    "answer": "Fransiya va Italiya",
-    "variant": ["Fransiya va Italiya", "Shveytsariya", "Avstriya", "Ispaniya"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Tohir Malik mashhur kitobi?",
-    "answer": "Shaytanat",
-    "variant": ["Shaytanat", "O‘tkan kunlar", "Yulduzli tunlar", "Sarob"]
-  },
-  {
-    "question": "Osiyodagi eng mashhur daryolardan biri?",
-    "answer": "Ganga",
-    "variant": ["Ganga", "Yanszi", "Amur", "Mekong"]
-  },
-  {
-    "question": "Dunyoning eng mashhur sportchilaridan biri — Usayn Bolt qaysi sport turi bo‘yicha mashhur?",
-    "answer": "Yugurish",
-    "variant": ["Yugurish", "Futbol", "Tennis", "Suzish"]
-  },
-  {
-    "question": "O‘zbekiston hududidagi mashhur qadimiy qal’alardan biri — Topraqqal’a qaysi davrga oid?",
-    "answer": "Kushon davriga",
-    "variant": ["Kushon davriga", "Temuriylar davriga", "Arab xalifaligi davriga", "Sovet davriga"]
-  },
-  {
-    "question": "Dunyoning eng mashhur minoralaridan biri — Burj Xalifa qayerda joylashgan?",
-    "answer": "BAA",
-    "variant": ["BAA", "Saudiya Arabistoni", "Katar", "Kuvayt"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur shoirlaridan biri — G‘afur G‘ulom mashhur asari?",
-    "answer": "Shum bola",
-    "variant": ["Shum bola", "Sarob", "Anor", "O‘tkan kunlar"]
-  },
-  {
-    "question": "Shimoliy Amerikadagi eng katta ko‘rfaz?",
-    "answer": "Meksika ko‘rfazi",
-    "variant": ["Meksika ko‘rfazi", "Bengal ko‘rfazi", "Pers ko‘rfazi", "Aden ko‘rfazi"]
-  },
-  {
-    "question": "O‘zbekiston hududida joylashgan qadimiy buddaviy yodgorliklardan biri?",
-    "answer": "Qoratepa",
-    "variant": ["Qoratepa", "Shohi Zinda", "Ulug‘bek observatoriyasi", "Gur Amir"]
-  },
-  {
-    "question": "Dunyoning eng baland faol vulqoni?",
-    "answer": "Ojos del Salado",
-    "variant": ["Ojos del Salado", "Etna", "Fudziyama", "Vezuviy"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Oybek mashhur romani?",
-    "answer": "Navoiy",
-    "variant": ["Navoiy", "Sarob", "Kecha va kunduz", "Yulduzli tunlar"]
-  },
-  {
-    "question": "Afrikadagi eng katta ko‘rfazlardan biri?",
-    "answer": "Gvineya ko‘rfazi",
-    "variant": ["Gvineya ko‘rfazi", "Aden ko‘rfazi", "Bengal ko‘rfazi", "Pers ko‘rfazi"]
-  },
-  {
-    "question": "O‘zbekiston hududidagi mashhur tarixiy yodgorliklardan biri — Minorai Kalon qayerda?",
-    "answer": "Buxoro",
-    "variant": ["Buxoro", "Samarqand", "Xiva", "Toshkent"]
-  },
-  {
-    "question": "Dunyoning eng mashhur orollardan biri — Bali qaysi davlatda joylashgan?",
-    "answer": "Indoneziya",
-    "variant": ["Indoneziya", "Filippin", "Malayziya", "Tailand"]
-  },
-  {
-    "question": "O‘zbekiston hududidagi mashhur maqbaralardan biri — Shohizinda majmuasi qayerda joylashgan?",
-    "answer": "Samarqand",
-    "variant": ["Samarqand", "Buxoro", "Xiva", "Shahrisabz"]
-  },
-  {
-    "question": "Dunyoning eng mashhur futbol jamoalaridan biri — Juventus qayerda joylashgan?",
-    "answer": "Italiya",
-    "variant": ["Italiya", "Ispaniya", "Fransiya", "Angliya"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur tarixiy shaxsi — Mirzo Ulug‘bek qaysi sohaga ko‘proq hissa qo‘shgan?",
-    "answer": "Astronomiya",
-    "variant": ["Astronomiya", "Matematika", "Tibbiyot", "Kimyo"]
-  },
-  {
-    "question": "Osiyodagi eng katta ko‘rfaz?",
-    "answer": "Bengal ko‘rfazi",
-    "variant": ["Bengal ko‘rfazi", "Pers ko‘rfazi", "Meksika ko‘rfazi", "Aden ko‘rfazi"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur yozuvchilaridan biri — O‘tkir Hoshimov mashhur qissasi?",
-    "answer": "Bahor qaytmaydi",
-    "variant": ["Bahor qaytmaydi", "Ikki eshik orasi", "Dunyoning ishlari", "Sarob"]
-  },
-  {
-    "question": "Dunyoning eng mashhur tog‘ tizmalardan biri — Alp qaysi qit’ada joylashgan?",
-    "answer": "Yevropa",
-    "variant": ["Yevropa", "Osiyo", "Janubiy Amerika", "Afrika"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur shoirlaridan biri — Erkin Vohidov mashhur dramasi?",
-    "answer": "Oltin devor",
-    "variant": ["Oltin devor", "Sarob", "Shohnoma", "Yulduzli tunlar"]
-  },
-  {
-    "question": "Dunyoning eng mashhur sharsharalaridan biri — Seljalandsfoss qayerda joylashgan?",
-    "answer": "Islandiya",
-    "variant": ["Islandiya", "Norvegiya", "Shvetsiya", "Finlyandiya"]
-  },
-  {
-    "question": "O‘zbekiston hududidagi mashhur tarixiy majmualardan biri — Ichan qal’a qayerda joylashgan?",
-    "answer": "Xiva",
-    "variant": ["Xiva", "Buxoro", "Samarqand", "Andijon"]
-  },
-  {
-    "question": "Dunyoning eng mashhur futbol jamoalaridan biri — PSG qayerda joylashgan?",
-    "answer": "Parij",
-    "variant": ["Parij", "Madrid", "Milan", "Manchester"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Cho‘lpon mashhur she’ri?",
-    "answer": "Ona tilim",
-    "variant": ["Ona tilim", "Tong nafasi", "Sarob", "Ruhlar isyoni"]
-  },
-  {
-    "question": "Afrikadagi eng mashhur tog‘ tizmalardan biri?",
-    "answer": "Atlas",
-    "variant": ["Atlas", "Drakensberg", "Kilimanjaro", "Simen"]
-  },
-  {
-    "question": "O‘zbekiston hududidagi mashhur tarixiy obidalardan biri — Ark qal’asi qayerda joylashgan?",
-    "answer": "Buxoro",
-    "variant": ["Buxoro", "Samarqand", "Toshkent", "Shahrisabz"]
-  },
-  {
-    "question": "Dunyoning eng mashhur minoralaridan biri — Big Ben qayerda joylashgan?",
-    "answer": "London",
-    "variant": ["London", "Parij", "Berlin", "Madrid"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur shoirlaridan biri — Abdulla Oripov mashhur dostoni?",
-    "answer": "Sohibqiron",
-    "variant": ["Sohibqiron", "Sarob", "Jannatga yo‘l", "O‘zbekiston"]
-  },
-  {
-    "question": "Janubiy Amerikadagi eng mashhur sharsharalardan biri?",
-    "answer": "Iguasu",
-    "variant": ["Iguasu", "Niagara", "Victoria", "Anxel"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Pirimqul Qodirov mashhur kitobi?",
-    "answer": "Qora ko‘zlar",
-    "variant": ["Qora ko‘zlar", "Avlodlar dovoni", "Yulduzli tunlar", "Sarob"]
-  },
-  {
-    "question": "Dunyoning eng mashhur muzliklaridan biri — Vatnajokull qayerda joylashgan?",
-    "answer": "Islandiya",
-    "variant": ["Islandiya", "Norvegiya", "Kanada", "Grenlandiya"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur tarixiy obidalaridan biri — Bibi Xonim masjidi qayerda joylashgan?",
-    "answer": "Samarqand",
-    "variant": ["Samarqand", "Buxoro", "Xiva", "Toshkent"]
-  },
-  {
-    "question": "Dunyoning eng mashhur futbol jamoalaridan biri — Milan qayerda joylashgan?",
-    "answer": "Italiya",
-    "variant": ["Italiya", "Ispaniya", "Fransiya", "Angliya"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Abdulla Qahhor mashhur qissasi?",
-    "answer": "Oltin yulduz",
-    "variant": ["Oltin yulduz", "Sarob", "Anor", "Sinchalak"]
-  },
-  {
-    "question": "Osiyodagi eng mashhur tog‘ tizmalardan biri?",
-    "answer": "Tyan-Shan",
-    "variant": ["Tyan-Shan", "Pamir", "Altay", "Himolay"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur shoirlaridan biri — Erkin Vohidov mashhur she’ri?",
-    "answer": "Nido",
-    "variant": ["Nido", "Ruhlar isyoni", "Tong nafasi", "O‘zbekiston"]
-  },
-  {
-    "question": "Dunyoning eng mashhur sharsharalaridan biri — Plitvice qayerda joylashgan?",
-    "answer": "Xorvatiya",
-    "variant": ["Xorvatiya", "Sloveniya", "Chexiya", "Serbiya"]
-  },
-  {
-    "question": "O‘zbekiston hududidagi mashhur tarixiy qal’alardan biri — Ayazqal’a qayerda joylashgan?",
-    "answer": "Qoraqalpog‘iston",
-    "variant": ["Qoraqalpog‘iston", "Buxoro", "Xorazm", "Samarqand"]
-  },
-  {
-    "question": "Dunyoning eng mashhur sportchilardan biri — Diego Maradona qaysi davlat fuqarosi edi?",
-    "answer": "Argentina",
-    "variant": ["Argentina", "Braziliya", "Ispaniya", "Urugvay"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Tohir Malik mashhur hikoyasi?",
-    "answer": "So‘nggi o‘q",
-    "variant": ["So‘nggi o‘q", "Shaytanat", "Sarob", "Bahor qaytmaydi"]
-  },
-  {
-    "question": "Dunyoning eng mashhur orollardan biri — Yangi Gvineya qaysi okeanda joylashgan?",
-    "answer": "Tinch okeani",
-    "variant": ["Tinch okeani", "Hind okeani", "Atlantika okeani", "Shimoliy muz okeani"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur shoirlaridan biri — G‘afur G‘ulom mashhur she’ri?",
-    "answer": "Sen yetim emassan",
-    "variant": ["Sen yetim emassan", "Shum bola", "Sarob", "Yulduzli tunlar"]
-  },
-  {
-    "question": "Dunyoning eng mashhur minoralaridan biri — Ostankino minorasi qayerda joylashgan?",
-    "answer": "Moskva",
-    "variant": ["Moskva", "Sankt-Peterburg", "Novosibirsk", "Minsk"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Cho‘lpon mashhur hikoyasi?",
-    "answer": "Sevgi va hayot",
-    "variant": ["Sevgi va hayot", "Yorqinoy", "Kecha va kunduz", "Buloqlar"]
-  },
-  {
-    "question": "Dunyoning eng mashhur teatrlaridan biri — Bolshoy teatri qaysi shaharda joylashgan?",
-    "answer": "Moskva",
-    "variant": ["Moskva", "Parij", "London", "Berlin"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur tarixiy shaharlaridan biri — Jizzax qaysi yo‘lda muhim nuqta bo‘lgan?",
-    "answer": "Buyuk Ipak yo‘li",
-    "variant": ["Buyuk Ipak yo‘li", "Arab savdo yo‘li", "Buyuk ipak dengiz yo‘li", "Yevropa savdo yo‘li"]
-  },
-  {
-    "question": "Buyuk geografik kashfiyotlar davrida Amerikani ochgan kishi kim?",
-    "answer": "Xristofor Kolumb",
-    "variant": ["Xristofor Kolumb", "Vasko da Gama", "Magellan", "Amerigo Vespucci"]
-  },
-  {
-    "question": "O‘zbekiston hududidagi eng katta ko‘l?",
-    "answer": "Aral dengizi",
-    "variant": ["Aral dengizi", "Aydarko‘l", "Sarezko‘l", "Tuzko‘l"]
-  },
-  {
-    "question": "Dunyoning eng baland hayvonlaridan biri?",
-    "answer": "Jirafa",
-    "variant": ["Jirafa", "Fil", "Gepard", "Arslon"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur tarixiy shaxsi — Jaloliddin Manguberdi qaysi asrda yashagan?",
-    "answer": "XIII asr",
-    "variant": ["XIII asr", "XI asr", "XIV asr", "XV asr"]
-  },
-  {
-    "question": "Dunyoning eng katta arxipelaglari qayerda joylashgan?",
-    "answer": "Janubi-Sharqiy Osiyo",
-    "variant": ["Janubi-Sharqiy Osiyo", "Shimoliy Amerika", "Afrika", "Yevropa"]
-  },
-  {
-    "question": "O‘zbekiston hududida joylashgan mashhur yodgorlik — Guri Amir maqbarasi kimga bag‘ishlangan?",
-    "answer": "Amir Temur",
-    "variant": ["Amir Temur", "Ulug‘bek", "Alisher Navoiy", "Ibn Sino"]
-  },
-  {
-    "question": "Dunyodagi eng chuqur okean?",
-    "answer": "Tinch okeani",
-    "variant": ["Tinch okeani", "Atlantika okeani", "Hind okeani", "Shimoliy muz okeani"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur yozuvchilaridan biri — Abdulla Qodiriy qaysi davr adibi?",
-    "answer": "XX asr boshlarida",
-    "variant": ["XX asr boshlarida", "XV asrda", "XVIII asrda", "XIX asrda"]
-  },
-  {
-    "question": "Eng qadimgi yozuvlardan biri — mixxat qayerda paydo bo‘lgan?",
-    "answer": "Shumer",
-    "variant": ["Shumer", "Misr", "Xitoy", "Hindiston"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur milliy o‘yinlaridan biri?",
-    "answer": "Ko‘pkari",
-    "variant": ["Ko‘pkari", "Chillak", "Shaxmat", "Basketbol"]
-  },
-  {
-    "question": "Dunyoning eng mashhur san’at muzeylaridan biri — Prado qayerda joylashgan?",
-    "answer": "Madrid",
-    "variant": ["Madrid", "Parij", "Berlin", "Rim"]
-  },
-  {
-    "question": "O‘zbekiston hududidagi mashhur tarixiy obidalaridan biri — Minorai Jam qayerda joylashgan?",
-    "answer": "Afg‘oniston bilan chegarada",
-    "variant": ["Afg‘oniston bilan chegarada", "Buxoro", "Samarqand", "Xorazm"]
-  },
-  {
-    "question": "Dunyoning eng baland tog‘ dovonlaridan biri?",
-    "answer": "Torong-La",
-    "variant": ["Torong-La", "Elbrus", "Altay", "Ural"]
-  },
-  {
-    "question": "O‘zbekistonning mashhur tarixiy shaxsi — Alisher Navoiy qaysi asrda yashagan?",
-    "answer": "XV asr",
-    "variant": ["XV asr", "XVI asr", "XIV asr", "XIII asr"]
-  },
-  {
-    "question": "Dunyoning eng katta ichki daryosiz hududi qayerda joylashgan?",
-    "answer": "Mongoliya",
-    "variant": ["Mongoliya", "Liviya", "Avstraliya", "Kanada"]
-  }
-]
-
-        # 200
-        diniy = [
-            {
-                "question": "Islomning nechta ustuni bor?",
-                "answer": "5 ta",
-                "variant": ["5 ta", "4 ta", "6 ta", "7 ta"]
-            },
-            {
-                "question": "Imonning nechta sharti bor?",
-                "answer": "6 ta",
-                "variant": ["6 ta", "5 ta", "7 ta", "4 ta"]
-            },
-            {
-                "question": "Qur'on nechta suradan iborat?",
-                "answer": "114 ta",
-                "variant": ["114 ta", "112 ta", "113 ta", "115 ta"]
-            },
-            {
-                "question": "Qaysi oyda ro'za tutiladi?",
-                "answer": "Ramazon",
-                "variant": ["Ramazon", "Zul-hijja", "Sha'bon", "Muharram"]
-            },
-            {
-                "question": "Musulmonlar qaysi tomonga qibla qiladi?",
-                "answer": "Ka'baga",
-                "variant": ["Ka'baga", "Quddusga", "Damashqqa", "Madina tomon"]
-            },
-            {
-                "question": "Payg'ambarimiz (s.a.v.) qaysi shaharda tug'ilganlar?",
-                "answer": "Makka",
-                "variant": ["Makka", "Madina", "Toif", "Quddus"]
-            },
-            {
-                "question": "Payg'ambarimiz (s.a.v.)ning hijrat qilgan shaharlari?",
-                "answer": "Madina",
-                "variant": ["Madina", "Toif", "Quddus", "Yamama"]
-            },
-            {
-                "question": "Hijrat sanasi milodiy qaysi yilga to'g'ri keladi?",
-                "answer": "622-yil",
-                "variant": ["622-yil", "610-yil", "632-yil", "570-yil"]
-            },
-            {
-                "question": "Qur'onning ilk nozil bo'lgan surasi qaysi?",
-                "answer": "Alaq (Iqro')",
-                "variant": ["Alaq (Iqro')", "Fotiha", "Baqara", "Qadr"]
-            },
-            {
-                "question": "Qur'onning eng uzun surasi qaysi?",
-                "answer": "Baqara",
-                "variant": ["Baqara", "Oli Imron", "Niso", "A'rof"]
-            },
-            {
-                "question": "Qur'onning eng qisqa surasi qaysi?",
-                "answer": "Kavsar",
-                "variant": ["Kavsar", "Ixlos", "Asr", "Nasr"]
-            },
-            {
-                "question": "Shahodat kalimasida kimga guvohlik beriladi?",
-                "answer": "Alloh yakkayu yagona",
-                "variant": ["Alloh yakkayu yagona", "Jabroil farishta", "Barcha payg'ambarlar", "Musulmonlar jamoasi"]
-            },
-            {
-                "question": "Islomning birinchi ustuni?",
-                "answer": "Shahodat",
-                "variant": ["Shahodat", "Namoz", "Ro'za", "Zakot"]
-            },
-            {
-                "question": "Juma kuni qaysi ibodat farz?",
-                "answer": "Juma namozi",
-                "variant": ["Juma namozi", "Tahajjud", "Tarovih", "Iyd namozi"]
-            },
-            {
-                "question": "Tarovih namozi qaysi oyda o'qiladi?",
-                "answer": "Ramazonda",
-                "variant": ["Ramazonda", "Zul-hijjada", "Sha'bonda", "Safarda"]
-            },
-            {
-                "question": "Qur'onni kim keltirgan farishta?",
-                "answer": "Jabroil (a.s.)",
-                "variant": ["Jabroil (a.s.)", "Mikoil (a.s.)", "Isrofil (a.s.)", "Azroil (a.s.)"]
-            },
-            {
-                "question": "Ka'ba qaysi shahar ichida joylashgan?",
-                "answer": "Makka",
-                "variant": ["Makka", "Madina", "Quddus", "Sana"]
-            },
-            {
-                "question": "Payg'ambarimizning otalarining ismi?",
-                "answer": "Abdulloh",
-                "variant": ["Abdulloh", "Abu Tolib", "Abdulmuttalib", "Hamza"]
-            },
-            {
-                "question": "Onalarining ismi?",
-                "answer": "Omina",
-                "variant": ["Omina", "Xadicha", "Amina", "Oisha"]
-            },
-            {
-                "question": "Rasululloh (s.a.v.)ning birinchi zavjalarining ismi?",
-                "answer": "Xadicha (r.a.)",
-                "variant": ["Xadicha (r.a.)", "Oisha (r.a.)", "Hafsa (r.a.)", "Zaynab (r.a.)"]
-            },
-            {
-                "question": "Islomda ikki katta hayit nomlari?",
-                "answer": "Iyd al-Fitr va Iyd al-Adha",
-                "variant": ["Iyd al-Fitr va Iyd al-Adha", "Navro'z va Qurban", "Fitr va Ramazon", "Qadr va Arafat"]
-            },
-            {
-                "question": "Qaysi kecha 'Laylatul Qadr' deb ataladi?",
-                "answer": "Qadr kechasi",
-                "variant": ["Qadr kechasi", "Baraat kechasi", "Miraj kechasi", "Arafa kechasi"]
-            },
-            {
-                "question": "Zakat kimlarga berilmaydi?",
-                "answer": "Boy (nisobdan ortiq) odamlarga",
-                "variant": ["Boy (nisobdan ortiq) odamlarga", "Faqirlarga", "Musofirlarga", "Qarzdorlarga"]
-            },
-            {
-                "question": "Haj qaysi oydagi farz ibodat?",
-                "answer": "Zul-hijja",
-                "variant": ["Zul-hijja", "Ramazon", "Muharram", "Rabi'ul avval"]
-            },
-            {
-                "question": "Qaysi shaharda Masjidun Nabaviy joylashgan?",
-                "answer": "Madina",
-                "variant": ["Madina", "Makka", "Quddus", "Kufa"]
-            },
-            {
-                "question": "Masjidul Aqso qayerda?",
-                "answer": "Quddus",
-                "variant": ["Quddus", "Makka", "Madina", "Dimashq"]
-            },
-            {
-                "question": "Qur'on qaysi tilda nozil bo'lgan?",
-                "answer": "Arab tilida",
-                "variant": ["Arab tilida", "Ibroniycha", "Forscha", "Aramiycha"]
-            },
-            {
-                "question": "Payg'ambarimizning so'nggi hajlari nima deb ataladi?",
-                "answer": "Vido haj",
-                "variant": ["Vido haj", "Qudrat haj", "Avvalgi haj", "Umra haj"]
-            },
-            {
-                "question": "Bir kunda farz namozlari jami nechta rakat?",
-                "answer": "17 rakat",
-                "variant": ["17 rakat", "12 rakat", "15 rakat", "20 rakat"]
-            },
-            {
-                "question": "Fotiha surasida nechta oyat bor?",
-                "answer": "7 oyat",
-                "variant": ["7 oyat", "6 oyat", "8 oyat", "5 oyat"]
-            },
-            {
-                "question": "Ro'za ochish vaqti qanday ataladi?",
-                "answer": "Iftor",
-                "variant": ["Iftor", "Saharlik", "Qiyom", "Tarovih"]
-            },
-            {
-                "question": "Ro'za boshlashdan oldingi taom nima deyiladi?",
-                "answer": "Saharlik",
-                "variant": ["Saharlik", "Iftor", "Sunnat", "Qiyom"]
-            },
-            {
-                "question": "Qaysi farishta ruhlarni oladi?",
-                "answer": "Azroil (a.s.)",
-                "variant": ["Azroil (a.s.)", "Jabroil (a.s.)", "Mikoil (a.s.)", "Isrofil (a.s.)"]
-            },
-            {
-                "question": "Qiyomat kuni karnay chaladigan farishta?",
-                "answer": "Isrofil (a.s.)",
-                "variant": ["Isrofil (a.s.)", "Jabroil (a.s.)", "Azroil (a.s.)", "Munkar (a.s.)"]
-            },
-            {
-                "question": "Qabrda savol beradigan farishtalar kimlar?",
-                "answer": "Munkar va Nakir",
-                "variant": ["Munkar va Nakir", "Jabroil va Mikoil", "Rizvon va Molik", "Harut va Marut"]
-            },
-            {
-                "question": "Parhezli bo'lish ma'nosidagi arabcha so'z?",
-                "answer": "Taqvo",
-                "variant": ["Taqvo", "Sabr", "Shukr", "Ihson"]
-            },
-            {
-                "question": "'Bismillahir rohmanir rohim' nima deyiladi?",
-                "answer": "Basmala",
-                "variant": ["Basmala", "Tahlil", "Tasbih", "Takbir"]
-            },
-            {
-                "question": "Allohdan o'zga iloh yo'qligiga guvohlik kalimasi?",
-                "answer": "La ilaha illalloh",
-                "variant": ["La ilaha illalloh", "Subhanalloh", "Alhamdulillah", "Allohu akbar"]
-            },
-            {
-                "question": "Namozni buzadigan holatlardan biri?",
-                "answer": "Gapirish",
-                "variant": ["Gapirish", "Sukut saqlash", "Qibla tomonga turish", "Qiroat o'qish"]
-            },
-            {
-                "question": "Tahorat qaysi ibodat uchun shart?",
-                "answer": "Namoz",
-                "variant": ["Namoz", "Ro'za", "Haj", "Zakot"]
-            },
-            {
-                "question": "Iyd al-Adhada qaysi amal qilinadi?",
-                "answer": "Qurbonlik",
-                "variant": ["Qurbonlik", "Tarovih", "Saharlik", "Fitra"]
-            },
-            {
-                "question": "Fitra sadaqasi qaysi hayit oldidan beriladi?",
-                "answer": "Iyd al-Fitr",
-                "variant": ["Iyd al-Fitr", "Iyd al-Adha", "Navro'z", "Juma"]
-            },
-            {
-                "question": "Islomning so'nggi payg'ambari kim?",
-                "answer": "Muhammad (s.a.v.)",
-                "variant": ["Muhammad (s.a.v.)", "Iso (a.s.)", "Muso (a.s.)", "Ibrohim (a.s.)"]
-            },
-            {
-                "question": "Qur'onda ko'p takrorlangan ism?",
-                "answer": "Alloh",
-                "variant": ["Alloh", "Muso", "Iso", "Ibrohim"]
-            },
-            {
-                "question": "Musulmonlar uchun muqaddas ikki shahar?",
-                "answer": "Makka va Madina",
-                "variant": ["Makka va Madina", "Quddus va Kufa", "Bag'dod va Basra", "Damashq va Qohira"]
-            },
-            {
-                "question": "Islom taqvimida birinchi oy?",
-                "answer": "Muharram",
-                "variant": ["Muharram", "Safar", "Ramazon", "Zul-hijja"]
-            },
-            {
-                "question": "Ashuro kuni qaysi oyda?",
-                "answer": "Muharram",
-                "variant": ["Muharram", "Ramazon", "Rabi'ul avval", "Sha'bon"]
-            },
-            {
-                "question": "Qur'onga eng ko'p sharh yozilgan sura?",
-                "answer": "Baqara",
-                "variant": ["Baqara", "Fotiha", "Niso", "Yosin"]
-            },
-            {
-                "question": "'Yosin' qaysi suraning nomi?",
-                "answer": "36-sura",
-                "variant": ["36-sura", "36-oyat", "30-sura", "60-sura"]
-            },
-            {
-                "question": "Qur'onda Maryam nomli sura bormi?",
-                "answer": "Ha, bor",
-                "variant": ["Ha, bor", "Yo'q", "Faqat oyat bor", "Faqat hadisda"]
-            },
-            {
-                "question": "Farz namozdan keyin ko'p aytiladigan tasbehlar yig'indisi?",
-                "answer": "33x Subhanalloh, 33x Alhamdulillah, 34x Allohu akbar",
-                "variant": ["33x Subhanalloh, 33x Alhamdulillah, 34x Allohu akbar", "30x hammasi", "40x hammasi", "25x hammasi"]
-            },
-            {
-                "question": "Islomda taom boshlash odobi?",
-                "answer": "Bismillah bilan",
-                "variant": ["Bismillah bilan", "Salom bilan", "Takbir bilan", "Sukut bilan"]
-            },
-            {
-                "question": "Zamzam suvi qayerdan chiqadi?",
-                "answer": "Makka",
-                "variant": ["Makka", "Madina", "Quddus", "Toif"]
-            },
-            {
-                "question": "Ka'bani kimlar tiklaganlar (yangilaganlar)?",
-                "answer": "Ibrohim va Ismoil (a.s.)",
-                "variant": ["Ibrohim va Ismoil (a.s.)", "Muso va Horun (a.s.)", "Dovud va Sulaymon (a.s.)", "Nuh va Idris (a.s.)"]
-            },
-            {
-                "question": "Qur'onda qaysi til ishlatilgan uslub?",
-                "answer": "Fasih arab tili",
-                "variant": ["Fasih arab tili", "Ammiya arab tili", "Fors aralash", "Ibroniy aralash"]
-            },
-            {
-                "question": "Namozning boshlanish takbiri nima deyiladi?",
-                "answer": "Takbiratul ihrom",
-                "variant": ["Takbiratul ihrom", "Taslim", "Qiroat", "Ruku'"]
-            },
-            {
-                "question": "Namoz yakunida aytiladigan salom nima deyiladi?",
-                "answer": "Taslim",
-                "variant": ["Taslim", "Takbir", "Qiyom", "Tashahhud"]
-            },
-            {
-                "question": "Tahoratdagi farz a'zolardan biri?",
-                "answer": "Yuzni yuvish",
-                "variant": ["Yuzni yuvish", "Soch tarash", "Quloq orqasini artish", "Tizzani silash"]
-            },
-            {
-                "question": "Umra nima?",
-                "answer": "Kichik haj amali",
-                "variant": ["Kichik haj amali", "Ziyofat", "Fitr sadaqasi", "Tarovih"]
-            },
-            {
-                "question": "Qibla dastlab qayerga bo'lgan?",
-                "answer": "Masjidul Aqso",
-                "variant": ["Masjidul Aqso", "Ka'ba", "Toif", "Madina"]
-            },
-            {
-                "question": "Qiblani Makka tomoniga o'zgartirish voqeasi qayerda bo'lgan?",
-                "answer": "Madina",
-                "variant": ["Madina", "Makka", "Quddus", "Badr"]
-            },
-            {
-                "question": "Badr g'azoti qaysi yilda bo'lgan? (hijriy)",
-                "answer": "2-yil",
-                "variant": ["2-yil", "1-yil", "3-yil", "4-yil"]
-            },
-            {
-                "question": "Uhud g'azoti qaysi yilda? (hijriy)",
-                "answer": "3-yil",
-                "variant": ["3-yil", "2-yil", "4-yil", "5-yil"]
-            },
-            {
-                "question": "Hudaybiya sulhi qaysi yilda? (hijriy)",
-                "answer": "6-yil",
-                "variant": ["6-yil", "5-yil", "7-yil", "4-yil"]
-            },
-            {
-                "question": "Makka fathi qaysi yilda? (hijriy)",
-                "answer": "8-yil",
-                "variant": ["8-yil", "9-yil", "7-yil", "10-yil"]
-            },
-            {
-                "question": "Qur'onda eng ko'p tilga olingan payg'ambar?",
-                "answer": "Muso (a.s.)",
-                "variant": ["Muso (a.s.)", "Ibrohim (a.s.)", "Iso (a.s.)", "Nuh (a.s.)"]
-            },
-            {
-                "question": "Payg'ambarimizga birinchi iymon keltirgan ayol kim?",
-                "answer": "Xadicha (r.a.)",
-                "variant": ["Xadicha (r.a.)", "Oisha (r.a.)", "Hafsa (r.a.)", "Zaynab (r.a.)"]
-            },
-            {
-                "question": "Erkaklar uchun jamoat bilan o'qilishi kuchli tavsiya etilgan namoz?",
-                "answer": "Jamoat namozi",
-                "variant": ["Jamoat namozi", "Vitr", "Duha", "Ishroq"]
-            },
-            {
-                "question": "Islomda halol eng muhim tamoyil?",
-                "answer": "Halol mehnat va halol rizq",
-                "variant": ["Halol mehnat va halol rizq", "Faqat sadaqa", "Faqat zakot", "Faqat ro'za"]
-            },
-            {
-                "question": "'Bismilloh' aytmasdan hayvon so'yish hukmi?",
-                "answer": "Joiz emas (harom)",
-                "variant": ["Joiz emas (harom)", "Makruh", "Muboh", "Savob"]
-            },
-            {
-                "question": "Islomda g'iybat nima?",
-                "answer": "Kishining yo'qida yomon gapirish",
-                "variant": ["Kishining yo'qida yomon gapirish", "Yolg'on gapirish", "Qasam ichish", "Savob so'z"]
-            },
-            {
-                "question": "Haram va Halol chegaralari to'plami nima deyiladi?",
-                "answer": "Shariat",
-                "variant": ["Shariat", "Fiqh", "Tafsir", "Hadis"]
-            },
-            {
-                "question": "Hadislarni yig'gan olimlardan biri?",
-                "answer": "Imom Buxoriy",
-                "variant": ["Imom Buxoriy", "Imom Matrudiy", "Imom G'azzoliy", "Imom Termiziy"]
-            },
-            {
-                "question": "Imom Buxoriyning mashhur to'plami nomi?",
-                "answer": "Al-Jome' as-Sahih",
-                "variant": ["Al-Jome' as-Sahih", "Ar-Risola", "Ihyo", "Sunan"]
-            },
-            {
-                "question": "'Sunan' to'plamlar muallifi bo'lgan muhaddis?",
-                "answer": "Imom Termiziy",
-                "variant": ["Imom Termiziy", "Imom Buxoriy", "Imom Muslim", "Imom Shofe'iy"]
-            },
-            {
-                "question": "Qur'on tafsiriga nima deyiladi?",
-                "answer": "Tafsir",
-                "variant": ["Tafsir", "Hadis", "Fiqh", "Nahv"]
-            },
-            {
-                "question": "Zikr so'zining ma'nosi?",
-                "answer": "Eslash (Allohni yod etish)",
-                "variant": ["Eslash (Allohni yod etish)", "Qasam", "Duo", "Marosim"]
-            },
-            {
-                "question": "Duo nima?",
-                "answer": "Allohdan so'rash",
-                "variant": ["Allohdan so'rash", "Odamdan so'rash", "Sadaka berish", "Kitob o'qish"]
-            },
-            {
-                "question": "Qur'onni yod olgan kishiga nima deyiladi?",
-                "answer": "Hofiz",
-                "variant": ["Hofiz", "Qoriy", "Mufassir", "Muhaddis"]
-            },
-            {
-                "question": "Qur'onni chiroyli ohangda o'qiydigan kishi?",
-                "answer": "Qoriy",
-                "variant": ["Qoriy", "Hofiz", "Faqih", "Imom"]
-            },
-            {
-                "question": "Namozda ruku'dan keyingi holat?",
-                "answer": "Qavma",
-                "variant": ["Qavma", "Sajda", "Jalsa", "Tashahhud"]
-            },
-            {
-                "question": "Ikki sajda orasidagi o'tirish nima deyiladi?",
-                "answer": "Jalsa",
-                "variant": ["Jalsa", "Qavma", "Tawarruk", "Iftirash"]
-            },
-            {
-                "question": "Tashahhudda o'qiladigan salovot nomi?",
-                "answer": "Durood (Salovot)",
-                "variant": ["Durood (Salovot)", "Basmala", "Takbir", "Tasbih"]
-            },
-            {
-                "question": "Musulmonlar uchun muqaddas kitoblar ichidan oxirgisi?",
-                "answer": "Qur'on",
-                "variant": ["Qur'on", "Injil", "Tavrot", "Zabur"]
-            },
-            {
-                "question": "Qur'onda necha juz' bor?",
-                "answer": "30 juz'",
-                "variant": ["30 juz'", "20 juz'", "40 juz'", "25 juz'"]
-            },
-            {
-                "question": "Qur'onda necha para bor deb ham yuritiladi?",
-                "answer": "30 para",
-                "variant": ["30 para", "20 para", "15 para", "40 para"]
-            },
-            {
-                "question": "Laylatul Qadr qaysi oylik kechalarda qidiriladi?",
-                "answer": "Ramazon oxirgi toq kechalari",
-                "variant": ["Ramazon oxirgi toq kechalari", "Sha'bon boshida", "Zul-hijja o'rtasi", "Muharram boshida"]
-            },
-            {
-                "question": "Iymonning bir shoxi nima? (hadis mazmuni)",
-                "answer": "Yo'ldan ozorli narsani olib tashlash",
-                "variant": ["Yo'ldan ozorli narsani olib tashlash", "Suv ichish", "Uyqu", "Savdo"]
-            },
-            {
-                "question": "Ro'za tutilmagan kunda ataylab yeyish hukmi?",
-                "answer": "Gunoh",
-                "variant": ["Gunoh", "Savob", "Muboh", "Farz"]
-            },
-            {
-                "question": "Islomning muhim fazilatlaridan biri?",
-                "answer": "Adolat",
-                "variant": ["Adolat", "Isrof", "Kibr", "Hasad"]
-            },
-            {
-                "question": "Islomiy salomlashish so'zi?",
-                "answer": "Assalomu alaykum",
-                "variant": ["Assalomu alaykum", "Marhaba", "Salamun qawla", "Xayrli tong"]
-            },
-            {
-                "question": "Salomga qanday javob beriladi?",
-                "answer": "Va alaykum assalom",
-                "variant": ["Va alaykum assalom", "Rahmat", "Yaxshi", "Alaykum"]
-            },
-            {
-                "question": "Islomda eng og'ir gunohlardan biri?",
-                "answer": "Shirk",
-                "variant": ["Shirk", "Gunoh", "Kibr", "Hasad"]
-            },
-            {
-                "question": "Allohning payg'ambarlariga ishonish nimaning ichida?",
-                "answer": "Imon shartlari",
-                "variant": ["Imon shartlari", "Islom ustunlari", "Fur'iy masala", "Mustahab ish"]
-            },
-            {
-                "question": "Jannat darvozaboni farishta kim?",
-                "answer": "Rizvon",
-                "variant": ["Rizvon", "Molik", "Munkar", "Nakir"]
-            },
-            {
-                "question": "Do'zax qo'riqchisi farishta kim?",
-                "answer": "Molik",
-                "variant": ["Molik", "Rizvon", "Jabroil", "Isrofil"]
-            },
-            {
-                "question": "Halol va haromni o'rgatadigan ilm?",
-                "answer": "Fiqh",
-                "variant": ["Fiqh", "Tafsir", "Hadis", "Aqida"]
-            },
-            {
-                "question": "Aqida ilmi nimani bayon qiladi?",
-                "answer": "Imon asoslarini",
-                "variant": ["Imon asoslarini", "Amallar tafsilini", "Til qoidalarini", "Tadbir usullarini"]
-            },
-            {
-                "question": "Islomda poklikning yarmi nima? (hadis)",
-                "answer": "Tahorat (poklik)",
-                "variant": ["Tahorat (poklik)", "Ro'za", "Zakot", "Haj"]
-            },
-            {
-                "question": "Sadaqa kimlar uchun savob?",
-                "answer": "Barchaga",
-                "variant": ["Barchaga", "Faqat boylarga", "Faqat ulamolarga", "Faqat safarda"]
-            },
-            {
-                "question": "Payg'ambarimizning laqablari orasida?",
-                "answer": "Al-Amin",
-                "variant": ["Al-Amin", "As-Sabir", "Al-Hakim", "Al-Mujtahid"]
-            },
-            {
-                "question": "Masjidga o'ng oyoq bilan kirish odobi nima deyiladi?",
-                "answer": "Sunnat",
-                "variant": ["Sunnat", "Farz", "Wajib", "Muboh"]
-            },
-            {
-                "question": "Tahajjud namozi qachon o'qiladi?",
-                "answer": "Tun oxirida",
-                "variant": ["Tun oxirida", "Bomdoddan so'ng", "Peshinda", "Asrda"]
-            },
-            {
-                "question": "Quloqqa azon aytish kimga sunnat?",
-                "answer": "Yangi tug'ilgan chaqaloqqa",
-                "variant": ["Yangi tug'ilgan chaqaloqqa", "Nikohda", "Hajda", "Safarda"]
-            },
-            {
-                "question": "Nikohdagi guvohlar soni kamida?",
-                "answer": "2 kishi",
-                "variant": ["2 kishi", "1 kishi", "3 kishi", "4 kishi"]
-            },
-            {
-                "question": "Halol daromadning ziddi nima?",
-                "answer": "Harom",
-                "variant": ["Harom", "Makruh", "Muboh", "Mustahab"]
-            },
-            {
-                "question": "Bismillahdan keyin ko'p aytiladigan hamd so'zi?",
-                "answer": "Alhamdulillah",
-                "variant": ["Alhamdulillah", "Subhanalloh", "Astaghfirullah", "La havla"]
-            },
-            {
-                "question": "Payg'ambarimizning so'nggi va'zlari qayerda eshitilgan?",
-                "answer": "Vido xutbasi Arafotda",
-                "variant": ["Vido xutbasi Arafotda", "Masjidul Haramda", "Masjidun Nabaviyda", "Mino vodiyda"]
-            },
-            {
-                "question": "Sa'y amali qaysi ikki joy oralig'ida?",
-                "answer": "Safa va Marva",
-                "variant": ["Safa va Marva", "Arafa va Muzdalifa", "Mino va Arafot", "Safa va Ka'ba"]
-            },
-            {
-                "question": "Arafotda turish hajsiz bo'ladimi?",
-                "answer": "Yo'q, hajning rukunidir",
-                "variant": ["Yo'q, hajning rukunidir", "Ha, ixtiyoriy", "Faqat umrada kerak", "Faqat sunnat"]
-            },
-            {
-                "question": "Qur'onda 'Allohu Samad' qaysi surada?",
-                "answer": "Ixlos",
-                "variant": ["Ixlos", "Falaq", "Nas", "Kavsar"]
-            },
-            {
-                "question": "Mu'awwizatayn deb qaysi suralar ataladi?",
-                "answer": "Falaq va Nas",
-                "variant": ["Falaq va Nas", "Ixlos va Nas", "Ixlos va Falaq", "Kavsar va Nasr"]
-            },
-            {
-                "question": "Bismillahdan oldin 'Ta'awwuz' qanday?",
-                "answer": "A'uzu billahi minash shaytonir rojiym",
-                "variant": ["A'uzu billahi minash shaytonir rojiym", "La ilaha illalloh", "Allohu akbar", "Subhanalloh"]
-            },
-            {
-                "question": "Qur'onda 'Bismillah' bo'lmagan sura?",
-                "answer": "Tavba",
-                "variant": ["Tavba", "Fatiha", "Naml", "Yunus"]
-            },
-            {
-                "question": "Payg'ambarimizning tog'alari ichidan mashhuri?",
-                "answer": "Vahshiy emas, Abu Tolib amakilari",
-                "variant": ["Abu Tolib (amaki)", "Abu Sufyon", "Abu Lahab", "Abu Hurayra"]
-            },
-            {
-                "question": "Makka va Madina qanday shaharlardir?",
-                "answer": "Haram shaharlari",
-                "variant": ["Haram shaharlari", "Faqat ziyorat shaharlari", "Fath shaharlari", "Savdo shaharlari"]
-            },
-            {
-                "question": "Zikrning eng afzali? (hadis)",
-                "answer": "La ilaha illalloh",
-                "variant": ["La ilaha illalloh", "Subhanalloh", "Allohu akbar", "Alhamdulillah"]
-            },
-            {
-                "question": "Dunyoviy ilmni o'rganish islomda?",
-                "answer": "Ruxsat va foydali",
-                "variant": ["Ruxsat va foydali", "Man qilingan", "Faqat ulamoga", "Faqat hajda"]
-            },
-            {
-                "question": "Zakotning maqsadi?",
-                "answer": "Molni poklash va muhtojga yordam",
-                "variant": ["Molni poklash va muhtojga yordam", "Faqat savob", "Boyish", "Urushga tayyorlanish"]
-            },
-            {
-                "question": "Ro'zaning ma'nosi lug'atan?",
-                "answer": "Tutilish",
-                "variant": ["Tutilish", "Yeyish", "Ichish", "Uyqu"]
-            },
-            {
-                "question": "Namozdagi ikki sajda nima deb ataladi?",
-                "answer": "Sajdatayn",
-                "variant": ["Sajdatayn", "Rukatayn", "Qiyomatayn", "Taslimayn"]
-            },
-            {
-                "question": "Payg'ambarimizning hali vahiy tushmagan davrda bo'lgan ko'rishlari?",
-                "answer": "Ruyoi soliha",
-                "variant": ["Ruyoi soliha", "Kashf", "Karomat", "Mo'jiza"]
-            },
-            {
-                "question": "Mo'jiza kimga xos?",
-                "answer": "Payg'ambarlar",
-                "variant": ["Payg'ambarlar", "Avliyolar", "Hamma mo'minlar", "Ulamolar"]
-            },
-            {
-                "question": "Karomat kimga xos?",
-                "answer": "Avliyolar",
-                "variant": ["Avliyolar", "Payg'ambarlar", "Farishtalar", "Hamma odamlar"]
-            },
-            {
-                "question": "Allohning so'nggi Kitobi?",
-                "answer": "Qur'on",
-                "variant": ["Qur'on", "Injil", "Tavrot", "Suhuf"]
-            },
-            {
-                "question": "Islomda ichkilikka hukm?",
-                "answer": "Harom",
-                "variant": ["Harom", "Makruh", "Muboh", "Mustahab"]
-            },
-            {
-                "question": "Qimor o'ynashning hukmi?",
-                "answer": "Harom",
-                "variant": ["Harom", "Makruh", "Muboh", "Mustahab"]
-            },
-            {
-                "question": "Ota-onaga munosabat qanday bo'lishi kerak?",
-                "answer": "Ehtirom va itoat (ma'siyatda emas)",
-                "variant": ["Ehtirom va itoat (ma'siyatda emas)", "Faqat itoat", "Faqat ehtirom", "Beparvo"]
-            },
-            {
-                "question": "Islomda eng fazilatli kunlardan biri?",
-                "answer": "Juma",
-                "variant": ["Juma", "Dushanba", "Seshanba", "Payshanba"]
-            },
-            {
-                "question": "Peyg'ambarimizning tavallud oylari? (ko'pchilik rivoyat)",
-                "answer": "Rabi'ul avval",
-                "variant": ["Rabi'ul avval", "Ramazon", "Muharram", "Zul-hijja"]
-            },
-            {
-                "question": "Miqot nima?",
-                "answer": "Ihromga kirish chegarasi",
-                "variant": ["Ihromga kirish chegarasi", "Sa'y joyi", "Tawof joyi", "Arafot tog'i"]
-            },
-            {
-                "question": "Ihromda taqiqlangan ish?",
-                "answer": "Soch olish",
-                "variant": ["Soch olish", "Zikr", "Duo", "Namoz"]
-            },
-            {
-                "question": "Tawof nima?",
-                "answer": "Ka'ba atrofida aylanish",
-                "variant": ["Ka'ba atrofida aylanish", "Safa-Marvada yugurish", "Arafotda turish", "Muzdalifada to'xtash"]
-            },
-            {
-                "question": "Sunnatning manbasi nima?",
-                "answer": "Payg'ambar (s.a.v.) so'z, amal va taqdirlari",
-                "variant": ["Payg'ambar (s.a.v.) so'z, amal va taqdirlari", "Sahobalar ixtilofi", "Faqihlar fatvosi", "Tariqatlar urfi"]
-            },
-            {
-                "question": "Sahobalar kimlar?",
-                "answer": "Rasulullohni ko'rib iymon keltirganlar",
-                "variant": ["Rasulullohni ko'rib iymon keltirganlar", "Faqat ulamolar", "Faqat ahli bayt", "Faqat muhajirlar"]
-            },
-            {
-                "question": "Muhajirlar kimlar?",
-                "answer": "Makkadan hijrat qilganlar",
-                "variant": ["Makkadan hijrat qilganlar", "Madinada kutib olganlar", "Ansorlar", "Tobe'inlar"]
-            },
-            {
-                "question": "Ansorlar kimlar?",
-                "answer": "Madinada Payg'ambarni qo'llab-quvvatlaganlar",
-                "variant": ["Madinada Payg'ambarni qo'llab-quvvatlaganlar", "Makkadan kelganlar", "Badr ahli", "Uhud ahli"]
-            },
-            {
-                "question": "Haj paytida tashlanadigan toshlar nima deb ataladi?",
-                "answer": "Jamrat",
-                "variant": ["Jamrat", "Sa'y", "Tawof", "Ihrom"]
-            },
-            {
-                "question": "Musulmonlarning birinchi qiblasi qayer bo'lgan?",
-                "answer": "Quddus",
-                "variant": ["Quddus", "Makka", "Madina", "Toif"]
-            },
-            {
-                "question": "Payg'ambarimiz (s.a.v.)ning eng yaqin sahobalaridan birinchisi kim edi?",
-                "answer": "Abu Bakr (r.a.)",
-                "variant": ["Abu Bakr (r.a.)", "Umar (r.a.)", "Ali (r.a.)", "Usmon (r.a.)"]
-            },
-            {
-                "question": "Qur'ondagi eng qisqa oyat qaysi?",
-                "answer": "Mudassir surasi 3-oyati",
-                "variant": ["Mudassir surasi 3-oyati", "Kavsar surasi 1-oyati", "Asr surasi 2-oyati", "Ixlos surasi 1-oyati"]
-            },
-            {
-                "question": "Payg'ambarimiz (s.a.v.) qachon vafot etganlar?",
-                "answer": "632-yilda",
-                "variant": ["632-yilda", "622-yilda", "630-yilda", "640-yilda"]
-            },
-            {
-                "question": "Qur'ondagi eng ko'p takrorlangan so'z qaysi?",
-                "answer": "Alloh",
-                "variant": ["Alloh", "Imon", "Islom", "Rahmat"]
-            },
-            {
-                "question": "Musulmonlarga qaysi hayvondan go'sht yeyish harom qilingan?",
-                "answer": "Cho'chqa",
-                "variant": ["Cho'chqa", "Qo'y", "Sigir", "Tovuq"]
-            },
-            {
-                "question": "Qur'onda qaysi kechaga ming oydan afzal deyiladi?",
-                "answer": "Qadr kechasi",
-                "variant": ["Qadr kechasi", "Baraat kechasi", "Miraj kechasi", "Juma kechasi"]
-            },
-            {
-                "question": "Payg'ambarimiz (s.a.v.)ning amakilari ichidan musulmon bo'lganlari kim?",
-                "answer": "Hamza (r.a.)",
-                "variant": ["Hamza (r.a.)", "Abu Lahab", "Abbas", "Haris"]
-            },
-            {
-                "question": "Ro'zada og'izni ochish odobi nima?",
-                "answer": "Xurmo bilan ochish",
-                "variant": ["Xurmo bilan ochish", "Non bilan ochish", "Suv bilan ochish", "Har xil taom bilan"]
-            },
-            {
-                "question": "Islomda eng katta bayramlardan biri nima?",
-                "answer": "Qurbon hayiti",
-                "variant": ["Qurbon hayiti", "Navro'z", "Juma", "Mehnat kuni"]
-            },
-            {
-                "question": "Qur'onda nechta payg'ambar ismi tilga olingan?",
-                "answer": "25 ta",
-                "variant": ["25 ta", "20 ta", "30 ta", "40 ta"]
-            },
-            {
-                "question": "Payg'ambarimiz (s.a.v.)ga birinchi vahiy qaysi so'z bilan boshlangan?",
-                "answer": "Iqro'",
-                "variant": ["Iqro'", "Bismillah", "Subhanalloh", "Allohu Akbar"]
-            },
-            {
-                "question": "Islomda farz namozlar soni nechta?",
-                "answer": "5 ta",
-                "variant": ["5 ta", "4 ta", "6 ta", "3 ta"]
-            },
-            {
-                "question": "Farz namozlarning nomlari qaysilar?",
-                "answer": "Bomdod, Peshin, Asr, Shom, Xufton",
-                "variant": ["Bomdod, Peshin, Asr, Shom, Xufton", "Bomdod, Duha, Asr, Shom, Vitr", "Bomdod, Peshin, Asr, Shom, Juma", "Bomdod, Peshin, Asr, Tarovih, Xufton"]
-            },
-            {
-                "question": "Bir kunda farz rakatlari taqsimoti to‘g‘ri qatorni toping (Hanafi)",
-                "answer": "2+4+4+3+4",
-                "variant": ["2+4+4+3+4", "2+4+2+3+4", "4+4+4+3+2", "2+2+4+3+4"]
-            },
-            {
-                "question": "To‘rt xalifa tartibi to‘g‘ri ko‘rsatilgan qator qaysi?",
-                "answer": "Abu Bakr, Umar, Usmon, Ali",
-                "variant": ["Abu Bakr, Umar, Usmon, Ali", "Umar, Abu Bakr, Ali, Usmon", "Abu Bakr, Usmon, Umar, Ali", "Ali, Usmon, Umar, Abu Bakr"]
-            },
-            {
-                "question": "Imom Muslimning mashhur hadis to‘plami nomi?",
-                "answer": "Sahih Muslim",
-                "variant": ["Sahih Muslim", "Sunan Abu Dovud", "Sahih Buxoriy", "Sunan an-Nasoiy"]
-            },
-            {
-                "question": "Mushafni bir nusxaga jamlashni keng yoygan xalifa kim?",
-                "answer": "Usmon (r.a.)",
-                "variant": ["Usmon (r.a.)", "Abu Bakr (r.a.)", "Umar (r.a.)", "Ali (r.a.)"]
-            },
-            {
-                "question": "Vahiyning kotibi bo‘lgan sahobalardan biri?",
-                "answer": "Zayd ibn Sobit (r.a.)",
-                "variant": ["Zayd ibn Sobit (r.a.)", "Abu Hurayra (r.a.)", "Anas ibn Molik (r.a.)", "Abdulloh ibn Umar (r.a.)"]
-            },
-            {
-                "question": "Janaza namozida nechta takbir bor?",
-                "answer": "4 ta",
-                "variant": ["4 ta", "3 ta", "5 ta", "2 ta"]
-            },
-            {
-                "question": "Janaza namozida ruku’ va sajda bormi?",
-                "answer": "Yo‘q",
-                "variant": ["Yo‘q", "Faqat ruku’ bor", "Faqat sajda bor", "Ikkalasi ham bor"]
-            },
-            {
-                "question": "G‘uslning farzlari (Hanafi) nechta?",
-                "answer": "3 ta",
-                "variant": ["3 ta", "2 ta", "4 ta", "5 ta"]
-            },
-            {
-                "question": "G‘uslning farzlariga qaysi to‘g‘ri kiradi?",
-                "answer": "Og‘izni chayish, burunni chayish, butun badanni yuvish",
-                "variant": [
-                "Og‘izni chayish, burunni chayish, butun badanni yuvish",
-                "Faqat boshga masah, qo‘l-oyoq yuvish",
-                "Faqat badan yuvish",
-                "Faqat qo‘l va oyoq yuvish"
-                ]
-            },
-            {
-                "question": "Tayammum qachon joiz bo‘ladi?",
-                "answer": "Suv topilmasa yoki zarar yetkazsa",
-                "variant": ["Suv topilmasa yoki zarar yetkazsa", "Har doim suv o‘rniga", "Faqat safarda emas", "Faqat kasal bo‘lsa ham bo‘lmaydi"]
-            },
-            {
-                "question": "Vitr so‘zining lug‘aviy ma’nosi?",
-                "answer": "Toq",
-                "variant": ["Toq", "Juft", "Ko‘p", "Kam"]
-            },
-            {
-                "question": "Isro voqeasida qaysi yo‘l bosib o‘tilgan?",
-                "answer": "Masjidul Haromdan Masjidul Aqsoga",
-                "variant": ["Masjidul Haromdan Masjidul Aqsoga", "Masjidun Nabaviydan Ka‘baga", "Arafatdan Muzdalifaga", "Safa va Marvaga"]
-            },
-            {
-                "question": "Mikoil (a.s.)ning vazifasi nimalarga bog‘liq?",
-                "answer": "Rizq va tabiat (yomg‘ir) ishlari",
-                "variant": ["Rizq va tabiat (yomg‘ir) ishlari", "Vahiy yetkazish", "Ruhlarni olish", "Sur chalinishi"]
-            },
-            {
-                "question": "“Kirāman Kātibīn” kimlar?",
-                "answer": "Amallarni yozuvchi farishtalar",
-                "variant": ["Amallarni yozuvchi farishtalar", "Qabr farishtalari", "Jannat qo‘riqchilari", "Vahiy farishtalari"]
-            },
-            {
-                "question": "Ayatul Kursi qaysi sura oyati?",
-                "answer": "Baqara, 255-oyat",
-                "variant": ["Baqara, 255-oyat", "Baqara, 2-oyat", "Ixlos, 1-oyat", "Niso, 34-oyat"]
-            },
-            {
-                "question": "Qaysi surada Bismillah ikki marta keladi?",
-                "answer": "Naml",
-                "variant": ["Naml", "Tavba", "Fotiha", "Yunus"]
-            },
-            {
-                "question": "Ayoli bo‘lmagan yagona sura nomi sifatida ayol ismi keltirilgan sura?",
-                "answer": "Maryam",
-                "variant": ["Maryam", "Aisha", "Hafsah", "Zaynab"]
-            },
-            {
-                "question": "Yunus (a.s.) bilan bog‘liq mo‘jiza?",
-                "answer": "Baliq qornida bo‘lishi",
-                "variant": ["Baliq qornida bo‘lishi", "Dengizni yorishi", "Olovda kuymasligi", "Toshni yumshatishi"]
-            },
-            {
-                "question": "Ibrohim (a.s.) olovga tashlanganda natija?",
-                "answer": "Olov sovuq va salomat bo‘ldi",
-                "variant": ["Olov sovuq va salomat bo‘ldi", "Yonib ketdi", "Dengizga qochdi", "Yomg‘ir o‘chirdi"]
-            },
-            {
-                "question": "Nuh (a.s.)ga berilgan buyruqlardan biri?",
-                "answer": "Kema qurish",
-                "variant": ["Kema qurish", "To‘g‘ridan-to‘g‘ri Makka tomon ketish", "Baytul Maqdisni qurish", "Qurbongoh barpo qilish"]
-            },
-            {
-                "question": "Haram oylar nechta?",
-                "answer": "4 ta",
-                "variant": ["4 ta", "3 ta", "2 ta", "5 ta"]
-            },
-            {
-                "question": "Haram oylar qaysilar?",
-                "answer": "Zul-qa‘da, Zul-hijja, Muharram, Rajab",
-                "variant": [
-                "Zul-qa‘da, Zul-hijja, Muharram, Rajab",
-                "Sha‘bon, Ramazon, Shawvol, Muharram",
-                "Safar, Rabi‘ul avval, Rajab, Sha‘bon",
-                "Zul-hijja, Ramazon, Rajab, Shawvol"
-                ]
-            },
-            {
-                "question": "Hijriy taqvimda oylar soni nechta?",
-                "answer": "12 ta",
-                "variant": ["12 ta", "10 ta", "11 ta", "13 ta"]
-            },
-            {
-                "question": "Arafat kuni qaysi sanaga to‘g‘ri keladi? (hijriy)",
-                "answer": "Zul-hijjaning 9-kuni",
-                "variant": ["Zul-hijjaning 9-kuni", "Zul-hijjaning 10-kuni", "Ramazonning 27-kuni", "Muharramning 10-kuni"]
-            },
-            {
-                "question": "I‘tikof odatda qachon ado etiladi?",
-                "answer": "Ramazonning so‘nggi o‘n kuni",
-                "variant": ["Ramazonning so‘nggi o‘n kuni", "Zul-hijja boshida", "Sha‘bon o‘rtasida", "Muharram oxirida"]
-            },
-            {
-                "question": "Hajar al-Asvadni o‘pish hukmi?",
-                "answer": "Sunnat",
-                "variant": ["Sunnat", "Farz", "Wajib", "Makruh"]
-            },
-            {
-                "question": "Masjidul Haromdagi bir namozning savobi haqida mashhur rivoyat?",
-                "answer": "100 000 barobar",
-                "variant": ["100 000 barobar", "10 000 barobar", "1 000 barobar", "500 barobar"]
-            },
-            {
-                "question": "Masjidun Nabaviydagi bir namoz savobi (mashhur rivoyatga ko‘ra)?",
-                "answer": "1 000 barobar",
-                "variant": ["1 000 barobar", "100 000 barobar", "500 barobar", "100 barobar"]
-            },
-            {
-                "question": "Sahih oltita hadis to‘plamidan biri?",
-                "answer": "Sunan Ibn Mojah",
-                "variant": ["Sunan Ibn Mojah", "Musnad Dorimiy", "Muwatto Molik", "Musnad Shofi‘iy"]
-            },
-            {
-                "question": "Abu Dovudning hadis to‘plami nomi?",
-                "answer": "Sunan Abu Dovud",
-                "variant": ["Sunan Abu Dovud", "Sahih Muslim", "Sunan at-Termiziy", "Sunan an-Nasoiy"]
-            },
-            {
-                "question": "To‘rtta fiqh mazhabi imomlaridan biri?",
-                "answer": "Abu Hanifa",
-                "variant": ["Abu Hanifa", "Ibn Taymiyya", "Jaloluddin Suyutiy", "Ibn Hajar"]
-            },
-            {
-                "question": "Imom Abu Hanifaning ismlari to‘liqroq?",
-                "answer": "Nu‘mon ibn Sobit",
-                "variant": ["Nu‘mon ibn Sobit", "Ahmad ibn Hanbal", "Muhammad ibn Idris", "Molik ibn Anas"]
-            },
-            {
-                "question": "Shariat manbalaridan biri bo‘lmaganini toping:",
-                "answer": "Urf bid’atlari",
-                "variant": ["Urf bid’atlari", "Qur’on", "Sunnat", "Ijmo‘ va Qiyos"]
-            },
-            {
-                "question": "“Sunnat” turlari orasida qaysi juftlik to‘g‘ri?",
-                "answer": "Qavliyya, Fi’liyya, Taqririyya",
-                "variant": ["Qavliyya, Fi’liyya, Taqririyya", "Qalbiyya, Lisaniyya, Amal", "Farziyya, Vojibiyya, Nafl", "Makruh, Halol, Harom"]
-            },
-            {
-                "question": "“Nifoq” so‘zining ma’nosi?",
-                "answer": "Ikkiyuzlamachilik",
-                "variant": ["Ikkiyuzlamachilik", "Shukr", "Taqvo", "Ihson"]
-            },
-            {
-                "question": "“Buhton” nima?",
-                "answer": "Bo‘lmagan aybni to‘qib gapirish",
-                "variant": ["Bo‘lmagan aybni to‘qib gapirish", "Yo‘qida aybini aytish", "Haqqoniy tanqid", "Sukut saqlash"]
-            },
-            {
-                "question": "Tahoratni buzadigan holatlardan biri?",
-                "answer": "Sham chiqishi",
-                "variant": ["Sham chiqishi", "Qibla tomonga burilish", "Qo‘l ko‘tarish", "Boshlang‘ich niyat"]
-            },
-            {
-                "question": "Zakat odatda nimalarga farz bo‘ladi?",
-                "answer": "Oltin-kumush, pul, tijorat moli va ayrim chorvalar",
-                "variant": [
-                "Oltin-kumush, pul, tijorat moli va ayrim chorvalar",
-                "Faqat kiyim-kechak",
-                "Faqat uy-joy",
-                "Faqat don va meva"
-                ]
-            },
-            {
-                "question": "Sadaqa jariya nimaga deyiladi?",
-                "answer": "Savobi uzluksiz davom etadigan sadaqa",
-                "variant": ["Savobi uzluksiz davom etadigan sadaqa", "Faqat bir martalik sadaqa", "Nazar", "Fitrning o‘zi"]
-            },
-            {
-                "question": "Niyatning joyi qayer?",
-                "answer": "Qalb",
-                "variant": ["Qalb", "Til", "Qo‘l", "Ko‘z"]
-            },
-            {
-                "question": "Safarda ro‘zani ochish hukmi?",
-                "answer": "Ruxsat",
-                "variant": ["Ruxsat", "Harom", "Farz", "Makruh"]
-            },
-            {
-                "question": "Badr jangidan keyingi mashhur janglardan biri?",
-                "answer": "Xandaq (Ahzob) jangi",
-                "variant": ["Xandaq (Ahzob) jangi", "Hunayn jangi", "Tabuk jangi", "Yarmuk jangi"]
-            },
-            {
-                "question": "Xandaq (Ahzob) jangi hijriy qaysi yilda?",
-                "answer": "5-yil",
-                "variant": ["5-yil", "4-yil", "6-yil", "7-yil"]
-            },
-            {
-                "question": "Tabuk g‘azoti hijriy qaysi yilda?",
-                "answer": "9-yil",
-                "variant": ["9-yil", "8-yil", "7-yil", "6-yil"]
-            },
-            {
-                "question": "Imom an-Nasoiy to‘plamining nomi?",
-                "answer": "Sunan an-Nasoiy",
-                "variant": ["Sunan an-Nasoiy", "Sahih Nasoiy", "Musnad Nasoiy", "Jome’ Nasoiy"]
-            },
-            {
-                "question": "Imom at-Termiziyning to‘plami nomi?",
-                "answer": "Sunan at-Termiziy",
-                "variant": ["Sunan at-Termiziy", "Jome’ul Kabir", "Sahih Termiziy", "Musnad Termiziy"]
-            },
-            {
-                "question": "Tafsirdagi mashhur ilk asarlardan biri muallifi Tabariyning kitobi?",
-                "answer": "Jome’ul bayan",
-                "variant": ["Jome’ul bayan", "Ihyo Ulumiddin", "Ar-Risola", "Al-Muwatto’"]
-            },
-            {
-                "question": "“Khotamul Anbiyo” unvonining ma’nosi?",
-                "answer": "Payg‘ambarlarning muhr-i xotimi",
-                "variant": ["Payg‘ambarlarning muhr-i xotimi", "Eng avvalgi payg‘ambar", "Faqat Bani Isroil payg‘ambari", "Faqat Makka ulamosi"]
-            },
-            {
-                "question": "Payg‘ambarimiz (s.a.v.) nechchi yoshda vafot etganlar?",
-                "answer": "63 yosh",
-                "variant": ["63 yosh", "60 yosh", "65 yosh", "62 yosh"]
-            }
-        ]
 
 
         

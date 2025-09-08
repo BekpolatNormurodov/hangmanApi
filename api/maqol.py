@@ -2,8 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 import random
 
-
-# Hangman usulida faqat rasmlar o'zgaradi, umumiy 10ta bosqich bo'lsin yutsa bitta bosqichga sakridi, yutqazsa boshidan boshlasin.
+# 100ta level buladi va har bir levelda 5tadan savol buladi
 class MaqolApi(APIView):
     def get(self, request):
 
@@ -825,7 +824,7 @@ class MaqolApi(APIView):
 
         maqol_6 = [
             {
-                "savol": "Xiyonatning izlari — ko‘rinmaydi, ammo qalbda .... yo'qolmaydi.",
+                "savol": "Xiyonatning izlari — ko‘rinmaydi, ammo qalbdagi .... yo'qolmaydi.",
                 "javob": "og‘riq"
             },
             {
