@@ -2,10 +2,10 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 import random
 
-# 100ta level buladi, har bir levelda 5tadan max 10tagacha savol buladi.
 class Viktoriya(APIView):
     def get(self, request):
  
+
 
         quiz_1 = [
             {
@@ -510,8 +510,6 @@ class Viktoriya(APIView):
             }
         ]
 
-
-
         quiz_2 = [
             {
                 "question": "Quyosh tizimidagi eng kichik sayyora?",
@@ -1014,8 +1012,6 @@ class Viktoriya(APIView):
                 "variant": ["Oy", "Sun’iy yo‘ldosh", "Quyosh", "Sayyora"]
             }
         ]
-
-
 
         quiz_3 = [
             {
@@ -1520,8 +1516,6 @@ class Viktoriya(APIView):
             }
         ]
 
-       
-
         quiz_4 = [
             {
                 "question": "O‘zbekiston hududidagi mashhur maqbaralardan biri — Ismoil Somoniy maqbarasi qayerda?",
@@ -2024,9 +2018,7 @@ class Viktoriya(APIView):
                 "variant": ["Oliy Kengash", "Senat", "Prezident qarorgohi", "Adliya vazirligi"]
             }
         ]
-
-        
-        
+    
         quiz_5 = [
             {
                 "question": "Dunyoning eng mashhur muzeylaridan biri — Britaniya muzeyi qayerda?",
@@ -2529,9 +2521,7 @@ class Viktoriya(APIView):
                 "variant": ["Norvegiya", "Daniya", "Islandiya", "Shvetsiya"]
             }
         ]
-        
-        
-
+            
         quiz_6 = [
             {
                 "question": "Kompyuter klaviaturasida 'Esc' tugmasi odatda qaysi burchakda joylashgan?",
@@ -3035,8 +3025,6 @@ class Viktoriya(APIView):
             }
         ]
 
-
-
         quiz_7 = [
             {
                 "question": "Yer yuzida eng baland tog‘ tizmasi qaysi?",
@@ -3539,9 +3527,7 @@ class Viktoriya(APIView):
                 "variant": ["8-dekabr", "1-sentyabr", "21-mart", "9-may"]
             }
         ]
-
-
-
+    
         quiz_8 = [
             {
                 "question": "O‘zbekiston Respublikasining Konstitutsiyasi qachon qabul qilingan?",
@@ -4044,8 +4030,6 @@ class Viktoriya(APIView):
                 "variant": ["Xristofor Kolumb", "Vasko da Gama", "Magellan", "Amerigo Vespucci"]
             }
         ]
-
-
     
         quiz_9 = [
             {
@@ -4549,9 +4533,7 @@ class Viktoriya(APIView):
                 "variant": ["XVIII-XIX asr", "XVI asr", "XIV-XV asr", "XX asr"]
             }
         ]
-
-
-  
+   
         quiz_10 = [
             {
                 "question": "Buyuk ipak yo‘li nechta qit’ani bog‘lagan?",
@@ -5056,106 +5038,106 @@ class Viktoriya(APIView):
         ]
                
 
-        lvl_1 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
-        lvl_2 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
-        lvl_3 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
-        lvl_4 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
-        lvl_5 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
-        lvl_6 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
-        lvl_7 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
-        lvl_8 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
-        lvl_9 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
-        lvl_10 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
-        lvl_11 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
-        lvl_12 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
-        lvl_13 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
-        lvl_14 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
-        lvl_15 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
-        lvl_16 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
-        lvl_17 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
-        lvl_18 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
-        lvl_19 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
-        lvl_20 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4),
-        lvl_21 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
-        lvl_22 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
-        lvl_23 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
-        lvl_24 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
-        lvl_25 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
-        lvl_26 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
-        lvl_27 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
-        lvl_28 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
-        lvl_29 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
-        lvl_30 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
-        lvl_31 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
-        lvl_32 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
-        lvl_33 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
-        lvl_34 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
-        lvl_35 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
-        lvl_36 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
-        lvl_37 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
-        lvl_38 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
-        lvl_39 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
-        lvl_40 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5),
-        lvl_41 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
-        lvl_42 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
-        lvl_43 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
-        lvl_44 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
-        lvl_45 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
-        lvl_46 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
-        lvl_47 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
-        lvl_48 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
-        lvl_49 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
-        lvl_50 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
-        lvl_51 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
-        lvl_52 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
-        lvl_53 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
-        lvl_54 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
-        lvl_55 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
-        lvl_56 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
-        lvl_57 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
-        lvl_58 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
-        lvl_59 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
-        lvl_60 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6),
-        lvl_61 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7),
-        lvl_62 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7),
-        lvl_63 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7),
-        lvl_64 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7),
-        lvl_65 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7),
-        lvl_66 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7),
-        lvl_67 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7),
-        lvl_68 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7),
-        lvl_69 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7),
-        lvl_70 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7),
-        lvl_71 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8),
-        lvl_72 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8),
-        lvl_73 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8),
-        lvl_74 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8),
-        lvl_75 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8),
-        lvl_76 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8),
-        lvl_77 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8),
-        lvl_78 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8),
-        lvl_79 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8),
-        lvl_80 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8),
-        lvl_81 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9),
-        lvl_82 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9),
-        lvl_83 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9),
-        lvl_84 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9),
-        lvl_85 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9),
-        lvl_86 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9),
-        lvl_87 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9),
-        lvl_88 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9),
-        lvl_89 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9),
-        lvl_90 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9),
-        lvl_91 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10),
-        lvl_92 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10),
-        lvl_93 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10),
-        lvl_94 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10),
-        lvl_95 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10),
-        lvl_96 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10),
-        lvl_97 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10),
-        lvl_98 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10),
-        lvl_99 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10),
-        lvl_100 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10),
+        lvl_1 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4)
+        lvl_2 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4)
+        lvl_3 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4)
+        lvl_4 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4)
+        lvl_5 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4)
+        lvl_6 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5)
+        lvl_7 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5)
+        lvl_8 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5)
+        lvl_9 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5)
+        lvl_10 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5)
+        lvl_11 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6)
+        lvl_12 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6)
+        lvl_13 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6)
+        lvl_14 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6)
+        lvl_15 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6)
+        lvl_16 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6)
+        lvl_17 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6)
+        lvl_18 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6)
+        lvl_19 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6)
+        lvl_20 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6)
+        lvl_21 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7)
+        lvl_22 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7)
+        lvl_23 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7)
+        lvl_24 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7)
+        lvl_25 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7)
+        lvl_26 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7)
+        lvl_27 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7)
+        lvl_28 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7)
+        lvl_29 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7)
+        lvl_30 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7)
+        lvl_31 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7)
+        lvl_32 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7)
+        lvl_33 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7)
+        lvl_34 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7)
+        lvl_35 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7)
+        lvl_36 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7)
+        lvl_37 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7)
+        lvl_38 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7)
+        lvl_39 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7)
+        lvl_40 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7)
+        lvl_41 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8)
+        lvl_42 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8)
+        lvl_43 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8)
+        lvl_44 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8)
+        lvl_45 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8)
+        lvl_46 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8)
+        lvl_47 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8)
+        lvl_48 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8)
+        lvl_49 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8)
+        lvl_50 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8)
+        lvl_51 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8)
+        lvl_52 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8)
+        lvl_53 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8)
+        lvl_54 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8)
+        lvl_55 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8)
+        lvl_56 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8)
+        lvl_57 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8)
+        lvl_58 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8)
+        lvl_59 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8)
+        lvl_60 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8)
+        lvl_61 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9)
+        lvl_62 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9)
+        lvl_63 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9)
+        lvl_64 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9)
+        lvl_65 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9)
+        lvl_66 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9)
+        lvl_67 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9)
+        lvl_68 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9)
+        lvl_69 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9)
+        lvl_70 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9)
+        lvl_71 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9)
+        lvl_72 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9)
+        lvl_73 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9)
+        lvl_74 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9)
+        lvl_75 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9)
+        lvl_76 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9)
+        lvl_77 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9)
+        lvl_78 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9)
+        lvl_79 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9)
+        lvl_80 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9)
+        lvl_81 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10)
+        lvl_82 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10)
+        lvl_83 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10)
+        lvl_84 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10)
+        lvl_85 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10)
+        lvl_86 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10)
+        lvl_87 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10)
+        lvl_88 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10)
+        lvl_89 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10)
+        lvl_90 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10)
+        lvl_91 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10)
+        lvl_92 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10)
+        lvl_93 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10)
+        lvl_94 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10)
+        lvl_95 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10)
+        lvl_96 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10)
+        lvl_97 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10)
+        lvl_98 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10)
+        lvl_99 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10)
+        lvl_100 = random.choice(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10)
 
 
 
